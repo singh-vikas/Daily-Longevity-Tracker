@@ -87,34 +87,37 @@
 
 ---
 
-## 🧴 **8:00-8:30 AM — Skin Care & Morning Supplements Block**
+## 💼 **8:00-10:00 AM — Work & Breakfast Block**
 
-### **Skin Routine (anti-aging focus):**
+### **8:00-8:40 AM — Focus Work Block (40 min):**
+- [ ] **Focus work session completed**: [ ] Yes [ ] No
+- [ ] **Duration**: _____ minutes
+- [ ] **Phone in another room** (minimize distractions)
+- [ ] **Caffeine timing** (if needed):
+  - [ ] Coffee/tea **90-120 minutes after waking** (optimal cortisol interaction)
+  - [ ] **L-Theanine pairing** (200mg) - reduces jitters, enhances focus
+  - [ ] **Amount**: _____ mg caffeine (limit: 100-200mg)
+- [ ] **Tasks completed**: _____
+
+---
+
+### **8:45-9:15 AM — Skin Care, Breakfast & Supplements (30 min):**
+
+#### **Skin Routine (anti-aging focus):**
 - [ ] **Gentle face wash** with mild cleanser (pH 5.5-6.5)
 - [ ] **Pat dry** (don't rub)
 - [ ] **Vitamin C serum** (L-ascorbic acid 10-20%) - antioxidant, collagen synthesis
 - [ ] **Moisturizer** (gel-based for oily, cream for dry skin)
 - [ ] **Sunscreen SPF 30+** (zinc oxide or titanium dioxide) - **CRITICAL** for longevity
 
-### **Essential Morning Supplements (with or after breakfast):**
-- [ ] **Vitamin D3 (2000 IU)** - immune function, bone health, mood
-- [ ] **Vitamin C (500 mg)** - collagen synthesis, immune support, antioxidant
-- [ ] **Omega-3 (800 mg EPA/DHA)** - anti-inflammatory, brain health
-- [ ] **Turmeric/Curcumin (1g)** - anti-inflammatory, activates AMPK pathway
-- [ ] **Optional: CoQ10 (100mg)** - mitochondrial function, energy production
-
----
-
-## 🍳 **8:30-9:30 AM — Breakfast & Metabolic Optimization Block**
-
-### **Breakfast Timing:**
+#### **Breakfast Timing:**
 - [ ] **Time**: _____
 - [ ] **90-120 minutes after waking** (allows cortisol pulse to complete)
 - [ ] **Break fast 16-18 hours after last meal** (if doing 16:8 intermittent fasting)
 
-### **High-Protein, Nutrient-Dense Breakfast (choose one):**
+#### **High-Protein, Nutrient-Dense Breakfast (choose one):**
 
-#### **Indian Options:**
+**Indian Options:**
 - [ ] **Moong dal chilla** with spinach + curd/yogurt
 - [ ] **Poha** with peas, peanuts, and vegetables
 - [ ] **Vegetable upma** with nuts and seeds
@@ -122,42 +125,51 @@
 - [ ] **Sprouts salad** (moong, chickpea) with tomatoes, onions, coriander
 - [ ] **Dalia** (broken wheat) with vegetables and nuts
 
-#### **Western Options:**
+**Western Options:**
 - [ ] **Overnight oats** with berries, chia seeds, walnuts, Greek yogurt
 - [ ] **Greek yogurt parfait** with granola, blueberries, almonds
 - [ ] **Scrambled eggs** (2-3) with spinach, tomatoes, avocado
 - [ ] **Smoothie**: Banana, spinach, almond milk, chia seeds, protein powder
 - [ ] **Cottage cheese** with fruit and seeds
+- [ ] **Other/Custom**: _____
 
-### **Breakfast Nutrients Checklist:**
+#### **Breakfast Nutrients Checklist:**
 - [ ] **Protein**: _____ g (target: 30-40g)
 - [ ] **Fiber**: _____ g (target: 10-15g)
 - [ ] **Healthy fats**: _____ g (target: 15-20g)
 - [ ] **Complex carbs**: _____ g (target: 40-60g)
 
-### **Post-Breakfast:**
+#### **Essential Morning Supplements (with or after breakfast):**
+- [ ] **Vitamin D3 (2000 IU)** - immune function, bone health, mood
+- [ ] **Vitamin C (500 mg)** - collagen synthesis, immune support, antioxidant
+- [ ] **Omega-3 (800 mg EPA/DHA)** - anti-inflammatory, brain health
+- [ ] **Turmeric/Curcumin (1g)** - anti-inflammatory, activates AMPK pathway
+- [ ] **Optional: CoQ10 (100mg)** - mitochondrial function, energy production
+
+#### **Post-Breakfast:**
 - [ ] **15-minute walk** (enhances glucose disposal, improves insulin sensitivity)
 - [ ] **Continue sunlight exposure** if possible
 
 ---
 
-## 💼 **9:30 AM-12:00 PM — Deep Work & Cognitive Peak Block**
+### **9:15-10:00 AM — Focus Work Block (45 min):**
+- [ ] **Focus work session completed**: [ ] Yes [ ] No
+- [ ] **Duration**: _____ minutes
+- [ ] **Tasks completed**: _____
 
-### **Cognitive Optimization:**
-- [ ] **Caffeine timing** (if needed):
-  - [ ] Coffee/tea **90-120 minutes after waking** (optimal cortisol interaction)
-  - [ ] **L-Theanine pairing** (200mg) - reduces jitters, enhances focus
-  - [ ] **Amount**: _____ mg caffeine (limit: 100-200mg)
-- [ ] **Phone in another room** (minimize distractions)
-- [ ] **Focus blocks**: 90-minute sessions, 15-minute breaks
+---
 
-### **Deep Work Protocol:**
+## 💼 **10:00-12:00 PM — Deep Work Block**
+
+### **10:00-10:50 AM — Focus Work (50 min):**
+- [ ] **Focus work session completed**: [ ] Yes [ ] No
+- [ ] **Duration**: _____ minutes
 - [ ] **Most challenging tasks first** (peak cognitive performance)
-- [ ] **Pomodoro technique**: 90 min focus, 15 min break
-- [ ] **Deep work sessions completed**: _____
-- [ ] **Break activities**: Stand, stretch, hydrate, rest eyes (20-20-20 rule)
+- [ ] **Tasks completed**: _____
 
-### **Mid-Morning Snack (10:00-10:30 AM, if needed):**
+---
+
+### **10:50-11:10 AM — Break & Snack (20 min):**
 - [ ] **Snack taken**: [ ] Yes [ ] No
 - [ ] **Options**:
   - [ ] Greek yogurt with pomegranate seeds
@@ -168,10 +180,16 @@
   - [ ] Roasted chickpeas (protein + fiber)
   - [ ] Dates with walnuts (natural energy boost)
 - [ ] **What I had**: _____
-
-### **Hydration:**
 - [ ] **Water**: _____ ml (target: 500-750ml during this block)
 - [ ] **Green tea** (optional, 2nd cup) - antioxidants, L-theanine
+- [ ] **Break activities**: Stand, stretch, hydrate, rest eyes (20-20-20 rule)
+
+---
+
+### **11:10-12:00 PM — Focus Work (50 min):**
+- [ ] **Focus work session completed**: [ ] Yes [ ] No
+- [ ] **Duration**: _____ minutes
+- [ ] **Tasks completed**: _____
 
 ---
 

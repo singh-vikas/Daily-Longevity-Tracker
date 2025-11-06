@@ -1,35 +1,19 @@
-# Daily Tracker & Productivity Report System
+# 🌱 Daily Longevity Tracker
 
-## 📂 Folder Structure
+A comprehensive daily tracking and productivity reporting system for optimizing longevity and health based on science-backed protocols.
 
-This folder contains all files related to daily tracking and productivity reporting.
+## ✨ Features
 
-```
-Daily_Tracker_System/
-├── README.md                          # This file - overview
-│
-├── markdown-tracker/                  # 📝 Markdown/command-line tracker
-│   ├── Daily_Tracker_Template.md     # Daily tracking template
-│   ├── productivity_report_generator.py  # Python script for reports
-│   ├── QUICK_START.md                 # Quick start guide
-│   └── README_Tracker.md              # Complete documentation
-│
-└── web-app/                           # 🌐 Web-based tracker application
-    ├── index.html                     # Main web application
-    ├── styles.css                     # Styling
-    ├── tracker.js                     # Data management
-    ├── report-generator.js            # Report generation
-    ├── .nojekyll                      # GitHub Pages config
-    ├── README_WEB.md                  # Web app documentation
-    ├── QUICK_DEPLOY.md                # Quick deploy guide
-    └── DEPLOYMENT.md                  # Full deployment guide
-```
+- **📝 Markdown Tracker**: Command-line tool for daily tracking with markdown files
+- **🌐 Web App**: Online tracker with real-time reports and data visualization
+- **📊 Productivity Scoring**: Automatic calculation of productivity score (0-100)
+- **💡 Insights & Recommendations**: Personalized feedback based on your data
 
 ## 🚀 Quick Start
 
 ### Option 1: Web-Based Tracker (Recommended)
 
-1. **Deploy to GitHub Pages** (see `web-app/QUICK_DEPLOY.md`)
+1. **Deploy to GitHub Pages** (see [DEPLOYMENT.md](DEPLOYMENT.md))
 2. **Access online** at your GitHub Pages URL
 3. **Fill tracker** directly in browser
 4. **Generate reports** instantly
@@ -40,46 +24,60 @@ Daily_Tracker_System/
 2. **Fill tracker** in your editor
 3. **Generate report**: `python markdown-tracker/productivity_report_generator.py --input Daily_Tracker_2024-01-15.md --output report.html`
 
-## 📊 What This System Does
+## 📂 Structure
 
-- **Daily Tracking**: Track sleep, energy, exercise, nutrition, habits
-- **Productivity Scoring**: Automatic calculation of productivity score (0-100)
-- **Report Generation**: Create markdown, HTML, or JSON reports
-- **Insights & Recommendations**: Get personalized feedback based on your data
+```
+Daily-Longevity-Tracker/
+├── README.md              # This file
+├── DEPLOYMENT.md          # Deployment guide
+├── USAGE.md               # How to use the tracker
+├── DESIGN.md              # Code design documentation
+├── LICENSE                # MIT License
+│
+├── docs/                  # Web app (GitHub Pages)
+│   ├── index.html
+│   ├── styles.css
+│   ├── tracker.js
+│   └── report-generator.js
+│
+├── markdown-tracker/      # Command-line tools
+│   ├── Daily_Tracker_Template.md
+│   └── productivity_report_generator.py
+│
+└── web-app/               # Original web app source
+    └── ...
+```
 
-## 📖 Documentation
+## 📊 What Gets Tracked
 
-### For Command-Line Usage:
-- **markdown-tracker/QUICK_START.md** - 3-step quick start guide
-- **markdown-tracker/README_Tracker.md** - Complete documentation with all features
-- **markdown-tracker/Daily_Tracker_Template.md** - Template with all metrics to track
+- Sleep quality and duration
+- Energy levels (morning, afternoon, evening)
+- Exercise (strength, cardio, flexibility)
+- Nutrition (protein, carbs, fats, fiber)
+- Habits completed
+- Mood and stress levels
 
-### For Web Application:
-- **web-app/README_WEB.md** - Web app usage guide
-- **web-app/QUICK_DEPLOY.md** - Quick deployment guide
-- **web-app/DEPLOYMENT.md** - Full deployment instructions
+## 📈 Productivity Score
 
-## 🔗 Related Files
+Automatically calculated (0-100) based on:
+- Sleep Quality (25 points)
+- Energy Levels (25 points)
+- Exercise Completion (20 points)
+- Habit Consistency (20 points)
+- Nutrition Completion (10 points)
 
-- **Main Routine**: `../0.Daily_Block_Routine.md` - Science-based daily routine
-- **Other Longevity Files**: `../` - Additional longevity resources
+## 🔬 Science-Based
 
-## 🎯 Which Option to Choose?
+Based on protocols from:
+- **Andrew Huberman** - Circadian rhythm optimization
+- **Peter Attia** - Zone 2 training, longevity protocols
+- **Mark Hyman** - Functional medicine, metabolic health
+- **Bryan Johnson** - Blueprint protocol, biomarker optimization
 
-### Choose Web App if:
-- ✅ You want to track online
-- ✅ You want instant reports
-- ✅ You want to access from any device
-- ✅ You prefer a visual interface
+## 📝 License
 
-### Choose Command-Line if:
-- ✅ You prefer markdown files
-- ✅ You use Obsidian or similar tools
-- ✅ You want version control with Git
-- ✅ You prefer local files
-
-**Note**: You can use both! Track in web app, export data, and use Python script for analysis.
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Start tracking today to optimize your longevity routine!**
+**Repository**: https://github.com/singh-vikas/Daily-Longevity-Tracker

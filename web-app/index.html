@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Longevity Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌱 Daily Longevity Tracker</h1>
+            <p class="subtitle">Track your daily routine and optimize your longevity</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('tracker')">📊 Daily Tracker</button>
+            <button class="tab-btn" onclick="showTab('report')">📈 Reports</button>
+            <button class="tab-btn" onclick="showTab('history')">📅 History</button>
+        </div>
+
+        <!-- Daily Tracker Tab -->
+        <div id="tracker-tab" class="tab-content active">
+            <div class="date-selector">
+                <label for="tracker-date">Date:</label>
+                <input type="date" id="tracker-date" value="" onchange="loadTrackerData()">
+                <button onclick="setToday()" class="btn-secondary">Today</button>
+            </div>
+
+            <form id="tracker-form" onsubmit="saveTrackerData(event)">
+                <!-- Sleep Quality -->
+                <section class="tracker-section">
+                    <h2>😴 Sleep Quality</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="bedtime">Bedtime</label>
+                            <input type="time" id="bedtime" name="bedtime">
+                        </div>
+                        <div class="form-group">
+                            <label for="wake-time">Wake Time</label>
+                            <input type="time" id="wake-time" name="wake-time">
+                        </div>
+                        <div class="form-group">
+                            <label for="sleep-duration">Sleep Duration (hours)</label>
+                            <input type="number" id="sleep-duration" name="sleep-duration" step="0.25" min="0" max="12">
+                        </div>
+                        <div class="form-group">
+                            <label for="sleep-quality">Sleep Quality (1-10)</label>
+                            <input type="number" id="sleep-quality" name="sleep-quality" min="1" max="10">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Energy Levels -->
+                <section class="tracker-section">
+                    <h2>⚡ Energy Levels</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="energy-morning">Morning (1-10)</label>
+                            <input type="number" id="energy-morning" name="energy-morning" min="1" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="energy-afternoon">Afternoon (1-10)</label>
+                            <input type="number" id="energy-afternoon" name="energy-afternoon" min="1" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="energy-evening">Evening (1-10)</label>
+                            <input type="number" id="energy-evening" name="energy-evening" min="1" max="10">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Exercise -->
+                <section class="tracker-section">
+                    <h2>🏋️ Exercise</h2>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="exercise-strength" name="exercise-strength">
+                            <span>Strength Training</span>
+                        </label>
+                        <input type="number" id="exercise-strength-duration" name="exercise-strength-duration" placeholder="Minutes" style="width: 100px; margin-left: 10px;">
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="exercise-cardio" name="exercise-cardio">
+                            <span>Cardio (Zone 2)</span>
+                        </label>
+                        <input type="number" id="exercise-cardio-duration" name="exercise-cardio-duration" placeholder="Minutes" style="width: 100px; margin-left: 10px;">
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="exercise-flexibility" name="exercise-flexibility">
+                            <span>Flexibility/Mobility</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="cold-exposure" name="cold-exposure">
+                            <span>Cold Exposure</span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Nutrition -->
+                <section class="tracker-section">
+                    <h2>🍽️ Nutrition</h2>
+                    <div class="meal-section">
+                        <h3>Breakfast</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Time</label>
+                                <input type="time" id="breakfast-time" name="breakfast-time">
+                            </div>
+                            <div class="form-group">
+                                <label>Protein (g)</label>
+                                <input type="number" id="breakfast-protein" name="breakfast-protein" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Carbs (g)</label>
+                                <input type="number" id="breakfast-carbs" name="breakfast-carbs" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Fats (g)</label>
+                                <input type="number" id="breakfast-fats" name="breakfast-fats" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meal-section">
+                        <h3>Lunch</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Time</label>
+                                <input type="time" id="lunch-time" name="lunch-time">
+                            </div>
+                            <div class="form-group">
+                                <label>Protein (g)</label>
+                                <input type="number" id="lunch-protein" name="lunch-protein" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Carbs (g)</label>
+                                <input type="number" id="lunch-carbs" name="lunch-carbs" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Fats (g)</label>
+                                <input type="number" id="lunch-fats" name="lunch-fats" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meal-section">
+                        <h3>Dinner</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Time</label>
+                                <input type="time" id="dinner-time" name="dinner-time">
+                            </div>
+                            <div class="form-group">
+                                <label>Protein (g)</label>
+                                <input type="number" id="dinner-protein" name="dinner-protein" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Carbs (g)</label>
+                                <input type="number" id="dinner-carbs" name="dinner-carbs" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Fats (g)</label>
+                                <input type="number" id="dinner-fats" name="dinner-fats" min="0">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Habits -->
+                <section class="tracker-section">
+                    <h2>✅ Habits</h2>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="habit-morning-sunlight" name="habit-morning-sunlight">
+                            <span>Morning Sunlight</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="habit-meditation" name="habit-meditation">
+                            <span>Meditation</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="habit-supplements" name="habit-supplements">
+                            <span>Supplements</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="habit-digital-sunset" name="habit-digital-sunset">
+                            <span>Digital Sunset</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="habit-social" name="habit-social">
+                            <span>Social Connection</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="habit-nature" name="habit-nature">
+                            <span>Nature Exposure</span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Mood & Notes -->
+                <section class="tracker-section">
+                    <h2>😊 Mood & Notes</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="mood">Mood (1-10)</label>
+                            <input type="number" id="mood" name="mood" min="1" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="stress">Stress Level (1-10)</label>
+                            <input type="number" id="stress" name="stress" min="1" max="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Any observations, challenges, or wins today..."></textarea>
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">💾 Save Tracker</button>
+                    <button type="button" onclick="generateReport()" class="btn-secondary">📊 Generate Report</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Report Tab -->
+        <div id="report-tab" class="tab-content">
+            <div class="report-controls">
+                <label for="report-date">Select Date:</label>
+                <input type="date" id="report-date" value="">
+                <button onclick="generateReport()" class="btn-primary">Generate Report</button>
+                <button onclick="exportReport()" class="btn-secondary">Export Report</button>
+            </div>
+            <div id="report-content"></div>
+        </div>
+
+        <!-- History Tab -->
+        <div id="history-tab" class="tab-content">
+            <h2>📅 Tracker History</h2>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <script src="tracker.js"></script>
+    <script src="report-generator.js"></script>
+</body>
+</html>
+

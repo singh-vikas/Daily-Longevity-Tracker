@@ -4,7 +4,7 @@ A comprehensive daily tracking and productivity reporting system for optimizing 
 
 ## ✨ Features
 
-- **📝 Markdown Tracker**: Command-line tool for daily tracking with markdown files
+- **📝 Manual Tracker**: Markdown-based tracking - fill template files manually, generate reports with Python
 - **🌐 Web App**: Online tracker with real-time reports and data visualization
 - **📊 Productivity Scoring**: Automatic calculation of productivity score (0-100)
 - **💡 Insights & Recommendations**: Personalized feedback based on your data
@@ -18,10 +18,10 @@ A comprehensive daily tracking and productivity reporting system for optimizing 
 3. **Fill tracker** directly in browser
 4. **Generate reports** instantly
 
-### Option 2: Command-Line Tracker
+### Option 2: Manual Tracker (Markdown Files)
 
 1. **Copy template**: `cp markdown-tracker/Daily_Tracker_Template.md Daily_Tracker_2024-01-15.md`
-2. **Fill tracker** in your editor
+2. **Fill tracker manually** in your editor (Obsidian, VS Code, etc.)
 3. **Generate report**: `python markdown-tracker/productivity_report_generator.py --input Daily_Tracker_2024-01-15.md --output report.html`
 
 ## 📂 Structure
@@ -40,9 +40,9 @@ Daily-Longevity-Tracker/
 │   ├── tracker.js
 │   └── report-generator.js
 │
-├── markdown-tracker/      # Command-line tools
-│   ├── Daily_Tracker_Template.md
-│   └── productivity_report_generator.py
+├── markdown-tracker/      # Manual tracker (markdown files)
+│   ├── Daily_Tracker_Template.md  # Template to fill manually
+│   └── productivity_report_generator.py  # Python script for reports
 │
 └── web-app/               # Original web app source
     └── ...

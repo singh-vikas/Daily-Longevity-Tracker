@@ -4,8 +4,8 @@
 
 The Daily Longevity Tracker consists of two main components:
 
-1. **Web Application** - Client-side single-page application
-2. **Command-Line Tools** - Python-based markdown processor
+1. **Web Application** - Client-side single-page application (online form interface)
+2. **Manual Tracker** - Markdown-based tracking with Python report generator
 
 ## Web Application (`docs/` or `web-app/`)
 
@@ -99,7 +99,13 @@ Score =
   (mealsCompleted / 3 * 10)            // 10 points
 ```
 
-## Command-Line Tools (`markdown-tracker/`)
+## Manual Tracker (`markdown-tracker/`)
+
+### What It Is
+A **manual tracking system** where you:
+1. Copy a markdown template file
+2. Fill it out manually in any text editor (Obsidian, VS Code, etc.)
+3. Run a Python script to generate productivity reports
 
 ### Technology Stack
 - **Python 3.7+** - Language

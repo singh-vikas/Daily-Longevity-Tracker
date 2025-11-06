@@ -27,7 +27,7 @@
 3. Click any date to load and edit
 4. View productivity scores
 
-## Command-Line Tracker
+## Manual Tracker (Markdown Files)
 
 ### Step 1: Create Daily Tracker
 
@@ -36,15 +36,17 @@ cd markdown-tracker
 cp Daily_Tracker_Template.md Daily_Tracker_2024-01-15.md
 ```
 
-### Step 2: Fill Tracker
+### Step 2: Fill Tracker Manually
 
-Open the markdown file and fill in:
-- Sleep metrics
-- Energy levels
-- Exercise completed
-- Nutrition data
-- Habits checked off
-- Mood and notes
+Open the markdown file in your editor (Obsidian, VS Code, etc.) and fill in:
+- Sleep metrics (fill in the blanks)
+- Energy levels (enter numbers)
+- Exercise completed (check boxes)
+- Nutrition data (fill in grams)
+- Habits checked off (mark checkboxes)
+- Mood and notes (write text)
+
+**This is manual entry** - you type/edit the markdown file directly.
 
 ### Step 3: Generate Report
 
@@ -53,6 +55,8 @@ python productivity_report_generator.py \
   --input Daily_Tracker_2024-01-15.md \
   --output report_2024-01-15.html
 ```
+
+The Python script reads your manually-filled markdown file and generates a report.
 
 ## Productivity Score
 
@@ -67,8 +71,9 @@ python productivity_report_generator.py \
 - Private to your browser
 - No backend required
 
-### Command-Line
+### Manual Tracker
 - Markdown files in your local directory
+- You manually edit the files
 - Full version control with Git
 - Export reports as HTML/JSON
 

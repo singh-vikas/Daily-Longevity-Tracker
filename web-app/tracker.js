@@ -1,17 +1,160 @@
 // Daily Tracker JavaScript
 const STORAGE_KEY = 'longevity_tracker_data';
+const STREAK_KEY = 'longevity_streak';
+
+// Get all task checkboxes
+function getAllTaskCheckboxes() {
+    return document.querySelectorAll('input[type="checkbox"][onchange*="updateCompletion"]');
+}
+
+// Calculate completion percentage
+function calculateCompletion() {
+    const checkboxes = getAllTaskCheckboxes();
+    if (checkboxes.length === 0) return 0;
+    
+    const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+    return Math.round((checked / checkboxes.length) * 100);
+}
+
+// Update completion stats
+function updateCompletion() {
+    const percentage = calculateCompletion();
+    const completionEl = document.getElementById('completion-percentage');
+    if (completionEl) {
+        completionEl.textContent = percentage + '%';
+        
+        // Visual feedback
+        if (percentage === 100) {
+            showReward('🎉 Perfect Day! You completed everything!');
+        } else if (percentage >= 80) {
+            showReward('🌟 Excellent progress!');
+        } else if (percentage >= 60) {
+            showReward('👍 Good job! Keep going!');
+        }
+    }
+    
+    // Update streak
+    updateStreak();
+    
+    // Auto-save on checkbox change
+    autoSave();
+}
+
+// Update streak counter
+function updateStreak() {
+    const today = new Date().toISOString().split('T')[0];
+    const data = getStoredData();
+    const dayData = data[today];
+    
+    if (!dayData) return;
+    
+    const percentage = calculateCompletion();
+    const streakData = JSON.parse(localStorage.getItem(STREAK_KEY) || '{"current": 0, "lastDate": ""}');
+    
+    if (percentage >= 80 && streakData.lastDate !== today) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yesterdayStr = yesterday.toISOString().split('T')[0];
+        
+        if (streakData.lastDate === yesterdayStr) {
+            streakData.current += 1;
+        } else if (streakData.lastDate !== today) {
+            streakData.current = 1;
+        }
+        
+        streakData.lastDate = today;
+        localStorage.setItem(STREAK_KEY, JSON.stringify(streakData));
+    }
+    
+    const streakEl = document.getElementById('streak-days');
+    if (streakEl) {
+        streakEl.textContent = streakData.current || 0;
+    }
+}
+
+// Show reward notification
+function showReward(message) {
+    // Remove existing reward
+    const existing = document.querySelector('.reward-notification');
+    if (existing) existing.remove();
+    
+    const reward = document.createElement('div');
+    reward.className = 'reward-notification';
+    reward.textContent = message;
+    document.body.appendChild(reward);
+    
+    setTimeout(() => {
+        reward.classList.add('fade-out');
+        setTimeout(() => reward.remove(), 500);
+    }, 2000);
+}
+
+// Auto-save on checkbox change
+function autoSave() {
+    const date = document.getElementById('tracker-date')?.value;
+    if (!date) return;
+    
+    // Debounce auto-save
+    clearTimeout(window.autoSaveTimeout);
+    window.autoSaveTimeout = setTimeout(() => {
+        saveTrackerData({ preventDefault: () => {} });
+    }, 1000);
+}
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     // Set today's date as default
     const today = new Date().toISOString().split('T')[0];
-    document.getElementById('tracker-date').value = today;
-    document.getElementById('report-date').value = today;
+    const trackerDate = document.getElementById('tracker-date');
+    const reportDate = document.getElementById('report-date');
+    
+    if (trackerDate) trackerDate.value = today;
+    if (reportDate) reportDate.value = today;
     
     // Load today's data if exists
     loadTrackerData();
     loadHistory();
+    updateCompletion();
+    
+    // Add change listeners to all checkboxes for visual feedback
+    getAllTaskCheckboxes().forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            // Add visual feedback
+            const label = this.closest('.task-checkbox');
+            if (label) {
+                if (this.checked) {
+                    label.classList.add('completed');
+                    // Add celebration effect
+                    createCelebrationEffect(label);
+                } else {
+                    label.classList.remove('completed');
+                }
+            }
+        });
+    });
 });
+
+// Create celebration effect
+function createCelebrationEffect(element) {
+    const emojis = ['✨', '🎉', '🌟', '💪', '🔥'];
+    for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+            const emoji = document.createElement('span');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.cssText = `
+                position: absolute;
+                font-size: 20px;
+                pointer-events: none;
+                animation: floatUp 1s ease-out forwards;
+                left: ${Math.random() * 100}%;
+                top: 50%;
+            `;
+            element.style.position = 'relative';
+            element.appendChild(emoji);
+            setTimeout(() => emoji.remove(), 1000);
+        }, i * 100);
+    }
+}
 
 // Tab switching
 function showTab(tabName) {
@@ -26,10 +169,13 @@ function showTab(tabName) {
     });
     
     // Show selected tab
-    document.getElementById(tabName + '-tab').classList.add('active');
+    const tabEl = document.getElementById(tabName + '-tab');
+    if (tabEl) tabEl.classList.add('active');
     
     // Add active class to clicked button
-    event.target.classList.add('active');
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
     
     // Load data if switching to history
     if (tabName === 'history') {
@@ -40,78 +186,142 @@ function showTab(tabName) {
 // Set date to today
 function setToday() {
     const today = new Date().toISOString().split('T')[0];
-    document.getElementById('tracker-date').value = today;
-    loadTrackerData();
+    const trackerDate = document.getElementById('tracker-date');
+    if (trackerDate) {
+        trackerDate.value = today;
+        loadTrackerData();
+    }
 }
 
 // Load tracker data for selected date
 function loadTrackerData() {
-    const date = document.getElementById('tracker-date').value;
+    const date = document.getElementById('tracker-date')?.value;
     if (!date) return;
     
     const data = getStoredData();
     const dayData = data[date] || {};
     
+    // Helper function to safely set value
+    const setValue = (id, value) => {
+        const el = document.getElementById(id);
+        if (el && value !== undefined && value !== null) {
+            el.value = value;
+        }
+    };
+    
+    const setChecked = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.checked = value || false;
+    };
+    
     // Load sleep data
-    if (dayData.bedtime) document.getElementById('bedtime').value = dayData.bedtime;
-    if (dayData.wakeTime) document.getElementById('wake-time').value = dayData.wakeTime;
-    if (dayData.sleepDuration) document.getElementById('sleep-duration').value = dayData.sleepDuration;
-    if (dayData.sleepQuality) document.getElementById('sleep-quality').value = dayData.sleepQuality;
+    setValue('bedtime', dayData.bedtime);
+    setValue('wake-time', dayData.wakeTime);
+    setValue('sleep-duration', dayData.sleepDuration);
+    setValue('sleep-quality', dayData.sleepQuality);
     
     // Load energy data
-    if (dayData.energyMorning) document.getElementById('energy-morning').value = dayData.energyMorning;
-    if (dayData.energyAfternoon) document.getElementById('energy-afternoon').value = dayData.energyAfternoon;
-    if (dayData.energyEvening) document.getElementById('energy-evening').value = dayData.energyEvening;
+    setValue('energy-morning', dayData.energyMorning);
+    setValue('energy-afternoon', dayData.energyAfternoon);
+    setValue('energy-evening', dayData.energyEvening);
     
-    // Load exercise data
-    document.getElementById('exercise-strength').checked = dayData.exerciseStrength || false;
-    document.getElementById('exercise-cardio').checked = dayData.exerciseCardio || false;
-    document.getElementById('exercise-flexibility').checked = dayData.exerciseFlexibility || false;
-    document.getElementById('cold-exposure').checked = dayData.coldExposure || false;
-    if (dayData.exerciseStrengthDuration) document.getElementById('exercise-strength-duration').value = dayData.exerciseStrengthDuration;
-    if (dayData.exerciseCardioDuration) document.getElementById('exercise-cardio-duration').value = dayData.exerciseCardioDuration;
+    // Load mood & stress
+    setValue('mood', dayData.mood);
+    setValue('stress', dayData.stress);
+    setValue('notes', dayData.notes);
     
-    // Load nutrition data
-    if (dayData.breakfast) {
-        if (dayData.breakfast.time) document.getElementById('breakfast-time').value = dayData.breakfast.time;
-        if (dayData.breakfast.protein) document.getElementById('breakfast-protein').value = dayData.breakfast.protein;
-        if (dayData.breakfast.carbs) document.getElementById('breakfast-carbs').value = dayData.breakfast.carbs;
-        if (dayData.breakfast.fats) document.getElementById('breakfast-fats').value = dayData.breakfast.fats;
-    }
+    // Load all checkboxes
+    const checkboxFields = [
+        'no-phone', 'get-out-bed', 'morning-sunlight', 'lemon-water', 'acv',
+        'meditation', 'gratitude', 'l-tyrosine', 'pre-workout-hydration',
+        'strength-training', 'zone2-training', 'zone5-training', 'flexibility',
+        'recovery-break', 'shower-completed', 'post-shower-skincare', 'green-tea-post-workout',
+        'focus-work-1', 'phone-away', 'caffeine-timing', 'breakfast-completed',
+        'supp-vitamin-d', 'supp-vitamin-c', 'supp-omega3', 'supp-turmeric', 'supp-coq10',
+        'supp-nr-nmn', 'supp-lions-mane', 'supp-spermidine', 'post-breakfast-walk',
+        'focus-work-2', 'sunlight-walk', 'deep-work-1', 'mid-morning-snack',
+        'focus-work-3', 'lunch-completed', 'supp-vitamin-k2', 'supp-garlic',
+        'supp-magnesium-lunch', 'supp-b-complex', 'post-lunch-walk',
+        'light-work-1', 'green-tea-afternoon', 'study-work-afternoon', 'nsdr',
+        'afternoon-snack', 'work-continuation', 'work-wrap-up',
+        'system-design-study', 'plan-next-day', 'dinner-completed', 'play-with-daughter',
+        'post-dinner-walk', 'digital-sunset', 'herbal-tea', 'light-reading',
+        'evening-journal', 'gratitude-reflection', 'supp-ashwagandha', 'supp-magnesium',
+        'supp-l-theanine', 'evening-skincare', 'sleep-environment', 'prepare-clothes',
+        'final-meditation', 'final-supplements'
+    ];
     
-    if (dayData.lunch) {
-        if (dayData.lunch.time) document.getElementById('lunch-time').value = dayData.lunch.time;
-        if (dayData.lunch.protein) document.getElementById('lunch-protein').value = dayData.lunch.protein;
-        if (dayData.lunch.carbs) document.getElementById('lunch-carbs').value = dayData.lunch.carbs;
-        if (dayData.lunch.fats) document.getElementById('lunch-fats').value = dayData.lunch.fats;
-    }
+    checkboxFields.forEach(field => {
+        setChecked(field, dayData[field]);
+    });
     
-    if (dayData.dinner) {
-        if (dayData.dinner.time) document.getElementById('dinner-time').value = dayData.dinner.time;
-        if (dayData.dinner.protein) document.getElementById('dinner-protein').value = dayData.dinner.protein;
-        if (dayData.dinner.carbs) document.getElementById('dinner-carbs').value = dayData.dinner.carbs;
-        if (dayData.dinner.fats) document.getElementById('dinner-fats').value = dayData.dinner.fats;
-    }
+    // Load text fields
+    const textFields = {
+        'sunlight-duration': dayData.sunlightDuration,
+        'meditation-duration': dayData.meditationDuration,
+        'gratitude-items': dayData.gratitudeItems,
+        'strength-focus': dayData.strengthFocus,
+        'strength-duration': dayData.strengthDuration,
+        'strength-exercises': dayData.strengthExercises,
+        'cardio-type': dayData.cardioType,
+        'cardio-duration': dayData.cardioDuration,
+        'flexibility-duration': dayData.flexibilityDuration,
+        'green-tea-amount': dayData.greenTeaAmount,
+        'work-type-1': dayData.workType1,
+        'work-duration-1': dayData.workDuration1,
+        'work-tasks-1': dayData.workTasks1,
+        'breakfast-time': dayData.breakfastTime,
+        'breakfast-meal': dayData.breakfastMeal,
+        'breakfast-protein': dayData.breakfastProtein,
+        'breakfast-carbs': dayData.breakfastCarbs,
+        'breakfast-fats': dayData.breakfastFats,
+        'breakfast-fiber': dayData.breakfastFiber,
+        'work-type-2': dayData.workType2,
+        'work-duration-2': dayData.workDuration2,
+        'work-tasks-2': dayData.workTasks2,
+        'deep-work-type-1': dayData.deepWorkType1,
+        'deep-work-duration-1': dayData.deepWorkDuration1,
+        'deep-work-tasks-1': dayData.deepWorkTasks1,
+        'snack-choice': dayData.snackChoice,
+        'work-type-3': dayData.workType3,
+        'work-duration-3': dayData.workDuration3,
+        'work-tasks-3': dayData.workTasks3,
+        'lunch-time': dayData.lunchTime,
+        'lunch-meal': dayData.lunchMeal,
+        'lunch-protein': dayData.lunchProtein,
+        'lunch-carbs': dayData.lunchCarbs,
+        'lunch-fats': dayData.lunchFats,
+        'lunch-fiber': dayData.lunchFiber,
+        'light-work-type-1': dayData.lightWorkType1,
+        'afternoon-work-type': dayData.afternoonWorkType,
+        'nsdr-duration': dayData.nsdrDuration,
+        'afternoon-snack-choice': dayData.afternoonSnackChoice,
+        'study-topic': dayData.studyTopic,
+        'next-day-tasks': dayData.nextDayTasks,
+        'dinner-time': dayData.dinnerTime || '19:00',
+        'dinner-meal': dayData.dinnerMeal,
+        'dinner-protein': dayData.dinnerProtein,
+        'dinner-carbs': dayData.dinnerCarbs,
+        'dinner-fats': dayData.dinnerFats,
+        'dinner-fiber': dayData.dinnerFiber,
+        'play-activities': dayData.playActivities
+    };
     
-    // Load habits
-    document.getElementById('habit-morning-sunlight').checked = dayData.habitMorningSunlight || false;
-    document.getElementById('habit-meditation').checked = dayData.habitMeditation || false;
-    document.getElementById('habit-supplements').checked = dayData.habitSupplements || false;
-    document.getElementById('habit-digital-sunset').checked = dayData.habitDigitalSunset || false;
-    document.getElementById('habit-social').checked = dayData.habitSocial || false;
-    document.getElementById('habit-nature').checked = dayData.habitNature || false;
+    Object.entries(textFields).forEach(([id, value]) => {
+        setValue(id, value);
+    });
     
-    // Load mood
-    if (dayData.mood) document.getElementById('mood').value = dayData.mood;
-    if (dayData.stress) document.getElementById('stress').value = dayData.stress;
-    if (dayData.notes) document.getElementById('notes').value = dayData.notes;
+    // Update completion after loading
+    setTimeout(updateCompletion, 100);
 }
 
 // Save tracker data
 function saveTrackerData(event) {
-    event.preventDefault();
+    if (event && event.preventDefault) {
+        event.preventDefault();
+    }
     
-    const date = document.getElementById('tracker-date').value;
+    const date = document.getElementById('tracker-date')?.value;
     if (!date) {
         alert('Please select a date');
         return;
@@ -119,48 +329,166 @@ function saveTrackerData(event) {
     
     const data = getStoredData();
     
+    // Helper to get value
+    const getValue = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.value : '';
+    };
+    
+    const getNumber = (id) => {
+        const el = document.getElementById(id);
+        return el ? (parseInt(el.value) || 0) : 0;
+    };
+    
+    const getFloat = (id) => {
+        const el = document.getElementById(id);
+        return el ? (parseFloat(el.value) || null) : null;
+    };
+    
+    const getChecked = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.checked : false;
+    };
+    
     data[date] = {
         date: date,
-        bedtime: document.getElementById('bedtime').value,
-        wakeTime: document.getElementById('wake-time').value,
-        sleepDuration: parseFloat(document.getElementById('sleep-duration').value) || null,
-        sleepQuality: parseInt(document.getElementById('sleep-quality').value) || null,
-        energyMorning: parseInt(document.getElementById('energy-morning').value) || null,
-        energyAfternoon: parseInt(document.getElementById('energy-afternoon').value) || null,
-        energyEvening: parseInt(document.getElementById('energy-evening').value) || null,
-        exerciseStrength: document.getElementById('exercise-strength').checked,
-        exerciseCardio: document.getElementById('exercise-cardio').checked,
-        exerciseFlexibility: document.getElementById('exercise-flexibility').checked,
-        coldExposure: document.getElementById('cold-exposure').checked,
-        exerciseStrengthDuration: parseInt(document.getElementById('exercise-strength-duration').value) || 0,
-        exerciseCardioDuration: parseInt(document.getElementById('exercise-cardio-duration').value) || 0,
-        breakfast: {
-            time: document.getElementById('breakfast-time').value,
-            protein: parseInt(document.getElementById('breakfast-protein').value) || 0,
-            carbs: parseInt(document.getElementById('breakfast-carbs').value) || 0,
-            fats: parseInt(document.getElementById('breakfast-fats').value) || 0
-        },
-        lunch: {
-            time: document.getElementById('lunch-time').value,
-            protein: parseInt(document.getElementById('lunch-protein').value) || 0,
-            carbs: parseInt(document.getElementById('lunch-carbs').value) || 0,
-            fats: parseInt(document.getElementById('lunch-fats').value) || 0
-        },
-        dinner: {
-            time: document.getElementById('dinner-time').value,
-            protein: parseInt(document.getElementById('dinner-protein').value) || 0,
-            carbs: parseInt(document.getElementById('dinner-carbs').value) || 0,
-            fats: parseInt(document.getElementById('dinner-fats').value) || 0
-        },
-        habitMorningSunlight: document.getElementById('habit-morning-sunlight').checked,
-        habitMeditation: document.getElementById('habit-meditation').checked,
-        habitSupplements: document.getElementById('habit-supplements').checked,
-        habitDigitalSunset: document.getElementById('habit-digital-sunset').checked,
-        habitSocial: document.getElementById('habit-social').checked,
-        habitNature: document.getElementById('habit-nature').checked,
-        mood: parseInt(document.getElementById('mood').value) || null,
-        stress: parseInt(document.getElementById('stress').value) || null,
-        notes: document.getElementById('notes').value
+        // Sleep
+        bedtime: getValue('bedtime'),
+        wakeTime: getValue('wake-time'),
+        sleepDuration: getFloat('sleep-duration'),
+        sleepQuality: getNumber('sleep-quality'),
+        // Energy
+        energyMorning: getNumber('energy-morning'),
+        energyAfternoon: getNumber('energy-afternoon'),
+        energyEvening: getNumber('energy-evening'),
+        // Mood
+        mood: getNumber('mood'),
+        stress: getNumber('stress'),
+        notes: getValue('notes'),
+        // Morning routine
+        noPhone: getChecked('no-phone'),
+        getOutBed: getChecked('get-out-bed'),
+        morningSunlight: getChecked('morning-sunlight'),
+        sunlightDuration: getNumber('sunlight-duration'),
+        lemonWater: getChecked('lemon-water'),
+        acv: getChecked('acv'),
+        meditation: getChecked('meditation'),
+        meditationDuration: getNumber('meditation-duration'),
+        gratitude: getChecked('gratitude'),
+        gratitudeItems: getValue('gratitude-items'),
+        // Exercise
+        lTyrosine: getChecked('l-tyrosine'),
+        preWorkoutHydration: getChecked('pre-workout-hydration'),
+        strengthTraining: getChecked('strength-training'),
+        strengthFocus: getValue('strength-focus'),
+        strengthDuration: getNumber('strength-duration'),
+        strengthExercises: getValue('strength-exercises'),
+        zone2Training: getChecked('zone2-training'),
+        cardioType: getValue('cardio-type'),
+        cardioDuration: getNumber('cardio-duration'),
+        zone5Training: getChecked('zone5-training'),
+        flexibility: getChecked('flexibility'),
+        flexibilityDuration: getNumber('flexibility-duration'),
+        recoveryBreak: getChecked('recovery-break'),
+        showerCompleted: getChecked('shower-completed'),
+        postShowerSkincare: getChecked('post-shower-skincare'),
+        greenTeaPostWorkout: getChecked('green-tea-post-workout'),
+        greenTeaAmount: getNumber('green-tea-amount'),
+        // Work blocks
+        focusWork1: getChecked('focus-work-1'),
+        phoneAway: getChecked('phone-away'),
+        caffeineTiming: getChecked('caffeine-timing'),
+        workType1: getValue('work-type-1'),
+        workDuration1: getNumber('work-duration-1'),
+        workTasks1: getValue('work-tasks-1'),
+        // Breakfast
+        breakfastCompleted: getChecked('breakfast-completed'),
+        breakfastTime: getValue('breakfast-time'),
+        breakfastMeal: getValue('breakfast-meal'),
+        breakfastProtein: getNumber('breakfast-protein'),
+        breakfastCarbs: getNumber('breakfast-carbs'),
+        breakfastFats: getNumber('breakfast-fats'),
+        breakfastFiber: getNumber('breakfast-fiber'),
+        // Supplements morning
+        suppVitaminD: getChecked('supp-vitamin-d'),
+        suppVitaminC: getChecked('supp-vitamin-c'),
+        suppOmega3: getChecked('supp-omega3'),
+        suppTurmeric: getChecked('supp-turmeric'),
+        suppCoq10: getChecked('supp-coq10'),
+        suppNrNmn: getChecked('supp-nr-nmn'),
+        suppLionsMane: getChecked('supp-lions-mane'),
+        suppSpermidine: getChecked('supp-spermidine'),
+        postBreakfastWalk: getChecked('post-breakfast-walk'),
+        // Work block 2
+        focusWork2: getChecked('focus-work-2'),
+        workType2: getValue('work-type-2'),
+        workDuration2: getNumber('work-duration-2'),
+        workTasks2: getValue('work-tasks-2'),
+        sunlightWalk: getChecked('sunlight-walk'),
+        // Deep work
+        deepWork1: getChecked('deep-work-1'),
+        deepWorkType1: getValue('deep-work-type-1'),
+        deepWorkDuration1: getNumber('deep-work-duration-1'),
+        deepWorkTasks1: getValue('deep-work-tasks-1'),
+        midMorningSnack: getChecked('mid-morning-snack'),
+        snackChoice: getValue('snack-choice'),
+        focusWork3: getChecked('focus-work-3'),
+        workType3: getValue('work-type-3'),
+        workDuration3: getNumber('work-duration-3'),
+        workTasks3: getValue('work-tasks-3'),
+        // Lunch
+        lunchCompleted: getChecked('lunch-completed'),
+        lunchTime: getValue('lunch-time'),
+        lunchMeal: getValue('lunch-meal'),
+        lunchProtein: getNumber('lunch-protein'),
+        lunchCarbs: getNumber('lunch-carbs'),
+        lunchFats: getNumber('lunch-fats'),
+        lunchFiber: getNumber('lunch-fiber'),
+        suppVitaminK2: getChecked('supp-vitamin-k2'),
+        suppGarlic: getChecked('supp-garlic'),
+        suppMagnesiumLunch: getChecked('supp-magnesium-lunch'),
+        suppBComplex: getChecked('supp-b-complex'),
+        postLunchWalk: getChecked('post-lunch-walk'),
+        // Afternoon
+        lightWork1: getChecked('light-work-1'),
+        lightWorkType1: getValue('light-work-type-1'),
+        greenTeaAfternoon: getChecked('green-tea-afternoon'),
+        studyWorkAfternoon: getChecked('study-work-afternoon'),
+        afternoonWorkType: getValue('afternoon-work-type'),
+        nsdr: getChecked('nsdr'),
+        nsdrDuration: getNumber('nsdr-duration'),
+        afternoonSnack: getChecked('afternoon-snack'),
+        afternoonSnackChoice: getValue('afternoon-snack-choice'),
+        workContinuation: getChecked('work-continuation'),
+        workWrapUp: getChecked('work-wrap-up'),
+        // Evening
+        systemDesignStudy: getChecked('system-design-study'),
+        studyTopic: getValue('study-topic'),
+        planNextDay: getChecked('plan-next-day'),
+        nextDayTasks: getValue('next-day-tasks'),
+        dinnerCompleted: getChecked('dinner-completed'),
+        dinnerTime: getValue('dinner-time') || '19:00',
+        dinnerMeal: getValue('dinner-meal'),
+        dinnerProtein: getNumber('dinner-protein'),
+        dinnerCarbs: getNumber('dinner-carbs'),
+        dinnerFats: getNumber('dinner-fats'),
+        dinnerFiber: getNumber('dinner-fiber'),
+        playWithDaughter: getChecked('play-with-daughter'),
+        playActivities: getValue('play-activities'),
+        postDinnerWalk: getChecked('post-dinner-walk'),
+        digitalSunset: getChecked('digital-sunset'),
+        herbalTea: getChecked('herbal-tea'),
+        lightReading: getChecked('light-reading'),
+        eveningJournal: getChecked('evening-journal'),
+        gratitudeReflection: getChecked('gratitude-reflection'),
+        suppAshwagandha: getChecked('supp-ashwagandha'),
+        suppMagnesium: getChecked('supp-magnesium'),
+        suppLTheanine: getChecked('supp-l-theanine'),
+        eveningSkincare: getChecked('evening-skincare'),
+        sleepEnvironment: getChecked('sleep-environment'),
+        prepareClothes: getChecked('prepare-clothes'),
+        finalMeditation: getChecked('final-meditation'),
+        finalSupplements: getChecked('final-supplements')
     };
     
     // Save to localStorage
@@ -171,6 +499,7 @@ function saveTrackerData(event) {
     
     // Reload history
     loadHistory();
+    updateCompletion();
 }
 
 // Get stored data
@@ -195,12 +524,14 @@ function loadHistory() {
     
     historyList.innerHTML = dates.map(date => {
         const dayData = data[date];
-        const score = calculateProductivityScore(dayData);
+        const score = calculateProductivityScore ? calculateProductivityScore(dayData) : 0;
+        const completion = calculateDayCompletion(dayData);
         
         return `
             <div class="history-item" onclick="loadDate('${date}')">
                 <h3>${formatDate(date)}</h3>
                 <div class="score">Score: ${score.toFixed(1)}/100</div>
+                <div class="completion">Completion: ${completion}%</div>
                 <p>Sleep: ${dayData.sleepQuality || 'N/A'}/10</p>
                 <p>Energy: ${calculateAverageEnergy(dayData)}/10</p>
             </div>
@@ -208,11 +539,32 @@ function loadHistory() {
     }).join('');
 }
 
+// Calculate day completion
+function calculateDayCompletion(dayData) {
+    if (!dayData) return 0;
+    const checkboxes = getAllTaskCheckboxes();
+    if (checkboxes.length === 0) return 0;
+    
+    let checked = 0;
+    checkboxes.forEach(cb => {
+        const fieldName = cb.id.replace(/-/g, '');
+        const camelCase = fieldName.charAt(0).toLowerCase() + fieldName.slice(1).replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+        if (dayData[camelCase] || dayData[cb.id]) {
+            checked++;
+        }
+    });
+    
+    return Math.round((checked / checkboxes.length) * 100);
+}
+
 // Load date in tracker
 function loadDate(date) {
-    document.getElementById('tracker-date').value = date;
-    showTab('tracker');
-    loadTrackerData();
+    const trackerDate = document.getElementById('tracker-date');
+    if (trackerDate) {
+        trackerDate.value = date;
+        showTab('tracker');
+        loadTrackerData();
+    }
 }
 
 // Format date
@@ -223,38 +575,30 @@ function formatDate(dateString) {
 
 // Calculate average energy
 function calculateAverageEnergy(dayData) {
-    const energies = [dayData.energyMorning, dayData.energyAfternoon, dayData.energyEvening].filter(e => e !== null);
+    if (!dayData) return 'N/A';
+    const energies = [dayData.energyMorning, dayData.energyAfternoon, dayData.energyEvening].filter(e => e !== null && e !== undefined);
     if (energies.length === 0) return 'N/A';
     return (energies.reduce((a, b) => a + b, 0) / energies.length).toFixed(1);
 }
 
 // Show notification
 function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #10b981;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 8px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        animation: slideIn 0.3s ease-out;
-    `;
-    notification.textContent = message;
+    // Remove existing notification
+    const existing = document.querySelector('.notification');
+    if (existing) existing.remove();
     
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
     document.body.appendChild(notification);
     
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-out';
+        notification.classList.add('fade-out');
         setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
 
-// Add CSS animation
+// Add CSS animations
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {
@@ -277,6 +621,57 @@ style.textContent = `
             opacity: 0;
         }
     }
+    @keyframes floatUp {
+        from {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-100px) scale(0.5);
+            opacity: 0;
+        }
+    }
+    .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #10b981;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        animation: slideIn 0.3s ease-out;
+    }
+    .notification.fade-out {
+        animation: slideOut 0.3s ease-out;
+    }
+    .reward-notification {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        z-index: 2000;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        animation: slideIn 0.5s ease-out;
+    }
+    .reward-notification.fade-out {
+        animation: slideOut 0.5s ease-out;
+    }
+    .task-checkbox.completed {
+        background: #d1fae5;
+        border-color: #10b981;
+    }
+    .task-checkbox.completed span {
+        text-decoration: line-through;
+        opacity: 0.7;
+    }
 `;
 document.head.appendChild(style);
-

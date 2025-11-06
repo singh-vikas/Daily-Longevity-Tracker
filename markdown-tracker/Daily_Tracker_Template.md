@@ -52,11 +52,13 @@
 
 ---
 
-## 🏋️ **6:30-8:00 AM — Exercise & Performance Block**
+## 🏋️ **6:30-8:00 AM — Exercise & Skin and Recovery Block**
 
 ### **Pre-Workout (if needed):**
 - [ ] **L-Tyrosine (500mg)** - enhances focus, dopamine precursor (optional, before intense training)
 - [ ] **Light hydration** (200-300ml water)
+  - [ ] **Note**: If you already drank lemon water (500ml), you may not need additional water unless you feel thirsty
+  - [ ] **Listen to your body** - sip water only if needed to avoid over-hydration
 
 ### **Strength Training (30-45 minutes):**
 - [ ] **Completed**: [ ] Yes [ ] No
@@ -80,17 +82,43 @@
 - [ ] **Duration**: _____ minutes
 
 ### **Post-Workout Recovery:**
+- [ ] **Recovery break before shower**: 
+  - [ ] **Wait 10-15 minutes** after workout/running before showering
+  - [ ] **Reason**: Allows body temperature to normalize, prevents rapid cooling
+  - [ ] **During this time**: Light stretching, hydration, deep breathing
+  - [ ] **Actual wait time**: _____ minutes
+
+- [ ] **Shower & Skin Care Routine** (after 10-15 min break):
+  - [ ] **Shower completed**: [ ] Yes [ ] No
+  - [ ] **Water temperature**: [ ] Warm [ ] Cool [ ] Cold (if doing cold exposure)
+  - [ ] **Post-shower skin care**:
+    - [ ] **Gentle cleanser** (if not done in morning) - pH 5.5-6.5
+    - [ ] **Pat dry** (don't rub - exercise increases skin sensitivity)
+    - [ ] **Vitamin C serum** (L-ascorbic acid 10-20%) - antioxidant, collagen synthesis
+    - [ ] **Moisturizer** (gel-based for oily, cream for dry skin)
+    - [ ] **Sunscreen SPF 30+** (if going outside) - CRITICAL for longevity
+
 - [ ] **Cold exposure** (if doing strength training): [ ] Yes [ ] No
   - [ ] Type: [ ] Cold shower [ ] Ice bath
   - [ ] Duration: _____ minutes (2-3 min for shower, 5-10 min for ice bath)
   - [ ] **Note**: NOT immediately after strength training (can blunt hypertrophy)
+  - [ ] **Best timing**: 3-4 hours after strength training OR after cardio
+
+- [ ] **Post-shower hydration & nutrition**:
+  - [ ] **Green tea before breakfast**: [ ] Yes [ ] No
+    - [ ] **Timing**: 90-120 minutes after waking (optimal for cortisol interaction)
+    - [ ] **Benefits**: Antioxidants (EGCG), L-theanine (calm focus), gentle caffeine
+    - [ ] **Note**: ✅ **Good choice** - Green tea supports metabolism, cognitive function, and longevity
+    - [ ] **Amount**: _____ ml
+  - [ ] **Water**: _____ ml (rehydrate after workout)
 
 ---
 
 ## 💼 **8:00-10:00 AM — Work & Breakfast Block**
 
-### **8:00-8:40 AM — Focus Work Block (40 min):**
-- [ ] **Focus work session completed**: [ ] Yes [ ] No
+### **8:00-8:40 AM — Focus Work/Study Block (40 min):**
+- [ ] **Focus work/study session completed**: [ ] Yes [ ] No
+- [ ] **Type**: [ ] Work [ ] Study [ ] Both
 - [ ] **Duration**: _____ minutes
 - [ ] **Phone in another room** (minimize distractions)
 - [ ] **Caffeine timing** (if needed):
@@ -98,22 +126,17 @@
   - [ ] **L-Theanine pairing** (200mg) - reduces jitters, enhances focus
   - [ ] **Amount**: _____ mg caffeine (limit: 100-200mg)
 - [ ] **Tasks completed**: _____
+- [ ] **Study topics/Work tasks**: _____
 
 ---
 
-### **8:45-9:15 AM — Skin Care, Breakfast & Supplements (30 min):**
-
-#### **Skin Routine (anti-aging focus):**
-- [ ] **Gentle face wash** with mild cleanser (pH 5.5-6.5)
-- [ ] **Pat dry** (don't rub)
-- [ ] **Vitamin C serum** (L-ascorbic acid 10-20%) - antioxidant, collagen synthesis
-- [ ] **Moisturizer** (gel-based for oily, cream for dry skin)
-- [ ] **Sunscreen SPF 30+** (zinc oxide or titanium dioxide) - **CRITICAL** for longevity
+### **8:40-9:10 AM — Breakfast, Walk & Supplements (30 min):**
 
 #### **Breakfast Timing:**
 - [ ] **Time**: _____
 - [ ] **90-120 minutes after waking** (allows cortisol pulse to complete)
 - [ ] **Break fast 16-18 hours after last meal** (if doing 16:8 intermittent fasting)
+- [ ] **Note**: If you had green tea after workout (90-120 min after waking), you can proceed to breakfast. Green tea before breakfast is beneficial and supports metabolism.
 
 #### **High-Protein, Nutrient-Dense Breakfast (choose one):**
 
@@ -144,28 +167,44 @@
 - [ ] **Vitamin C (500 mg)** - collagen synthesis, immune support, antioxidant
 - [ ] **Omega-3 (800 mg EPA/DHA)** - anti-inflammatory, brain health
 - [ ] **Turmeric/Curcumin (1g)** - anti-inflammatory, activates AMPK pathway
-- [ ] **Optional: CoQ10 (100mg)** - mitochondrial function, energy production
+- [ ] **CoQ10 (100mg)** - mitochondrial function, energy production
+- [ ] **NR (Nicotinamide Riboside 375mg) or NMN (500mg)** - cellular energy, NAD+ boost, cognitive function
+- [ ] **Lion's Mane Mushroom** (optional) - brain health, memory, focus
+- [ ] **Spermidine (10mg)** - autophagy, cellular renewal, cognitive longevity
 
-#### **Post-Breakfast:**
+#### **Post-Breakfast Walk:**
 - [ ] **15-minute walk** (enhances glucose disposal, improves insulin sensitivity)
 - [ ] **Continue sunlight exposure** if possible
+- [ ] **Walk completed**: [ ] Yes [ ] No
+- [ ] **Duration**: _____ minutes
 
 ---
 
-### **9:15-10:00 AM — Focus Work Block (45 min):**
-- [ ] **Focus work session completed**: [ ] Yes [ ] No
+### **9:10-9:50 AM — Focus Work/Study Block (40 min):**
+- [ ] **Focus work/study session completed**: [ ] Yes [ ] No
+- [ ] **Type**: [ ] Work [ ] Study [ ] Both
 - [ ] **Duration**: _____ minutes
 - [ ] **Tasks completed**: _____
+- [ ] **Study topics/Work tasks**: _____
+
+### **9:50-10:00 AM — Break & Sunlight Walk (10 min):**
+- [ ] **10-15 minute walk in sunlight**: [ ] Yes [ ] No
+- [ ] **Duration**: _____ minutes
+- [ ] **Benefits**: Circadian rhythm support, vitamin D, mental reset
+- [ ] **Break activities**: Stand, stretch, hydrate, rest eyes (20-20-20 rule)
 
 ---
 
-## 💼 **10:00-12:00 PM — Deep Work Block**
+## 💼 **10:00-12:00 PM — Deep Work/Study Block**
 
-### **10:00-10:50 AM — Focus Work (50 min):**
-- [ ] **Focus work session completed**: [ ] Yes [ ] No
+### **10:00-10:50 AM — Deep Work/Study Session (50 min):**
+- [ ] **Deep work/study session completed**: [ ] Yes [ ] No
+- [ ] **Type**: [ ] Work [ ] Study [ ] Both
 - [ ] **Duration**: _____ minutes
 - [ ] **Most challenging tasks first** (peak cognitive performance)
 - [ ] **Tasks completed**: _____
+- [ ] **Study topics/Work tasks**: _____
+- [ ] **Pomodoro technique**: 50 min focus, 10 min break
 
 ---
 
@@ -186,14 +225,16 @@
 
 ---
 
-### **11:10-12:00 PM — Focus Work (50 min):**
-- [ ] **Focus work session completed**: [ ] Yes [ ] No
+### **11:10-12:00 PM — Focus Work/Study Session (50 min):**
+- [ ] **Focus work/study session completed**: [ ] Yes [ ] No
+- [ ] **Type**: [ ] Work [ ] Study [ ] Both
 - [ ] **Duration**: _____ minutes
 - [ ] **Tasks completed**: _____
+- [ ] **Study topics/Work tasks**: _____
 
 ---
 
-## 🍽️ **12:00-1:00 PM — Lunch & Metabolic Health Block**
+## 🍽️ **12:00-1:00 PM — Lunch Break, Walk & Metabolic Health Block**
 
 ### **Lunch Timing:**
 - [ ] **Time**: _____
@@ -235,7 +276,8 @@
 ### **Lunch Supplements (with meal):**
 - [ ] **Vitamin K2 (MK-7, 600 mcg)** - calcium regulation, bone health, cardiovascular health
 - [ ] **Garlic extract (2.4g equivalent)** - cardiovascular health, immune function
-- [ ] **Optional: Magnesium (400mg)** - if not getting enough from diet
+- [ ] **Magnesium (400mg)** - muscle recovery, sleep quality, stress reduction (if not taken in evening)
+- [ ] **B Complex** (½ pill, Mon & Thurs only) - energy metabolism, brain function
 
 ### **Post-Lunch:**
 - [ ] **10-15 minute walk** (glucose disposal, prevents post-meal energy crash)
@@ -243,14 +285,41 @@
 
 ---
 
-## ☕ **1:00-4:00 PM — Sustained Work & Afternoon Optimization Block**
+## ☕ **1:00-4:00 PM — Sustained Work/Study & Afternoon Optimization Block**
 
-### **Afternoon Protocol:**
-- [ ] **Green tea with lemon** (2:00 PM) - antioxidants, gentle caffeine
-- [ ] **Lighter cognitive tasks** (email, admin, meetings)
-- [ ] **Collaborative work** (social engagement benefits)
+### **1:00-1:50 PM — Light Work/Study Block (50 min):**
+- [ ] **Work/study session completed**: [ ] Yes [ ] No
+- [ ] **Type**: [ ] Work [ ] Study [ ] Both
+- [ ] **Focus**: Lighter cognitive tasks (email, admin, meetings, review notes)
+- [ ] **Tasks completed**: _____
+- [ ] **Study topics/Work tasks**: _____
 
-### **Mid-Afternoon Snack (3:30-4:00 PM, if needed):**
+### **1:50-2:10 PM — Green Tea & Break (20 min):**
+- [ ] **Green tea with lemon** - antioxidants, gentle caffeine, L-theanine
+- [ ] **Break activities**: Stand, stretch, hydrate, rest eyes (20-20-20 rule)
+- [ ] **Social connection** (if possible) - boosts mood, longevity marker
+
+---
+
+### **2:10-3:30 PM — Study/Work Block (80 min):**
+- [ ] **Work/study session completed**: [ ] Yes [ ] No
+- [ ] **Type**: [ ] Work [ ] Study [ ] Both
+- [ ] **Focus**: Collaborative work, study groups, or focused learning
+- [ ] **Tasks completed**: _____
+- [ ] **Study topics/Work tasks**: _____
+
+---
+
+### **3:30-4:00 PM — NSDR & Snack Break (30 min):**
+
+#### **NSDR (Non-Sleep Deep Rest) - 15-20 minutes:**
+- [ ] **NSDR completed**: [ ] Yes [ ] No
+- [ ] **Duration**: _____ minutes (target: 15-20 min)
+- [ ] **Benefits**: Reduces cortisol, enhances focus, improves learning retention
+- [ ] **Method**: [ ] YouTube NSDR/Yoga Nidra [ ] Guided meditation [ ] Deep breathing
+- [ ] **Note**: Critical for study/work performance - do before 4 PM
+
+#### **Mid-Afternoon Snack (if needed):**
 - [ ] **Snack taken**: [ ] Yes [ ] No
 - [ ] **Options**:
   - [ ] Nutty pudding (Greek yogurt, flaxseeds, chia seeds, nuts, berries)
@@ -260,54 +329,66 @@
   - [ ] Hummus with carrot sticks
   - [ ] Boiled sweet corn with lemon
   - [ ] Rice cake with almond butter
+  - [ ] Dark chocolate (15g) - cognitive benefits, flavonoids
 - [ ] **What I had**: _____
+- [ ] **Water**: _____ ml
 
-### **Energy Management:**
-- [ ] **NSDR (Non-Sleep Deep Rest)** - 10-20 minutes (Huberman protocol): [ ] Yes [ ] No
-  - [ ] Duration: _____ minutes
-  - [ ] Reduces cortisol, enhances focus, improves learning
+#### **Optional Energy Boost:**
 - [ ] **Cold exposure** (if not done in morning): [ ] Yes [ ] No
   - [ ] 2-3 minute cold shower
   - [ ] Boosts dopamine, norepinephrine, focus
 
 ---
 
-## 🚶 **4:00-6:00 PM — Transition & Evening Preparation Block**
+## 🚶 **4:00-6:00 PM — Afternoon Work/Study & Transition Block**
 
-### **Work Wrap-Up:**
+### **4:00-5:00 PM — Work/Study Continuation (60 min):**
+- [ ] **Work/study session completed**: [ ] Yes [ ] No
+- [ ] **Type**: [ ] Work [ ] Study [ ] Both
+- [ ] **Focus**: Meetings, collaborative work, or study review
+- [ ] **Tasks completed**: _____
+- [ ] **Study topics/Work tasks**: _____
+
+### **5:00-6:00 PM — Transition & Physical Activity (60 min):**
+- [ ] **Work wrap-up**: Plan tomorrow, organize tasks
+- [ ] **Physical Activity** (if morning workout not possible):
+  - [ ] **Evening workout session**: [ ] Yes [ ] No
+    - [ ] Strength training: 3-4x/week
+    - [ ] Zone 2 cardio: 3-4x/week
+  - [ ] **Walk or commute** (if applicable): [ ] Yes [ ] No
+- [ ] **Light stretching** or yoga (10-15 minutes): [ ] Yes [ ] No
+- [ ] **Hydration**: _____ ml (target: 500-750ml water)
+
+---
+
+## 🌙 **6:00-9:00 PM — Evening Wind-Down & Sleep Preparation Block**
+
+### **6:00-6:40 PM — Study/Read System Design Block (40 min):**
+- [ ] **Study/Read System Design** or focused learning
+  - [ ] **Topic/Book**: _____
+  - [ ] **Duration**: _____ minutes
+  - [ ] **Type**: [ ] System Design [ ] Technical Reading [ ] Other: _____
 - [ ] **Plan next day** (write 3-4 key tasks)
   - [ ] Task 1: _____
   - [ ] Task 2: _____
   - [ ] Task 3: _____
   - [ ] Task 4: _____
 - [ ] **Email inbox zero** (if possible)
-- [ ] **Journal**: What went well today? What to improve?
-  - [ ] What went well: _____
-  - [ ] What to improve: _____
-
-### **Physical Activity:**
-- [ ] **Light stretching** or yoga (10-15 minutes): [ ] Yes [ ] No
-- [ ] **Walk or commute** (if applicable): [ ] Yes [ ] No
-- [ ] **OR**: Evening workout session (if morning not possible): [ ] Yes [ ] No
-  - [ ] Strength training: 3-4x/week
-  - [ ] Zone 2 cardio: 3-4x/week
-
-### **Pre-Dinner Preparation:**
 - [ ] **Hydration**: _____ ml (target: 500-750ml water)
 - [ ] **Avoid heavy snacking** (allow insulin to normalize)
 
 ---
 
-## 🥗 **6:00-7:30 PM — Dinner & Evening Nutrition Block**
+### **6:40-8:00 PM — Dinner & Play with Daughter Block (80 min):**
 
-### **Dinner Timing:**
-- [ ] **Time**: _____
+#### **Dinner Timing:**
+- [ ] **Time**: 7:00-7:30 PM (optimal timing)
 - [ ] **3-4 hours before bedtime** (optimal for sleep quality)
 - [ ] **Lighter meal** than lunch (supports circadian rhythm)
 
-### **Dinner Options (choose one):**
+#### **Dinner Options (choose one):**
 
-#### **Indian Options:**
+**Indian Options:**
 - [ ] **Grilled fish/chicken** curry (less oil) with vegetables
 - [ ] **Stir-fried vegetables** (bhindi, lauki, broccoli) with dal
 - [ ] **Vegetable soup** with whole grain bread
@@ -316,7 +397,7 @@
 - [ ] **Tofu stir-fry** with mixed vegetables
 - [ ] **Methi thepla** with curd
 
-#### **Western Options:**
+**Western Options:**
 - [ ] **Grilled salmon** with asparagus and quinoa
 - [ ] **Vegetable stir-fry** with tofu
 - [ ] **Lentil soup** with whole grain bread
@@ -324,64 +405,90 @@
 - [ ] **Baked sweet potato** with beans and vegetables
 - [ ] **Veggie omelette** with salad
 
-### **Dinner Accompaniments:**
+#### **Dinner Accompaniments:**
 - [ ] **Steamed vegetables**: Broccoli, cauliflower, leafy greens
 - [ ] **Fermented foods**: Sauerkraut, kimchi, yogurt
 - [ ] **Small portion** of complex carbs (if needed)
 - [ ] **Salad**: Mixed greens with olive oil
 
-### **Dinner Nutrients Focus:**
+#### **Dinner Nutrients Focus:**
 - [ ] **Protein**: _____ g (target: 25-35g)
 - [ ] **Fiber**: _____ g (target: 10-15g)
 - [ ] **Healthy fats**: _____ g (target: 10-15g)
 - [ ] **Lower carbs**: _____ g (target: 30-40g - supports sleep)
 
-### **Post-Dinner:**
-- [ ] **15-20 minute walk** (glucose disposal, digestion)
-- [ ] **Light stretching** (5-10 minutes)
+#### **Play with Daughter:**
+- [ ] **Quality time**: [ ] Yes [ ] No
+- [ ] **Activities**: _____
+- [ ] **Duration**: _____ minutes
 
 ---
 
-## 🌙 **7:30-9:00 PM — Wind-Down & Sleep Preparation Block**
+### **8:00-8:10 PM — Post-Meal Walk (10 min):**
+- [ ] **15-20 minute walk** (glucose disposal, digestion)
+- [ ] **Walk completed**: [ ] Yes [ ] No
+- [ ] **Duration**: _____ minutes
+- [ ] **Light stretching** (5-10 minutes) - can be done during walk
 
-### **Evening Supplements (7:30-8:00 PM):**
+---
+
+### **8:10-8:30 PM — Wind-Down Activities Block (20 min):**
+- [ ] **Digital sunset begins**: No screens 2 hours before bed
+  - [ ] **Blue light blocking**: Use blue light glasses or screen filters
+  - [ ] **Dim lights**: Use warm, dim lighting (candles, salt lamps)
+- [ ] **Herbal tea**: Chamomile, tulsi (holy basil), or passionflower
+- [ ] **Light reading**: Physical book (not digital)
+  - [ ] **Book/Reading**: _____
+  - [ ] **Duration**: _____ minutes
+- [ ] **Journal**: Review day, plan tomorrow
+  - [ ] **Plan next day breakfast, lunch, dinner and tasks**: _____
+- [ ] **Gratitude reflection**: 3 things you're grateful for
+  - [ ] Item 1: _____
+  - [ ] Item 2: _____
+  - [ ] Item 3: _____
+- [ ] **Gentle stretching or yoga** (if not done earlier): [ ] Yes [ ] No
+  - [ ] **Duration**: _____ minutes
+
+---
+
+### **8:30-8:50 PM — Supplements & Skin Care Block (20 min):**
+
+#### **Evening Supplements (8:30 PM):**
 - [ ] **Ashwagandha (600mg)** - stress management, cortisol reduction
 - [ ] **Magnesium (400mg)** - muscle recovery, sleep quality, stress reduction
   - [ ] **Forms**: Magnesium glycinate or citrate (best absorption)
 - [ ] **Optional: L-Theanine (200mg)** - if feeling anxious
 
-### **Evening Skin Routine:**
-- [ ] **Cleanse face** with gentle cleanser
+#### **Evening Skin Care Routine (8:30-8:50 PM):**
+- [ ] **Cleanse face** with gentle cleanser (pH 5.5-6.5)
+- [ ] **Pat dry** (don't rub)
 - [ ] **Retinol or niacinamide serum** (alternate nights):
   - [ ] **Retinol**: Anti-aging, collagen production (use 2-3x/week initially)
   - [ ] **Niacinamide**: Pore refinement, anti-inflammatory
 - [ ] **Moisturizer** (night cream)
 - [ ] **Eye cream** (if needed)
 
-### **Wind-Down Protocol (8:00-9:00 PM):**
-- [ ] **Digital sunset**: No screens 2 hours before bed
-  - [ ] **Blue light blocking**: Use blue light glasses or screen filters
-  - [ ] **Dim lights**: Use warm, dim lighting (candles, salt lamps)
-- [ ] **Herbal tea**: Chamomile, tulsi (holy basil), or passionflower
-- [ ] **Light reading**: Physical book (not digital)
-- [ ] **Gratitude reflection**: 3 things you're grateful for
-  - [ ] Item 1: _____
-  - [ ] Item 2: _____
-  - [ ] Item 3: _____
-- [ ] **Journal**: Review day, plan tomorrow
+---
 
-### **Sleep Environment Optimization:**
+### **8:50-9:00 PM — Sleep Environment & Final Prep (10 min):**
+
+#### **Sleep Environment Optimization:**
 - [ ] **Cool room**: 65-68°F (18-20°C)
 - [ ] **Dark room**: Blackout curtains, eye mask
 - [ ] **Quiet**: Earplugs or white noise machine
 - [ ] **No electronics**: Phone in another room or airplane mode
+- [ ] **Prepare tomorrow's clothes** (reduces morning decision fatigue)
 
-### **Final Supplements (9:00 PM, if needed):**
-- [ ] **Melatonin (300 mcg)** - only if sleep issues persist
-  - [ ] **Note**: Try optimizing sleep environment first
-- [ ] **Magnesium** (if not taken earlier)
+#### **Final Wind-Down (9:00 PM):**
+- [ ] **Deep breathing or meditation** (5-10 minutes): [ ] Yes [ ] No
+  - [ ] **Type**: [ ] Box breathing [ ] 4-7-8 breathing [ ] Body scan [ ] Other: _____
+  - [ ] **Duration**: _____ minutes
+- [ ] **Final supplements** (if needed):
+  - [ ] **Melatonin (300 mcg)** - only if sleep issues persist
+    - [ ] **Note**: Try optimizing sleep environment first
+  - [ ] **Magnesium** (if not taken earlier)
 
-### **Sleep Timing:**
+#### **Sleep Timing:**
 - [ ] **Target bedtime**: 9:00-10:00 PM
 - [ ] **Actual bedtime**: _____
 - [ ] **Target sleep**: 7-9 hours (individual variation)

@@ -97,7 +97,7 @@ function autoSave() {
     // Debounce auto-save
     clearTimeout(window.autoSaveTimeout);
     window.autoSaveTimeout = setTimeout(() => {
-        saveTrackerData({ preventDefault: () => {} });
+        saveTrackerData({ preventDefault: () => {} }, true); // true = isAutoSave
     }, 1000);
 }
 
@@ -316,14 +316,16 @@ function loadTrackerData() {
 }
 
 // Save tracker data
-function saveTrackerData(event) {
+function saveTrackerData(event, isAutoSave = false) {
     if (event && event.preventDefault) {
         event.preventDefault();
     }
     
     const date = document.getElementById('tracker-date')?.value;
     if (!date) {
-        alert('Please select a date');
+        if (!isAutoSave) {
+            alert('Please select a date');
+        }
         return;
     }
     
@@ -494,8 +496,10 @@ function saveTrackerData(event) {
     // Save to localStorage
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     
-    // Show success message
-    showNotification('✅ Tracker data saved successfully!');
+    // Show success message only on manual save (not auto-save)
+    if (!isAutoSave) {
+        showNotification('✅ Tracker data saved successfully!');
+    }
     
     // Reload history
     loadHistory();

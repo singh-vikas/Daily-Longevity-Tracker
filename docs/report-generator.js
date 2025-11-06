@@ -45,29 +45,33 @@ function generateReport() {
         
         <div class="metric-card">
             <h3>🏋️ Exercise</h3>
-            <p><strong>Strength Training:</strong> ${dayData.exerciseStrength ? '✅' : '❌'} ${dayData.exerciseStrengthDuration ? `(${dayData.exerciseStrengthDuration} min)` : ''}</p>
-            <p><strong>Cardio:</strong> ${dayData.exerciseCardio ? '✅' : '❌'} ${dayData.exerciseCardioDuration ? `(${dayData.exerciseCardioDuration} min)` : ''}</p>
-            <p><strong>Flexibility:</strong> ${dayData.exerciseFlexibility ? '✅' : '❌'}</p>
-            <p><strong>Cold Exposure:</strong> ${dayData.coldExposure ? '✅' : '❌'}</p>
-            <p><strong>Total Minutes:</strong> ${(dayData.exerciseStrengthDuration || 0) + (dayData.exerciseCardioDuration || 0)} minutes</p>
+            <p><strong>Strength Training:</strong> ${dayData.strengthTraining ? '✅' : '❌'} ${dayData.strengthDuration ? `(${dayData.strengthDuration} min)` : ''}</p>
+            <p><strong>Cardio (Zone 2):</strong> ${dayData.zone2Training ? '✅' : '❌'} ${dayData.cardioDuration ? `(${dayData.cardioDuration} min)` : ''}</p>
+            <p><strong>Cardio (Zone 5):</strong> ${dayData.zone5Training ? '✅' : '❌'}</p>
+            <p><strong>Flexibility:</strong> ${dayData.flexibility ? '✅' : '❌'} ${dayData.flexibilityDuration ? `(${dayData.flexibilityDuration} min)` : ''}</p>
+            <p><strong>Total Minutes:</strong> ${(dayData.strengthDuration || 0) + (dayData.cardioDuration || 0) + (dayData.flexibilityDuration || 0)} minutes</p>
         </div>
         
         <div class="metric-card">
             <h3>🍽️ Nutrition</h3>
-            <p><strong>Breakfast:</strong> P: ${dayData.breakfast?.protein || 0}g, C: ${dayData.breakfast?.carbs || 0}g, F: ${dayData.breakfast?.fats || 0}g</p>
-            <p><strong>Lunch:</strong> P: ${dayData.lunch?.protein || 0}g, C: ${dayData.lunch?.carbs || 0}g, F: ${dayData.lunch?.fats || 0}g</p>
-            <p><strong>Dinner:</strong> P: ${dayData.dinner?.protein || 0}g, C: ${dayData.dinner?.carbs || 0}g, F: ${dayData.dinner?.fats || 0}g</p>
-            <p><strong>Total Protein:</strong> ${(dayData.breakfast?.protein || 0) + (dayData.lunch?.protein || 0) + (dayData.dinner?.protein || 0)}g</p>
+            <p><strong>Breakfast:</strong> P: ${dayData.breakfastProtein || 0}g, C: ${dayData.breakfastCarbs || 0}g, F: ${dayData.breakfastFats || 0}g, Fiber: ${dayData.breakfastFiber || 0}g</p>
+            <p><strong>Lunch:</strong> P: ${dayData.lunchProtein || 0}g, C: ${dayData.lunchCarbs || 0}g, F: ${dayData.lunchFats || 0}g, Fiber: ${dayData.lunchFiber || 0}g</p>
+            <p><strong>Dinner:</strong> P: ${dayData.dinnerProtein || 0}g, C: ${dayData.dinnerCarbs || 0}g, F: ${dayData.dinnerFats || 0}g, Fiber: ${dayData.dinnerFiber || 0}g</p>
+            <p><strong>Total Protein:</strong> ${(dayData.breakfastProtein || 0) + (dayData.lunchProtein || 0) + (dayData.dinnerProtein || 0)}g</p>
+            <p><strong>Total Fiber:</strong> ${(dayData.breakfastFiber || 0) + (dayData.lunchFiber || 0) + (dayData.dinnerFiber || 0)}g</p>
         </div>
         
         <div class="metric-card">
             <h3>✅ Habits Completed</h3>
-            <p>${dayData.habitMorningSunlight ? '✅' : '❌'} Morning Sunlight</p>
-            <p>${dayData.habitMeditation ? '✅' : '❌'} Meditation</p>
-            <p>${dayData.habitSupplements ? '✅' : '❌'} Supplements</p>
-            <p>${dayData.habitDigitalSunset ? '✅' : '❌'} Digital Sunset</p>
-            <p>${dayData.habitSocial ? '✅' : '❌'} Social Connection</p>
-            <p>${dayData.habitNature ? '✅' : '❌'} Nature Exposure</p>
+            <p>${dayData.morningSunlight ? '✅' : '❌'} Morning Sunlight</p>
+            <p>${dayData.meditation ? '✅' : '❌'} Meditation</p>
+            <p>${dayData.gratitude ? '✅' : '❌'} Gratitude Journaling</p>
+            <p>${dayData.postBreakfastWalk ? '✅' : '❌'} Post-Breakfast Walk</p>
+            <p>${dayData.postLunchWalk ? '✅' : '❌'} Post-Lunch Walk</p>
+            <p>${dayData.nsdr ? '✅' : '❌'} NSDR (Non-Sleep Deep Rest)</p>
+            <p>${dayData.digitalSunset ? '✅' : '❌'} Digital Sunset</p>
+            <p>${dayData.eveningJournal ? '✅' : '❌'} Evening Journal</p>
+            <p>${dayData.gratitudeReflection ? '✅' : '❌'} Gratitude Reflection</p>
         </div>
         
         <div class="metric-card">
@@ -104,27 +108,31 @@ function calculateProductivityScore(dayData) {
     }
     
     // Exercise completion (20 points)
-    if (dayData.exerciseStrength || dayData.exerciseCardio) {
+    if (dayData.strengthTraining || dayData.zone2Training || dayData.zone5Training) {
         score += 20;
+    } else if (dayData.flexibility) {
+        score += 10;
     }
     
-    // Habit completion (20 points)
+    // Habit completion (20 points) - Updated to match current tracker fields
     const habits = [
-        dayData.habitMorningSunlight,
-        dayData.habitMeditation,
-        dayData.habitSupplements,
-        dayData.habitDigitalSunset,
-        dayData.habitSocial,
-        dayData.habitNature
+        dayData.morningSunlight,
+        dayData.meditation,
+        dayData.gratitude,
+        dayData.postBreakfastWalk,
+        dayData.postLunchWalk,
+        dayData.nsdr,
+        dayData.digitalSunset,
+        dayData.eveningJournal
     ];
     const completedHabits = habits.filter(h => h).length;
     score += (completedHabits / habits.length) * 20;
     
-    // Nutrition completion (10 points)
+    // Nutrition completion (10 points) - Updated to match current tracker fields
     const mealsCompleted = [
-        dayData.breakfast?.protein > 0 || dayData.breakfast?.carbs > 0,
-        dayData.lunch?.protein > 0 || dayData.lunch?.carbs > 0,
-        dayData.dinner?.protein > 0 || dayData.dinner?.carbs > 0
+        dayData.breakfastCompleted,
+        dayData.lunchCompleted,
+        dayData.dinnerCompleted
     ].filter(Boolean).length;
     score += (mealsCompleted / 3) * 10;
     
@@ -161,7 +169,7 @@ function generateInsights(dayData) {
     }
     
     // Exercise insights
-    const totalMinutes = (dayData.exerciseStrengthDuration || 0) + (dayData.exerciseCardioDuration || 0);
+    const totalMinutes = (dayData.strengthDuration || 0) + (dayData.cardioDuration || 0) + (dayData.flexibilityDuration || 0);
     if (totalMinutes >= 45) {
         insights.push({ text: '✅ Excellent exercise volume', type: 'success' });
     } else if (totalMinutes >= 30) {
@@ -172,12 +180,14 @@ function generateInsights(dayData) {
     
     // Habit insights
     const habits = [
-        dayData.habitMorningSunlight,
-        dayData.habitMeditation,
-        dayData.habitSupplements,
-        dayData.habitDigitalSunset,
-        dayData.habitSocial,
-        dayData.habitNature
+        dayData.morningSunlight,
+        dayData.meditation,
+        dayData.gratitude,
+        dayData.postBreakfastWalk,
+        dayData.postLunchWalk,
+        dayData.nsdr,
+        dayData.digitalSunset,
+        dayData.eveningJournal
     ];
     const completed = habits.filter(h => h).length;
     const completionRate = (completed / habits.length) * 100;

@@ -103,6 +103,9 @@ function autoSave() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize dark mode first
+    initDarkMode();
+    
     // Set today's date as default
     const today = new Date().toISOString().split('T')[0];
     const trackerDate = document.getElementById('tracker-date');
@@ -679,3 +682,347 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ==================== DATA EXPORT/IMPORT ====================
+
+// Export all tracker data as JSON
+function exportAllData() {
+    const data = getStoredData();
+    const streakData = JSON.parse(localStorage.getItem(STREAK_KEY) || '{"current": 0, "lastDate": ""}');
+    
+    const exportData = {
+        version: '1.0',
+        exportDate: new Date().toISOString(),
+        trackerData: data,
+        streakData: streakData
+    };
+    
+    const json = JSON.stringify(exportData, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `longevity_tracker_backup_${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    
+    showNotification('✅ Data exported successfully!');
+}
+
+// Import tracker data from JSON file
+function importData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const importData = JSON.parse(e.target.result);
+            
+            // Validate data structure
+            if (!importData.trackerData) {
+                throw new Error('Invalid file format: missing trackerData');
+            }
+            
+            // Confirm before overwriting
+            if (Object.keys(getStoredData()).length > 0) {
+                if (!confirm('This will overwrite your existing data. Continue?')) {
+                    return;
+                }
+            }
+            
+            // Import tracker data
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(importData.trackerData));
+            
+            // Import streak data if available
+            if (importData.streakData) {
+                localStorage.setItem(STREAK_KEY, JSON.stringify(importData.streakData));
+            }
+            
+            showNotification('✅ Data imported successfully!');
+            loadHistory();
+            updateCompletion();
+            
+            // Reset file input
+            event.target.value = '';
+        } catch (error) {
+            alert('Error importing data: ' + error.message);
+            console.error('Import error:', error);
+        }
+    };
+    reader.readAsText(file);
+}
+
+// Export data to CSV
+function exportToCSV() {
+    const data = getStoredData();
+    const dates = Object.keys(data).sort();
+    
+    if (dates.length === 0) {
+        alert('No data to export');
+        return;
+    }
+    
+    // CSV headers
+    const headers = [
+        'Date',
+        'Sleep Duration (hours)',
+        'Sleep Quality (1-10)',
+        'Energy Morning (1-10)',
+        'Energy Afternoon (1-10)',
+        'Energy Evening (1-10)',
+        'Mood (1-10)',
+        'Stress (1-10)',
+        'Strength Training',
+        'Cardio',
+        'Breakfast Protein (g)',
+        'Lunch Protein (g)',
+        'Dinner Protein (g)',
+        'Total Protein (g)',
+        'Completion %'
+    ];
+    
+    // CSV rows
+    const rows = dates.map(date => {
+        const dayData = data[date];
+        const completion = calculateDayCompletion(dayData);
+        const totalProtein = (dayData.breakfastProtein || 0) + (dayData.lunchProtein || 0) + (dayData.dinnerProtein || 0);
+        
+        return [
+            date,
+            dayData.sleepDuration || '',
+            dayData.sleepQuality || '',
+            dayData.energyMorning || '',
+            dayData.energyAfternoon || '',
+            dayData.energyEvening || '',
+            dayData.mood || '',
+            dayData.stress || '',
+            dayData.strengthTraining ? 'Yes' : 'No',
+            dayData.zone2Training || dayData.zone5Training ? 'Yes' : 'No',
+            dayData.breakfastProtein || 0,
+            dayData.lunchProtein || 0,
+            dayData.dinnerProtein || 0,
+            totalProtein,
+            completion
+        ];
+    });
+    
+    // Combine headers and rows
+    const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.map(cell => `"${cell}"`).join(','))
+    ].join('\n');
+    
+    // Download CSV
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `longevity_tracker_${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+    
+    showNotification('✅ CSV exported successfully!');
+}
+
+// ==================== DARK MODE ====================
+
+// Toggle dark mode
+function toggleDarkMode() {
+    const body = document.body;
+    const isDark = body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    
+    // Update button icon
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    if (toggleBtn) {
+        toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    }
+}
+
+// Initialize dark mode on page load
+function initDarkMode() {
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        if (toggleBtn) {
+            toggleBtn.textContent = '☀️';
+        }
+    }
+}
+
+// ==================== WEEKLY/MONTHLY SUMMARIES ====================
+
+// Show summary (weekly or monthly)
+function showSummary(type) {
+    // Update active button
+    document.querySelectorAll('.tab-btn-small').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    const summaryContent = document.getElementById('summary-content');
+    
+    if (type === 'weekly') {
+        summaryContent.innerHTML = generateWeeklySummary();
+    } else {
+        summaryContent.innerHTML = generateMonthlySummary();
+    }
+}
+
+// Generate weekly summary
+function generateWeeklySummary() {
+    const data = getStoredData();
+    const dates = Object.keys(data).sort().reverse();
+    
+    if (dates.length === 0) {
+        return '<p>No data available for weekly summary.</p>';
+    }
+    
+    // Get last 7 days
+    const last7Days = dates.slice(0, 7);
+    const weekData = last7Days.map(date => data[date]).filter(d => d);
+    
+    if (weekData.length === 0) {
+        return '<p>No data available for the last 7 days.</p>';
+    }
+    
+    // Calculate averages
+    const avgSleepDuration = weekData.reduce((sum, d) => sum + (d.sleepDuration || 0), 0) / weekData.length;
+    const avgSleepQuality = weekData.reduce((sum, d) => sum + (d.sleepQuality || 0), 0) / weekData.length;
+    const avgEnergyMorning = weekData.reduce((sum, d) => sum + (d.energyMorning || 0), 0) / weekData.length;
+    const avgEnergyAfternoon = weekData.reduce((sum, d) => sum + (d.energyAfternoon || 0), 0) / weekData.length;
+    const avgEnergyEvening = weekData.reduce((sum, d) => sum + (d.energyEvening || 0), 0) / weekData.length;
+    const avgMood = weekData.reduce((sum, d) => sum + (d.mood || 0), 0) / weekData.length;
+    const avgStress = weekData.reduce((sum, d) => sum + (d.stress || 0), 0) / weekData.length;
+    
+    // Count habits
+    const strengthDays = weekData.filter(d => d.strengthTraining).length;
+    const cardioDays = weekData.filter(d => d.zone2Training || d.zone5Training).length;
+    const sunlightDays = weekData.filter(d => d.morningSunlight).length;
+    const meditationDays = weekData.filter(d => d.meditation).length;
+    
+    // Calculate average completion
+    const avgCompletion = weekData.reduce((sum, d) => {
+        return sum + calculateDayCompletion(d);
+    }, 0) / weekData.length;
+    
+    return `
+        <div class="summary-card">
+            <h3>📅 Last 7 Days Summary</h3>
+            <p><strong>Days Tracked:</strong> ${weekData.length}/7</p>
+            <p><strong>Average Completion:</strong> ${avgCompletion.toFixed(1)}%</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>😴 Sleep</h3>
+            <p><strong>Avg Duration:</strong> ${avgSleepDuration.toFixed(1)} hours</p>
+            <p><strong>Avg Quality:</strong> ${avgSleepQuality.toFixed(1)}/10</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>⚡ Energy</h3>
+            <p><strong>Morning:</strong> ${avgEnergyMorning.toFixed(1)}/10</p>
+            <p><strong>Afternoon:</strong> ${avgEnergyAfternoon.toFixed(1)}/10</p>
+            <p><strong>Evening:</strong> ${avgEnergyEvening.toFixed(1)}/10</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>🏋️ Exercise</h3>
+            <p><strong>Strength Training:</strong> ${strengthDays}/7 days</p>
+            <p><strong>Cardio:</strong> ${cardioDays}/7 days</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>✅ Habits</h3>
+            <p><strong>Morning Sunlight:</strong> ${sunlightDays}/7 days</p>
+            <p><strong>Meditation:</strong> ${meditationDays}/7 days</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>😊 Mood & Stress</h3>
+            <p><strong>Avg Mood:</strong> ${avgMood.toFixed(1)}/10</p>
+            <p><strong>Avg Stress:</strong> ${avgStress.toFixed(1)}/10</p>
+        </div>
+    `;
+}
+
+// Generate monthly summary
+function generateMonthlySummary() {
+    const data = getStoredData();
+    const dates = Object.keys(data).sort().reverse();
+    
+    if (dates.length === 0) {
+        return '<p>No data available for monthly summary.</p>';
+    }
+    
+    // Get last 30 days
+    const last30Days = dates.slice(0, 30);
+    const monthData = last30Days.map(date => data[date]).filter(d => d);
+    
+    if (monthData.length === 0) {
+        return '<p>No data available for the last 30 days.</p>';
+    }
+    
+    // Calculate averages
+    const avgSleepDuration = monthData.reduce((sum, d) => sum + (d.sleepDuration || 0), 0) / monthData.length;
+    const avgSleepQuality = monthData.reduce((sum, d) => sum + (d.sleepQuality || 0), 0) / monthData.length;
+    const avgEnergyMorning = monthData.reduce((sum, d) => sum + (d.energyMorning || 0), 0) / monthData.length;
+    const avgMood = monthData.reduce((sum, d) => sum + (d.mood || 0), 0) / monthData.length;
+    const avgStress = monthData.reduce((sum, d) => sum + (d.stress || 0), 0) / monthData.length;
+    
+    // Count habits
+    const strengthDays = monthData.filter(d => d.strengthTraining).length;
+    const cardioDays = monthData.filter(d => d.zone2Training || d.zone5Training).length;
+    const sunlightDays = monthData.filter(d => d.morningSunlight).length;
+    const meditationDays = monthData.filter(d => d.meditation).length;
+    
+    // Calculate average completion
+    const avgCompletion = monthData.reduce((sum, d) => {
+        return sum + calculateDayCompletion(d);
+    }, 0) / monthData.length;
+    
+    // Calculate consistency (days with >80% completion)
+    const consistentDays = monthData.filter(d => calculateDayCompletion(d) >= 80).length;
+    const consistencyRate = (consistentDays / monthData.length * 100).toFixed(1);
+    
+    return `
+        <div class="summary-card">
+            <h3>📆 Last 30 Days Summary</h3>
+            <p><strong>Days Tracked:</strong> ${monthData.length}/30</p>
+            <p><strong>Average Completion:</strong> ${avgCompletion.toFixed(1)}%</p>
+            <p><strong>Consistency Rate:</strong> ${consistencyRate}% (${consistentDays} days with >80% completion)</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>😴 Sleep</h3>
+            <p><strong>Avg Duration:</strong> ${avgSleepDuration.toFixed(1)} hours</p>
+            <p><strong>Avg Quality:</strong> ${avgSleepQuality.toFixed(1)}/10</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>⚡ Energy</h3>
+            <p><strong>Morning Average:</strong> ${avgEnergyMorning.toFixed(1)}/10</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>🏋️ Exercise</h3>
+            <p><strong>Strength Training:</strong> ${strengthDays}/30 days (${(strengthDays/30*100).toFixed(0)}%)</p>
+            <p><strong>Cardio:</strong> ${cardioDays}/30 days (${(cardioDays/30*100).toFixed(0)}%)</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>✅ Habits</h3>
+            <p><strong>Morning Sunlight:</strong> ${sunlightDays}/30 days (${(sunlightDays/30*100).toFixed(0)}%)</p>
+            <p><strong>Meditation:</strong> ${meditationDays}/30 days (${(meditationDays/30*100).toFixed(0)}%)</p>
+        </div>
+        
+        <div class="metric-card">
+            <h3>😊 Mood & Stress</h3>
+            <p><strong>Avg Mood:</strong> ${avgMood.toFixed(1)}/10</p>
+            <p><strong>Avg Stress:</strong> ${avgStress.toFixed(1)}/10</p>
+        </div>
+    `;
+}
+

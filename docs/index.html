@@ -9,8 +9,15 @@
 <body>
     <div class="container">
         <header>
-            <h1>🌱 Daily Longevity Tracker</h1>
-            <p class="subtitle">Track your daily routine and optimize your longevity</p>
+            <div class="header-top">
+                <div>
+                    <h1>🌱 Daily Longevity Tracker</h1>
+                    <p class="subtitle">Track your daily routine and optimize your longevity</p>
+                </div>
+                <button id="dark-mode-toggle" class="dark-mode-btn" onclick="toggleDarkMode()" title="Toggle dark mode">
+                    🌙
+                </button>
+            </div>
             <div class="completion-stats" id="completion-stats">
                 <span>Completion: <strong id="completion-percentage">0%</strong></span>
                 <span class="streak">🔥 Streak: <strong id="streak-days">0</strong> days</span>
@@ -21,6 +28,7 @@
             <button class="tab-btn active" onclick="showTab('tracker')">📊 Daily Tracker</button>
             <button class="tab-btn" onclick="showTab('report')">📈 Reports</button>
             <button class="tab-btn" onclick="showTab('history')">📅 History</button>
+            <button class="tab-btn" onclick="showTab('summaries')">📊 Summaries</button>
         </div>
 
         <!-- Daily Tracker Tab -->
@@ -935,7 +943,25 @@
         <!-- History Tab -->
         <div id="history-tab" class="tab-content">
             <h2>📅 Tracker History</h2>
+            <div class="history-controls">
+                <button onclick="exportAllData()" class="btn-primary">📥 Export All Data</button>
+                <label for="import-data" class="btn-secondary" style="cursor: pointer; display: inline-block;">
+                    📤 Import Data
+                    <input type="file" id="import-data" accept=".json" onchange="importData(event)" style="display: none;">
+                </label>
+                <button onclick="exportToCSV()" class="btn-secondary">📊 Export to CSV</button>
+            </div>
             <div id="history-list"></div>
+        </div>
+
+        <!-- Summaries Tab -->
+        <div id="summaries-tab" class="tab-content">
+            <h2>📊 Weekly & Monthly Summaries</h2>
+            <div class="summary-controls">
+                <button class="tab-btn-small active" onclick="showSummary('weekly')">📅 Weekly</button>
+                <button class="tab-btn-small" onclick="showSummary('monthly')">📆 Monthly</button>
+            </div>
+            <div id="summary-content"></div>
         </div>
     </div>
 

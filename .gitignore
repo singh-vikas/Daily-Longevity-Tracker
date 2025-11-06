@@ -15,7 +15,9 @@ build/
 report_*.html
 report_*.md
 report_*.json
-Daily_Tracker_*.md
+# Ignore dated tracker files but keep the template
+Daily_Tracker_20*.md
+!Daily_Tracker_Template.md
 
 # OS
 .DS_Store

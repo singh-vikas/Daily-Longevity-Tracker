@@ -5,7 +5,8 @@
 ### Step 1: Push to GitHub
 
 ```bash
-cd /Users/vikaskumar.singh/opensource/System-Design/Daily-Longevity-Tracker
+# Navigate to your repository directory
+cd /path/to/Daily-Longevity-Tracker
 
 git add .
 git commit -m "Setup repository"
@@ -14,7 +15,7 @@ git push -u origin main
 
 ### Step 2: Enable GitHub Pages
 
-1. Go to: **https://github.com/singh-vikas/Daily-Longevity-Tracker/settings/pages**
+1. Go to: **https://github.com/YOUR_USERNAME/Daily-Longevity-Tracker/settings/pages**
 2. Under **Source**, select:
    - **Branch**: `main`
    - **Folder**: `/docs`
@@ -24,7 +25,7 @@ git push -u origin main
 
 Your tracker will be live at:
 ```
-https://singh-vikas.github.io/Daily-Longevity-Tracker/
+https://YOUR_USERNAME.github.io/Daily-Longevity-Tracker/
 ```
 
 Wait 1-2 minutes for GitHub to build and deploy.

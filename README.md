@@ -80,4 +80,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Repository**: https://github.com/singh-vikas/Daily-Longevity-Tracker
+**Repository**: https://github.com/YOUR_USERNAME/Daily-Longevity-Tracker

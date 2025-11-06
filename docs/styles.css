@@ -488,6 +488,32 @@ h1 {
     margin-top: 5px;
 }
 
+/* Nested items for better formatting */
+.nested-item {
+    margin: 10px 0 15px 20px;
+    padding: 10px;
+    background: #f8fafc;
+    border-left: 3px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.nested-item > div {
+    margin: 5px 0;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.note-text {
+    margin: 10px 0;
+    padding: 8px 12px;
+    background: #fef3c7;
+    border-left: 3px solid var(--warning-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {

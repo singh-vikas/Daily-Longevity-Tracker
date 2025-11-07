@@ -164,12 +164,19 @@
                     </div>
                 </section>
 
-                <!-- 6:30-8:00 AM Exercise Block -->
+                <!-- 6:30-8:30 AM Exercise Block -->
                 <section class="tracker-section">
-                    <h2>🏋️ 6:30-8:00 AM — Exercise & Skin and Recovery Block</h2>
+                    <h2>🏋️ 6:30-8:30 AM — Exercise & Recovery Block (2 hours with buffer time)</h2>
+                    <div class="note-text">
+                        <strong>Note:</strong> This block includes buffer time for context switching, transitions, and realistic pacing. You don't need to do everything every day - alternate strength/cardio days.
+                    </div>
                     
                     <div class="task-group">
-                        <h4>Pre-Workout (if needed):</h4>
+                        <h4>6:30-6:40 AM — Pre-Workout Prep (10 min):</h4>
+                        <div class="nested-item">
+                            <div>• <strong>Transition time</strong> (5 min) - Change clothes, prepare equipment</div>
+                            <div>• <strong>Mental preparation</strong> (2-3 min) - Set workout intention</div>
+                        </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="l-tyrosine" name="l-tyrosine" onchange="updateCompletion()">
                             <span><strong>L-Tyrosine (500mg)</strong> - enhances focus, dopamine precursor (optional, before intense training)</span>
@@ -185,7 +192,12 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>Strength Training (30-45 minutes):</h4>
+                        <h4>6:40-7:30 AM — Workout Session (50 min):</h4>
+                        <div class="note-text">
+                            <strong>Choose ONE per day (alternate days):</strong>
+                        </div>
+                        
+                        <h5>Option A: Strength Training Day (45-50 min):</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="strength-training" name="strength-training" onchange="updateCompletion()">
                             <span><strong>Completed</strong>: [ ] Yes [ ] No</span>
@@ -214,8 +226,7 @@
                         <div class="note-text"><strong>Progressive overload</strong>: Track weights, aim for 2-5% increase weekly</div>
                     </div>
 
-                    <div class="task-group">
-                        <h4>Cardiovascular Training (15-20 minutes):</h4>
+                        <h5>Option B: Cardio Day (30-40 min):</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="zone2-training" name="zone2-training" onchange="updateCompletion()">
                             <span><strong>Zone 2 Training</strong> (60-70% max heart rate): [ ] Yes [ ] No</span>
@@ -243,11 +254,15 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>Flexibility & Mobility (10 minutes):</h4>
+                        <h5>Option C: Light Day (20-30 min):</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="flexibility" name="flexibility" onchange="updateCompletion()">
-                            <span><strong>Surya Namaskar</strong> (5-10 rounds) or dynamic stretching: [ ] Yes [ ] No</span>
+                            <span><strong>Flexibility & Mobility</strong>: [ ] Yes [ ] No</span>
                         </label>
+                        <div class="nested-item">
+                            <div>• <strong>Surya Namaskar</strong> (5-10 rounds) or dynamic stretching</div>
+                            <div>• <strong>OR Light walk</strong> (if recovering)</div>
+                        </div>
                         <div class="form-group inline-group">
                             <label for="flexibility-duration"><strong>Duration</strong> (minutes):</label>
                             <input type="number" id="flexibility-duration" name="flexibility-duration" min="0" style="width: 100px;">
@@ -255,31 +270,65 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>Post-Workout Recovery:</h4>
+                        <h4>7:30-7:45 AM — Post-Workout Recovery Break (15 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="recovery-break" name="recovery-break" onchange="updateCompletion()">
                             <span><strong>Recovery break before shower</strong>:</span>
                         </label>
                         <div class="nested-item">
-                            <div>• <strong>Wait 10-15 minutes</strong> after workout/running before showering</div>
+                            <div>• <strong>Wait 10-15 minutes</strong> after workout before showering</div>
                             <div>• <strong>Reason</strong>: Allows body temperature to normalize, prevents rapid cooling</div>
-                            <div>• <strong>During this time</strong>: Light stretching, hydration, deep breathing</div>
-                        </div>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="shower-completed" name="shower-completed" onchange="updateCompletion()">
-                            <span><strong>Shower & Skin Care Routine</strong> (after 10-15 min break):</span>
-                        </label>
-                        <div class="nested-item">
-                            <div>• <strong>Shower completed</strong>: [ ] Yes [ ] No</div>
-                            <div>• <strong>Post-shower skin care</strong>:</div>
+                            <div>• <strong>During this time</strong>:</div>
                             <div style="margin-left: 20px;">
-                                - Gentle cleanser (if not done in morning) - pH 5.5-6.5<br>
-                                - Pat dry (don't rub - exercise increases skin sensitivity)<br>
-                                - Vitamin C serum (L-ascorbic acid 10-20%) - antioxidant, collagen synthesis<br>
-                                - Moisturizer (gel-based for oily, cream for dry skin)<br>
-                                - Sunscreen SPF 30+ (if going outside) - CRITICAL for longevity
+                                - Light stretching (5 min)<br>
+                                - Hydration (water)<br>
+                                - Deep breathing/calm down (5 min)
                             </div>
                         </div>
+                        <div class="form-group inline-group">
+                            <label for="recovery-wait-time">Actual wait time (minutes):</label>
+                            <input type="number" id="recovery-wait-time" name="recovery-wait-time" min="0" style="width: 100px;">
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>7:45-8:15 AM — Shower & Skin Care (30 min):</h4>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="shower-completed" name="shower-completed" onchange="updateCompletion()">
+                            <span><strong>Shower</strong> (10-15 min):</span>
+                        </label>
+                        <div class="form-group">
+                            <label for="shower-water-temp">Water temperature:</label>
+                            <select id="shower-water-temp" name="shower-water-temp">
+                                <option value="">Select...</option>
+                                <option value="warm">Warm</option>
+                                <option value="cool">Cool</option>
+                                <option value="cold">Cold (if doing cold exposure)</option>
+                            </select>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="post-shower-skincare" name="post-shower-skincare" onchange="updateCompletion()">
+                            <span><strong>Post-shower skin care</strong> (10-15 min):</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• Gentle cleanser (if not done in morning) - pH 5.5-6.5</div>
+                            <div>• Pat dry (don't rub - exercise increases skin sensitivity)</div>
+                            <div>• Vitamin C serum (L-ascorbic acid 10-20%) - antioxidant, collagen synthesis</div>
+                            <div>• Moisturizer (gel-based for oily, cream for dry skin)</div>
+                            <div>• Sunscreen SPF 30+ (if going outside) - CRITICAL for longevity</div>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="cold-exposure" name="cold-exposure" onchange="updateCompletion()">
+                            <span><strong>Cold exposure</strong> (optional, alternate days): [ ] Yes [ ] No</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• <strong>Note</strong>: NOT immediately after strength training (can blunt hypertrophy)</div>
+                            <div>• <strong>Best timing</strong>: 3-4 hours after strength training OR after cardio only</div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>8:15-8:30 AM — Post-Workout Hydration & Transition (15 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="green-tea-post-workout" name="green-tea-post-workout" onchange="updateCompletion()">
                             <span><strong>Green tea before breakfast</strong>: [ ] Yes [ ] No</span>
@@ -287,21 +336,28 @@
                         <div class="nested-item">
                             <div>• <strong>Timing</strong>: 90-120 minutes after waking (optimal for cortisol interaction)</div>
                             <div>• <strong>Benefits</strong>: Antioxidants (EGCG), L-theanine (calm focus), gentle caffeine</div>
-                            <div>• <strong>Note</strong>:  <strong>Good choice</strong> - Green tea supports metabolism, cognitive function, and longevity</div>
+                            <div>• <strong>Note</strong>: <strong>Good choice</strong> - Green tea supports metabolism, cognitive function, and longevity</div>
                         </div>
                         <div class="form-group inline-group">
                             <label for="green-tea-amount"><strong>Amount</strong> (ml):</label>
                             <input type="number" id="green-tea-amount" name="green-tea-amount" min="0" style="width: 100px;">
                         </div>
+                        <div class="form-group inline-group">
+                            <label for="post-workout-water">Water (ml):</label>
+                            <input type="number" id="post-workout-water" name="post-workout-water" min="0" style="width: 100px;">
+                        </div>
+                        <div class="note-text">
+                            <strong>Transition time</strong> (5-10 min) - Prepare for work/breakfast, mental shift
+                        </div>
                     </div>
                 </section>
 
-                <!-- 8:00-10:00 AM Work & Breakfast -->
+                <!-- 8:30-10:20 AM Work & Breakfast -->
                 <section class="tracker-section">
-                    <h2>💼 8:00-10:00 AM — Work & Breakfast Block</h2>
+                    <h2>💼 8:30-10:20 AM — Work & Breakfast Block</h2>
                     
                     <div class="task-group">
-                        <h4>8:00-8:40 AM — Focus Work/Study Block</h4>
+                        <h4>8:30-9:10 AM — Focus Work/Study Block (40 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="focus-work-1" name="focus-work-1" onchange="updateCompletion()">
                             <span><strong>Focus work/study session completed</strong></span>
@@ -345,7 +401,7 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>8:40-9:10 AM — Breakfast, Walk & Supplements</h4>
+                        <h4>9:10-9:40 AM — Breakfast, Walk & Supplements (30 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="breakfast-completed" name="breakfast-completed" onchange="updateCompletion()">
                             <span><strong>Breakfast completed</strong></span>
@@ -428,7 +484,7 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>9:10-9:50 AM — Focus Work/Study Block</h4>
+                        <h4>9:40-10:20 AM — Focus Work/Study Block (40 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="focus-work-2" name="focus-work-2" onchange="updateCompletion()">
                             <span><strong>Focus work/study session completed</strong></span>
@@ -455,7 +511,7 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>9:50-10:00 AM — Break & Sunlight Walk</h4>
+                        <h4>10:20-10:30 AM — Break & Sunlight Walk (10 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="sunlight-walk" name="sunlight-walk" onchange="updateCompletion()">
                             <span><strong>10-15 minute walk in sunlight</strong></span>
@@ -463,12 +519,12 @@
                     </div>
                 </section>
 
-                <!-- 10:00-12:00 PM Deep Work -->
+                <!-- 10:30-12:30 PM Deep Work -->
                 <section class="tracker-section">
-                    <h2>💼 10:00-12:00 PM — Deep Work/Study Block</h2>
+                    <h2>💼 10:30-12:30 PM — Deep Work/Study Block</h2>
                     
                     <div class="task-group">
-                        <h4>10:00-10:50 AM — Deep Work/Study Session</h4>
+                        <h4>10:30-11:20 AM — Deep Work/Study Session (50 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="deep-work-1" name="deep-work-1" onchange="updateCompletion()">
                             <span><strong>Deep work/study session completed</strong></span>
@@ -495,7 +551,7 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>10:50-11:10 AM — Break & Snack</h4>
+                        <h4>11:20-11:40 AM — Break & Snack (20 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="mid-morning-snack" name="mid-morning-snack" onchange="updateCompletion()">
                             <span><strong>Snack taken</strong></span>
@@ -507,7 +563,7 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>11:10-12:00 PM — Focus Work/Study Session</h4>
+                        <h4>11:40-12:30 PM — Focus Work/Study Session (50 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="focus-work-3" name="focus-work-3" onchange="updateCompletion()">
                             <span><strong>Focus work/study session completed</strong></span>
@@ -534,9 +590,9 @@
                     </div>
                 </section>
 
-                <!-- 12:00-1:00 PM Lunch -->
+                <!-- 12:30-1:30 PM Lunch -->
                 <section class="tracker-section">
-                    <h2>🍽️ 12:00-1:00 PM — Lunch Break, Walk & Metabolic Health Block</h2>
+                    <h2>🍽️ 12:30-1:30 PM — Lunch Break, Walk & Metabolic Health Block</h2>
                     
                     <div class="task-group">
                         <label class="task-checkbox">

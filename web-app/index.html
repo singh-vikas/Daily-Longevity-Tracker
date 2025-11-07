@@ -164,12 +164,19 @@
                     </div>
                 </section>
 
-                <!-- 6:30-8:00 AM Exercise Block -->
+                <!-- 6:30-8:30 AM Exercise Block -->
                 <section class="tracker-section">
-                    <h2>🏋️ 6:30-8:00 AM — Exercise & Skin and Recovery Block</h2>
+                    <h2>🏋️ 6:30-8:30 AM — Exercise & Recovery Block (2 hours with buffer time)</h2>
+                    <div class="note-text">
+                        <strong>Note:</strong> This block includes buffer time for context switching, transitions, and realistic pacing. You don't need to do everything every day - alternate strength/cardio days.
+                    </div>
                     
                     <div class="task-group">
-                        <h4>Pre-Workout (if needed):</h4>
+                        <h4>6:30-6:40 AM — Pre-Workout Prep (10 min):</h4>
+                        <div class="nested-item">
+                            <div>• <strong>Transition time</strong> (5 min) - Change clothes, prepare equipment</div>
+                            <div>• <strong>Mental preparation</strong> (2-3 min) - Set workout intention</div>
+                        </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="l-tyrosine" name="l-tyrosine" onchange="updateCompletion()">
                             <span><strong>L-Tyrosine (500mg)</strong> - enhances focus, dopamine precursor (optional, before intense training)</span>
@@ -185,7 +192,12 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>Strength Training (30-45 minutes):</h4>
+                        <h4>6:40-7:30 AM — Workout Session (50 min):</h4>
+                        <div class="note-text">
+                            <strong>Choose ONE per day (alternate days):</strong>
+                        </div>
+                        
+                        <h5>Option A: Strength Training Day (45-50 min):</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="strength-training" name="strength-training" onchange="updateCompletion()">
                             <span><strong>Completed</strong>: [ ] Yes [ ] No</span>
@@ -214,8 +226,7 @@
                         <div class="note-text"><strong>Progressive overload</strong>: Track weights, aim for 2-5% increase weekly</div>
                     </div>
 
-                    <div class="task-group">
-                        <h4>Cardiovascular Training (15-20 minutes):</h4>
+                        <h5>Option B: Cardio Day (30-40 min):</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="zone2-training" name="zone2-training" onchange="updateCompletion()">
                             <span><strong>Zone 2 Training</strong> (60-70% max heart rate): [ ] Yes [ ] No</span>
@@ -243,11 +254,15 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>Flexibility & Mobility (10 minutes):</h4>
+                        <h5>Option C: Light Day (20-30 min):</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="flexibility" name="flexibility" onchange="updateCompletion()">
-                            <span><strong>Surya Namaskar</strong> (5-10 rounds) or dynamic stretching: [ ] Yes [ ] No</span>
+                            <span><strong>Flexibility & Mobility</strong>: [ ] Yes [ ] No</span>
                         </label>
+                        <div class="nested-item">
+                            <div>• <strong>Surya Namaskar</strong> (5-10 rounds) or dynamic stretching</div>
+                            <div>• <strong>OR Light walk</strong> (if recovering)</div>
+                        </div>
                         <div class="form-group inline-group">
                             <label for="flexibility-duration"><strong>Duration</strong> (minutes):</label>
                             <input type="number" id="flexibility-duration" name="flexibility-duration" min="0" style="width: 100px;">
@@ -255,31 +270,65 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>Post-Workout Recovery:</h4>
+                        <h4>7:30-7:45 AM — Post-Workout Recovery Break (15 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="recovery-break" name="recovery-break" onchange="updateCompletion()">
                             <span><strong>Recovery break before shower</strong>:</span>
                         </label>
                         <div class="nested-item">
-                            <div>• <strong>Wait 10-15 minutes</strong> after workout/running before showering</div>
+                            <div>• <strong>Wait 10-15 minutes</strong> after workout before showering</div>
                             <div>• <strong>Reason</strong>: Allows body temperature to normalize, prevents rapid cooling</div>
-                            <div>• <strong>During this time</strong>: Light stretching, hydration, deep breathing</div>
-                        </div>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="shower-completed" name="shower-completed" onchange="updateCompletion()">
-                            <span><strong>Shower & Skin Care Routine</strong> (after 10-15 min break):</span>
-                        </label>
-                        <div class="nested-item">
-                            <div>• <strong>Shower completed</strong>: [ ] Yes [ ] No</div>
-                            <div>• <strong>Post-shower skin care</strong>:</div>
+                            <div>• <strong>During this time</strong>:</div>
                             <div style="margin-left: 20px;">
-                                - Gentle cleanser (if not done in morning) - pH 5.5-6.5<br>
-                                - Pat dry (don't rub - exercise increases skin sensitivity)<br>
-                                - Vitamin C serum (L-ascorbic acid 10-20%) - antioxidant, collagen synthesis<br>
-                                - Moisturizer (gel-based for oily, cream for dry skin)<br>
-                                - Sunscreen SPF 30+ (if going outside) - CRITICAL for longevity
+                                - Light stretching (5 min)<br>
+                                - Hydration (water)<br>
+                                - Deep breathing/calm down (5 min)
                             </div>
                         </div>
+                        <div class="form-group inline-group">
+                            <label for="recovery-wait-time">Actual wait time (minutes):</label>
+                            <input type="number" id="recovery-wait-time" name="recovery-wait-time" min="0" style="width: 100px;">
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>7:45-8:15 AM — Shower & Skin Care (30 min):</h4>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="shower-completed" name="shower-completed" onchange="updateCompletion()">
+                            <span><strong>Shower</strong> (10-15 min):</span>
+                        </label>
+                        <div class="form-group">
+                            <label for="shower-water-temp">Water temperature:</label>
+                            <select id="shower-water-temp" name="shower-water-temp">
+                                <option value="">Select...</option>
+                                <option value="warm">Warm</option>
+                                <option value="cool">Cool</option>
+                                <option value="cold">Cold (if doing cold exposure)</option>
+                            </select>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="post-shower-skincare" name="post-shower-skincare" onchange="updateCompletion()">
+                            <span><strong>Post-shower skin care</strong> (10-15 min):</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• Gentle cleanser (if not done in morning) - pH 5.5-6.5</div>
+                            <div>• Pat dry (don't rub - exercise increases skin sensitivity)</div>
+                            <div>• Vitamin C serum (L-ascorbic acid 10-20%) - antioxidant, collagen synthesis</div>
+                            <div>• Moisturizer (gel-based for oily, cream for dry skin)</div>
+                            <div>• Sunscreen SPF 30+ (if going outside) - CRITICAL for longevity</div>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="cold-exposure" name="cold-exposure" onchange="updateCompletion()">
+                            <span><strong>Cold exposure</strong> (optional, alternate days): [ ] Yes [ ] No</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• <strong>Note</strong>: NOT immediately after strength training (can blunt hypertrophy)</div>
+                            <div>• <strong>Best timing</strong>: 3-4 hours after strength training OR after cardio only</div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>8:15-8:30 AM — Post-Workout Hydration & Transition (15 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="green-tea-post-workout" name="green-tea-post-workout" onchange="updateCompletion()">
                             <span><strong>Green tea before breakfast</strong>: [ ] Yes [ ] No</span>
@@ -287,29 +336,39 @@
                         <div class="nested-item">
                             <div>• <strong>Timing</strong>: 90-120 minutes after waking (optimal for cortisol interaction)</div>
                             <div>• <strong>Benefits</strong>: Antioxidants (EGCG), L-theanine (calm focus), gentle caffeine</div>
-                            <div>• <strong>Note</strong>:  <strong>Good choice</strong> - Green tea supports metabolism, cognitive function, and longevity</div>
+                            <div>• <strong>Note</strong>: <strong>Good choice</strong> - Green tea supports metabolism, cognitive function, and longevity</div>
                         </div>
                         <div class="form-group inline-group">
                             <label for="green-tea-amount"><strong>Amount</strong> (ml):</label>
                             <input type="number" id="green-tea-amount" name="green-tea-amount" min="0" style="width: 100px;">
                         </div>
+                        <div class="form-group inline-group">
+                            <label for="post-workout-water">Water (ml):</label>
+                            <input type="number" id="post-workout-water" name="post-workout-water" min="0" style="width: 100px;">
+                        </div>
+                        <div class="note-text">
+                            <strong>Transition time</strong> (5-10 min) - Prepare for work/breakfast, mental shift
+                        </div>
                     </div>
                 </section>
 
-                <!-- 8:00-10:00 AM Work & Breakfast -->
+                <!-- 8:00-8:45 AM Deep Work -->
                 <section class="tracker-section">
-                    <h2>💼 8:00-10:00 AM — Work & Breakfast Block</h2>
+                    <h2>💼 8:00-8:45 AM — Deep Work Block (45 minutes)</h2>
+                    <div class="note-text">
+                        <strong>Optimal Timing:</strong> After green tea and warm bath - body is warm, focused, and ready for peak cognitive performance. This leverages the post-bath warmth and green tea's L-theanine for enhanced concentration.
+                    </div>
                     
                     <div class="task-group">
-                        <h4>8:00-8:40 AM — Focus Work/Study Block</h4>
+                        <h4>8:00-8:45 AM — Deep Work Session:</h4>
                         <label class="task-checkbox">
-                            <input type="checkbox" id="focus-work-1" name="focus-work-1" onchange="updateCompletion()">
-                            <span><strong>Focus work/study session completed</strong></span>
+                            <input type="checkbox" id="deep-work-morning" name="deep-work-morning" onchange="updateCompletion()">
+                            <span><strong>Deep work/study session completed</strong></span>
                         </label>
                         <div class="form-grid">
                             <div class="form-group">
-                                <label for="work-type-1">Type:</label>
-                                <select id="work-type-1" name="work-type-1">
+                                <label for="deep-work-type-morning">Type:</label>
+                                <select id="deep-work-type-morning" name="deep-work-type-morning">
                                     <option value="">Select...</option>
                                     <option value="work">Work</option>
                                     <option value="study">Study</option>
@@ -317,35 +376,65 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="work-duration-1">Duration (minutes):</label>
-                                <input type="number" id="work-duration-1" name="work-duration-1" min="0">
+                                <label for="deep-work-duration-morning">Duration (minutes):</label>
+                                <input type="number" id="deep-work-duration-morning" name="deep-work-duration-morning" min="0">
                             </div>
                         </div>
+                        <div class="note-text">
+                            <strong>Most challenging tasks first</strong> (peak cognitive performance)
+                        </div>
                         <div class="form-group">
-                            <label for="work-tasks-1">Tasks/Study topics:</label>
-                            <textarea id="work-tasks-1" name="work-tasks-1" rows="2"></textarea>
+                            <label for="deep-work-tasks-morning">Tasks/Study topics:</label>
+                            <textarea id="deep-work-tasks-morning" name="deep-work-tasks-morning" rows="2"></textarea>
                         </div>
                         <label class="task-checkbox">
-                            <input type="checkbox" id="phone-away" name="phone-away" onchange="updateCompletion()">
+                            <input type="checkbox" id="phone-away-morning" name="phone-away-morning" onchange="updateCompletion()">
                             <span><strong>Phone in another room</strong> (minimize distractions)</span>
                         </label>
+                        <h5>Study Methods Used (if studying):</h5>
+                        <div class="checkbox-grid">
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-active-recall-morning" name="study-active-recall-morning" onchange="updateCompletion()">
+                                <span><strong>Active recall</strong> (testing yourself)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-spaced-rep-morning" name="study-spaced-rep-morning" onchange="updateCompletion()">
+                                <span><strong>Spaced repetition</strong> (Anki, flashcards)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-feynman-morning" name="study-feynman-morning" onchange="updateCompletion()">
+                                <span><strong>Feynman technique</strong> (explain in simple terms)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-practice-morning" name="study-practice-morning" onchange="updateCompletion()">
+                                <span><strong>Practice problems/exercises</strong></span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-reading-morning" name="study-reading-morning" onchange="updateCompletion()">
+                                <span><strong>Reading/note-taking</strong></span>
+                            </label>
+                        </div>
                         <label class="task-checkbox">
-                            <input type="checkbox" id="caffeine-timing" name="caffeine-timing" onchange="updateCompletion()">
+                            <input type="checkbox" id="caffeine-timing-morning" name="caffeine-timing-morning" onchange="updateCompletion()">
                             <span><strong>Caffeine timing</strong> (if needed):</span>
                         </label>
                         <div class="nested-item">
                             <div>• Coffee/tea <strong>90-120 minutes after waking</strong> (optimal cortisol interaction)</div>
                             <div>• <strong>L-Theanine pairing</strong> (200mg) - reduces jitters, enhances focus</div>
-                            <div>• <strong>Amount</strong>: _____ mg caffeine (limit: 100-200mg)</div>
                         </div>
                         <div class="form-group inline-group">
-                            <label for="caffeine-amount">Caffeine amount (mg):</label>
-                            <input type="number" id="caffeine-amount" name="caffeine-amount" min="0" max="200" style="width: 100px;">
+                            <label for="caffeine-amount-morning">Caffeine amount (mg):</label>
+                            <input type="number" id="caffeine-amount-morning" name="caffeine-amount-morning" min="0" max="200" style="width: 100px;">
                         </div>
                     </div>
+                </section>
 
+                <!-- 8:45-9:00 AM Breakfast -->
+                <section class="tracker-section">
+                    <h2>🍳 8:45-9:00 AM — Breakfast & Metabolic Optimization Block (15 minutes)</h2>
+                    
                     <div class="task-group">
-                        <h4>8:40-9:10 AM — Breakfast, Walk & Supplements</h4>
+                        <h4>8:45-9:00 AM — Breakfast:</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="breakfast-completed" name="breakfast-completed" onchange="updateCompletion()">
                             <span><strong>Breakfast completed</strong></span>
@@ -427,48 +516,21 @@
                         </div>
                     </div>
 
-                    <div class="task-group">
-                        <h4>9:10-9:50 AM — Focus Work/Study Block</h4>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="focus-work-2" name="focus-work-2" onchange="updateCompletion()">
-                            <span><strong>Focus work/study session completed</strong></span>
-                        </label>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="work-type-2">Type:</label>
-                                <select id="work-type-2" name="work-type-2">
-                                    <option value="">Select...</option>
-                                    <option value="work">Work</option>
-                                    <option value="study">Study</option>
-                                    <option value="both">Both</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="work-duration-2">Duration (minutes):</label>
-                                <input type="number" id="work-duration-2" name="work-duration-2" min="0">
-                            </div>
+                        <div class="note-text">
+                            <strong>Post-Breakfast Walk</strong> (can be done during first break): Can be done during the 10:30-10:45 AM break to avoid interrupting deep work flow
                         </div>
-                        <div class="form-group">
-                            <label for="work-tasks-2">Tasks/Study topics:</label>
-                            <textarea id="work-tasks-2" name="work-tasks-2" rows="2"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="task-group">
-                        <h4>9:50-10:00 AM — Break & Sunlight Walk</h4>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="sunlight-walk" name="sunlight-walk" onchange="updateCompletion()">
-                            <span><strong>10-15 minute walk in sunlight</strong></span>
-                        </label>
                     </div>
                 </section>
 
-                <!-- 10:00-12:00 PM Deep Work -->
+                <!-- 9:00-12:00 PM Deep Work -->
                 <section class="tracker-section">
-                    <h2>💼 10:00-12:00 PM — Deep Work/Study Block</h2>
+                    <h2>💼 9:00-12:00 PM — Deep Work & Cognitive Peak Block</h2>
+                    <div class="note-text">
+                        <strong>Science:</strong> Peak cognitive performance window. Most challenging tasks first. Use 90-minute focus blocks with 15-minute breaks.
+                    </div>
                     
                     <div class="task-group">
-                        <h4>10:00-10:50 AM — Deep Work/Study Session</h4>
+                        <h4>9:00-10:30 AM — Deep Work Session 1 (90 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="deep-work-1" name="deep-work-1" onchange="updateCompletion()">
                             <span><strong>Deep work/study session completed</strong></span>
@@ -488,14 +550,106 @@
                                 <input type="number" id="deep-work-duration-1" name="deep-work-duration-1" min="0">
                             </div>
                         </div>
+                        <div class="note-text">
+                            <strong>Most challenging tasks first</strong> (peak cognitive performance)
+                        </div>
                         <div class="form-group">
                             <label for="deep-work-tasks-1">Tasks/Study topics:</label>
                             <textarea id="deep-work-tasks-1" name="deep-work-tasks-1" rows="2"></textarea>
                         </div>
+                        <h5>Study Methods Used (if studying):</h5>
+                        <div class="checkbox-grid">
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-active-recall-1" name="study-active-recall-1" onchange="updateCompletion()">
+                                <span><strong>Active recall</strong> (testing yourself)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-spaced-rep-1" name="study-spaced-rep-1" onchange="updateCompletion()">
+                                <span><strong>Spaced repetition</strong> (Anki, flashcards)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-feynman-1" name="study-feynman-1" onchange="updateCompletion()">
+                                <span><strong>Feynman technique</strong> (explain in simple terms)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-practice-1" name="study-practice-1" onchange="updateCompletion()">
+                                <span><strong>Practice problems/exercises</strong></span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-reading-1" name="study-reading-1" onchange="updateCompletion()">
+                                <span><strong>Reading/note-taking</strong></span>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="task-group">
-                        <h4>10:50-11:10 AM — Break & Snack</h4>
+                        <h4>10:30-10:45 AM — Break (15 min):</h4>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="break-morning" name="break-morning" onchange="updateCompletion()">
+                            <span><strong>Break activities</strong>: Stand, stretch, hydrate, rest eyes (20-20-20 rule)</span>
+                        </label>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="post-breakfast-walk-break" name="post-breakfast-walk-break" onchange="updateCompletion()">
+                            <span><strong>Post-breakfast walk</strong> (if not done earlier) - enhances glucose disposal</span>
+                        </label>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="sunlight-exposure-break" name="sunlight-exposure-break" onchange="updateCompletion()">
+                            <span><strong>Sunlight exposure</strong> (if possible) - circadian rhythm support</span>
+                        </label>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>10:45-12:00 PM — Deep Work Session 2 (75 min):</h4>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="deep-work-2" name="deep-work-2" onchange="updateCompletion()">
+                            <span><strong>Focus work/study session completed</strong></span>
+                        </label>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="deep-work-type-2">Type:</label>
+                                <select id="deep-work-type-2" name="deep-work-type-2">
+                                    <option value="">Select...</option>
+                                    <option value="work">Work</option>
+                                    <option value="study">Study</option>
+                                    <option value="both">Both</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="deep-work-duration-2">Duration (minutes):</label>
+                                <input type="number" id="deep-work-duration-2" name="deep-work-duration-2" min="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deep-work-tasks-2">Tasks/Study topics:</label>
+                            <textarea id="deep-work-tasks-2" name="deep-work-tasks-2" rows="2"></textarea>
+                        </div>
+                        <h5>Study Methods Used (if studying):</h5>
+                        <div class="checkbox-grid">
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-active-recall-2" name="study-active-recall-2" onchange="updateCompletion()">
+                                <span><strong>Active recall</strong> (testing yourself)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-spaced-rep-2" name="study-spaced-rep-2" onchange="updateCompletion()">
+                                <span><strong>Spaced repetition</strong> (Anki, flashcards)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-feynman-2" name="study-feynman-2" onchange="updateCompletion()">
+                                <span><strong>Feynman technique</strong> (explain in simple terms)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-practice-2" name="study-practice-2" onchange="updateCompletion()">
+                                <span><strong>Practice problems/exercises</strong></span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-reading-2" name="study-reading-2" onchange="updateCompletion()">
+                                <span><strong>Reading/note-taking</strong></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>11:00 AM — Mid-Morning Snack (if needed):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="mid-morning-snack" name="mid-morning-snack" onchange="updateCompletion()">
                             <span><strong>Snack taken</strong></span>
@@ -505,40 +659,22 @@
                             <input type="text" id="snack-choice" name="snack-choice" placeholder="Snack details">
                         </div>
                     </div>
-
-                    <div class="task-group">
-                        <h4>11:10-12:00 PM — Focus Work/Study Session</h4>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="focus-work-3" name="focus-work-3" onchange="updateCompletion()">
-                            <span><strong>Focus work/study session completed</strong></span>
-                        </label>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="work-type-3">Type:</label>
-                                <select id="work-type-3" name="work-type-3">
-                                    <option value="">Select...</option>
-                                    <option value="work">Work</option>
-                                    <option value="study">Study</option>
-                                    <option value="both">Both</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="work-duration-3">Duration (minutes):</label>
-                                <input type="number" id="work-duration-3" name="work-duration-3" min="0">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="work-tasks-3">Tasks/Study topics:</label>
-                            <textarea id="work-tasks-3" name="work-tasks-3" rows="2"></textarea>
-                        </div>
-                    </div>
                 </section>
 
                 <!-- 12:00-1:00 PM Lunch -->
                 <section class="tracker-section">
-                    <h2>🍽️ 12:00-1:00 PM — Lunch Break, Walk & Metabolic Health Block</h2>
+                    <h2>🍽️ 12:00-1:00 PM — Lunch Break & Metabolic Health Block</h2>
                     
                     <div class="task-group">
+                        <h4>Lunch Timing:</h4>
+                        <div class="form-group inline-group">
+                            <label for="lunch-prep-time">12:00-12:30 PM (Prep, Bring, Buy):</label>
+                            <input type="checkbox" id="lunch-prep" name="lunch-prep" onchange="updateCompletion()">
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="lunch-eat-time">12:30-12:45 PM (Eat, exact timing window):</label>
+                            <input type="checkbox" id="lunch-eat" name="lunch-eat" onchange="updateCompletion()">
+                        </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="lunch-completed" name="lunch-completed" onchange="updateCompletion()">
                             <span><strong>Lunch completed</strong></span>
@@ -610,7 +746,7 @@
                     <h2>☕ 1:00-4:00 PM — Sustained Work/Study & Afternoon Optimization Block</h2>
                     
                     <div class="task-group">
-                        <h4>1:00-1:50 PM — Light Work/Study Block</h4>
+                        <h4>1:00-2:00 PM — Light Work/Study Block (60 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="light-work-1" name="light-work-1" onchange="updateCompletion()">
                             <span><strong>Work/study session completed</strong></span>
@@ -625,46 +761,100 @@
                                     <option value="both">Both</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="light-work-duration-1">Duration (minutes):</label>
+                                <input type="number" id="light-work-duration-1" name="light-work-duration-1" min="0">
+                            </div>
+                        </div>
+                        <div class="note-text">
+                            <strong>Focus:</strong> Lighter cognitive tasks (email, admin, meetings, review notes)
+                        </div>
+                        <div class="form-group">
+                            <label for="light-work-tasks-1">Tasks/Study topics:</label>
+                            <textarea id="light-work-tasks-1" name="light-work-tasks-1" rows="2"></textarea>
                         </div>
                     </div>
 
                     <div class="task-group">
-                        <h4>1:50-2:10 PM — Green Tea & Break</h4>
+                        <h4>2:00-2:15 PM — Break, Green Tea & Energy Management (15 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="green-tea-afternoon" name="green-tea-afternoon" onchange="updateCompletion()">
                             <span><strong>Green tea with lemon</strong> - antioxidants, gentle caffeine, L-theanine</span>
                         </label>
+                        <div class="nested-item">
+                            <div>• <strong>Science</strong>: Helps manage natural afternoon dip (2-3 PM circadian low)</div>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="break-activities-afternoon" name="break-activities-afternoon" onchange="updateCompletion()">
+                            <span><strong>Break activities</strong>: Stand, stretch, hydrate, rest eyes (20-20-20 rule)</span>
+                        </label>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="social-connection-afternoon" name="social-connection-afternoon" onchange="updateCompletion()">
+                            <span><strong>Social connection</strong> (if possible) - boosts mood, longevity marker</span>
+                        </label>
                     </div>
 
                     <div class="task-group">
-                        <h4>2:10-3:30 PM — Study/Work Block</h4>
+                        <h4>2:15-3:30 PM — Collaborative Work/Study Block (75 min):</h4>
                         <label class="task-checkbox">
-                            <input type="checkbox" id="study-work-afternoon" name="study-work-afternoon" onchange="updateCompletion()">
+                            <input type="checkbox" id="collaborative-work" name="collaborative-work" onchange="updateCompletion()">
                             <span><strong>Work/study session completed</strong></span>
                         </label>
                         <div class="form-grid">
                             <div class="form-group">
-                                <label for="afternoon-work-type">Type:</label>
-                                <select id="afternoon-work-type" name="afternoon-work-type">
+                                <label for="collaborative-work-type">Type:</label>
+                                <select id="collaborative-work-type" name="collaborative-work-type">
                                     <option value="">Select...</option>
                                     <option value="work">Work</option>
                                     <option value="study">Study</option>
                                     <option value="both">Both</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="collaborative-work-duration">Duration (minutes):</label>
+                                <input type="number" id="collaborative-work-duration" name="collaborative-work-duration" min="0">
+                            </div>
+                        </div>
+                        <div class="note-text">
+                            <strong>Focus:</strong> Collaborative work, study groups, or focused learning
+                        </div>
+                        <div class="form-group">
+                            <label for="collaborative-work-tasks">Tasks/Study topics:</label>
+                            <textarea id="collaborative-work-tasks" name="collaborative-work-tasks" rows="2"></textarea>
+                        </div>
+                        <h5>Study Methods Used (if studying):</h5>
+                        <div class="checkbox-grid">
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-group-discussion" name="study-group-discussion" onchange="updateCompletion()">
+                                <span><strong>Study group discussion</strong></span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-peer-tutoring" name="study-peer-tutoring" onchange="updateCompletion()">
+                                <span><strong>Teaching others</strong> (peer tutoring)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-group-problem-solving" name="study-group-problem-solving" onchange="updateCompletion()">
+                                <span><strong>Group problem-solving</strong></span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-review-sessions" name="study-review-sessions" onchange="updateCompletion()">
+                                <span><strong>Review sessions</strong></span>
+                            </label>
                         </div>
                     </div>
 
                     <div class="task-group">
-                        <h4>3:30-4:00 PM — NSDR & Snack Break</h4>
+                        <h4>3:30-4:00 PM — NSDR & Snack Break (30 min):</h4>
+                        <h5>NSDR (Non-Sleep Deep Rest) - 10-20 minutes:</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="nsdr" name="nsdr" onchange="updateCompletion()">
-                            <span><strong>NSDR (Non-Sleep Deep Rest)</strong> - 15-20 minutes</span>
+                            <span><strong>NSDR completed</strong></span>
                         </label>
                         <div class="nested-item">
-                            <div>• <strong>Benefits</strong>: Reduces cortisol, enhances focus, improves learning retention</div>
+                            <div>• <strong>Benefits</strong>: Reduces cortisol, enhances focus, <strong>improves learning retention</strong> (critical for students)</div>
                             <div>• <strong>Method</strong>: YouTube NSDR/Yoga Nidra, Guided meditation, or Deep breathing</div>
-                            <div>• <strong>Note</strong>: Critical for study/work performance - do before 4 PM</div>
+                            <div>• <strong>Science</strong>: Huberman protocol - addresses natural 2-3 PM circadian dip, <strong>consolidates morning learning</strong></div>
+                            <div>• <strong>Note</strong>: Critical for study/work performance - do before 4 PM. <strong>Especially important after study sessions for memory consolidation.</strong></div>
                         </div>
                         <div class="form-group inline-group">
                             <label for="nsdr-duration">Duration (minutes):</label>
@@ -717,14 +907,50 @@
                     <h2>🌙 6:00-9:00 PM — Evening Wind-Down & Sleep Preparation Block</h2>
                     
                     <div class="task-group">
-                        <h4>6:00-6:40 PM — Study/Read System Design Block</h4>
+                        <h4>6:00-7:00 PM — Personal Time & Preparation (60 min):</h4>
                         <label class="task-checkbox">
-                            <input type="checkbox" id="system-design-study" name="system-design-study" onchange="updateCompletion()">
-                            <span><strong>Study/Read System Design</strong> or focused learning</span>
+                            <input type="checkbox" id="evening-review" name="evening-review" onchange="updateCompletion()">
+                            <span><strong>Evening Review/Study Session</strong> (optional, lighter cognitive load):</span>
                         </label>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="evening-review-topic">Topic/Subject:</label>
+                                <input type="text" id="evening-review-topic" name="evening-review-topic" placeholder="What did you review?">
+                            </div>
+                            <div class="form-group">
+                                <label for="evening-review-duration">Duration (minutes):</label>
+                                <input type="number" id="evening-review-duration" name="evening-review-duration" min="0">
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <label for="study-topic">Topic/Book:</label>
-                            <input type="text" id="study-topic" name="study-topic" placeholder="What did you study?">
+                            <label for="evening-review-type">Type:</label>
+                            <select id="evening-review-type" name="evening-review-type">
+                                <option value="">Select...</option>
+                                <option value="review-notes">Review notes</option>
+                                <option value="light-reading">Light reading</option>
+                                <option value="system-design">System Design</option>
+                                <option value="technical-reading">Technical Reading</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <h5>Study Methods:</h5>
+                        <div class="checkbox-grid">
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-quick-review" name="study-quick-review" onchange="updateCompletion()">
+                                <span><strong>Quick review of morning topics</strong></span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-spaced-rep-evening" name="study-spaced-rep-evening" onchange="updateCompletion()">
+                                <span><strong>Spaced repetition review</strong> (Anki)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-planning-next" name="study-planning-next" onchange="updateCompletion()">
+                                <span><strong>Planning next study session</strong></span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="study-light-reading" name="study-light-reading" onchange="updateCompletion()">
+                                <span><strong>Light reading</strong> (not intensive)</span>
+                            </label>
                         </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="plan-next-day" name="plan-next-day" onchange="updateCompletion()">
@@ -737,7 +963,7 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>6:40-8:00 PM — Dinner & Play with Daughter Block</h4>
+                        <h4>7:00-8:00 PM — Dinner & Family Time Block (60 min):</h4>
                         <div class="nested-item">
                             <div><strong>Dinner Timing</strong>:</div>
                             <div>• <strong>Time</strong>: 7:00-7:30 PM (optimal timing)</div>
@@ -790,19 +1016,39 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>8:00-8:10 PM — Post-Meal Walk</h4>
+                        <h4>8:00-8:15 PM — Post-Meal Walk (15 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="post-dinner-walk" name="post-dinner-walk" onchange="updateCompletion()">
-                            <span><strong>Post-Dinner Walk</strong>:</span>
+                            <span><strong>15-minute walk</strong> (glucose disposal, prevents post-meal energy crash)</span>
                         </label>
+                        <div class="form-group inline-group">
+                            <label for="walk-duration-dinner">Walk duration (minutes):</label>
+                            <input type="number" id="walk-duration-dinner" name="walk-duration-dinner" min="0" style="width: 100px;">
+                        </div>
                         <div class="nested-item">
-                            <div>• <strong>15-20 minute walk</strong> (glucose disposal, digestion)</div>
                             <div>• <strong>Light stretching</strong> (5-10 minutes) - can be done during walk</div>
                         </div>
                     </div>
 
                     <div class="task-group">
-                        <h4>8:10-8:30 PM — Wind-Down Activities</h4>
+                        <h4>8:15-8:30 PM — Evening Skin Care Routine (15 min):</h4>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="evening-skin-care" name="evening-skin-care" onchange="updateCompletion()">
+                            <span><strong>Evening Skin Care Routine</strong>:</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• <strong>Cleanse face</strong> with gentle cleanser (pH 5.5-6.5)</div>
+                            <div>• <strong>Pat dry</strong> (don't rub)</div>
+                            <div>• <strong>Retinol or niacinamide serum</strong> (alternate nights):</div>
+                            <div>  - <strong>Retinol</strong>: Anti-aging, collagen production (use 2-3x/week initially)</div>
+                            <div>  - <strong>Niacinamide</strong>: Pore refinement, anti-inflammatory</div>
+                            <div>• <strong>Moisturizer</strong> (night cream)</div>
+                            <div>• <strong>Eye cream</strong> (if needed)</div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>8:30-9:00 PM — Wind-Down Activities Block (30 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="digital-sunset" name="digital-sunset" onchange="updateCompletion()">
                             <span><strong>Digital sunset begins</strong>: No screens 2 hours before bed</span>
@@ -841,7 +1087,7 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>8:30-8:50 PM — Supplements & Skin Care</h4>
+                        <h4>9:00-9:30 PM — Supplements & Sleep Prep (30 min):</h4>
                         <h5>Evening Supplements:</h5>
                         <div class="checkbox-grid">
                             <label class="task-checkbox">
@@ -860,26 +1106,8 @@
                                 <span><strong>Optional: L-Theanine (200mg)</strong> - if feeling anxious</span>
                             </label>
                         </div>
-                        <h5>Evening Skin Care:</h5>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="evening-skincare" name="evening-skincare" onchange="updateCompletion()">
-                            <span><strong>Evening Skin Care Routine</strong>:</span>
-                        </label>
-                        <div class="nested-item">
-                            <div>• <strong>Cleanse face</strong> with gentle cleanser (pH 5.5-6.5)</div>
-                            <div>• <strong>Pat dry</strong> (don't rub)</div>
-                            <div>• <strong>Retinol or niacinamide serum</strong> (alternate nights):</div>
-                            <div style="margin-left: 20px;">
-                                - <strong>Retinol</strong>: Anti-aging, collagen production (use 2-3x/week initially)<br>
-                                - <strong>Niacinamide</strong>: Pore refinement, anti-inflammatory
-                            </div>
-                            <div>• <strong>Moisturizer</strong> (night cream)</div>
-                            <div>• <strong>Eye cream</strong> (if needed)</div>
-                        </div>
-                    </div>
-
-                    <div class="task-group">
-                        <h4>8:50-9:00 PM — Sleep Environment & Final Prep</h4>
+                        
+                        <h5>Sleep Environment Optimization:</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="sleep-environment" name="sleep-environment" onchange="updateCompletion()">
                             <span><strong>Sleep Environment Optimization</strong>:</span>
@@ -889,18 +1117,29 @@
                             <div>• <strong>Dark room</strong>: Blackout curtains, eye mask</div>
                             <div>• <strong>Quiet</strong>: Earplugs or white noise machine</div>
                             <div>• <strong>No electronics</strong>: Phone in another room or airplane mode</div>
+                            <div>• <strong>Prepare tomorrow's clothes</strong> (reduces morning decision fatigue)</div>
                         </div>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="prepare-clothes" name="prepare-clothes" onchange="updateCompletion()">
-                            <span><strong>Prepare tomorrow's clothes</strong> (reduces morning decision fatigue)</span>
-                        </label>
+                        
+                        <h5>Final Wind-Down:</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="final-meditation" name="final-meditation" onchange="updateCompletion()">
-                            <span><strong>Final Wind-Down</strong>:</span>
+                            <span><strong>Deep breathing or meditation</strong> (5-10 minutes):</span>
                         </label>
-                        <div class="nested-item">
-                            <div>• <strong>Deep breathing or meditation</strong> (5-10 minutes): [ ] Yes [ ] No</div>
-                            <div>• <strong>Type</strong>: Box breathing, 4-7-8 breathing, Body scan, or Other</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="meditation-type">Type:</label>
+                                <select id="meditation-type" name="meditation-type">
+                                    <option value="">Select...</option>
+                                    <option value="box-breathing">Box breathing</option>
+                                    <option value="4-7-8-breathing">4-7-8 breathing</option>
+                                    <option value="body-scan">Body scan</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="meditation-duration">Duration (minutes):</label>
+                                <input type="number" id="meditation-duration" name="meditation-duration" min="0" style="width: 100px;">
+                            </div>
                         </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="final-supplements" name="final-supplements" onchange="updateCompletion()">

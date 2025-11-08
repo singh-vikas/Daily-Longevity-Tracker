@@ -514,8 +514,6 @@
                             <label for="walk-duration-breakfast">Walk duration (minutes):</label>
                             <input type="number" id="walk-duration-breakfast" name="walk-duration-breakfast" min="0" style="width: 100px;">
                         </div>
-                    </div>
-
                         <div class="note-text">
                             <strong>Post-Breakfast Walk</strong> (can be done during first break): Can be done during the 10:30-10:45 AM break to avoid interrupting deep work flow
                         </div>
@@ -524,9 +522,26 @@
 
                 <!-- 9:00-12:00 PM Deep Work -->
                 <section class="tracker-section">
-                    <h2>💼 9:00-12:00 PM — Deep Work & Cognitive Peak Block</h2>
+                    <h2>💼 9:00 AM-12:00 PM — Deep Work & Cognitive Peak Block</h2>
                     <div class="note-text">
                         <strong>Science:</strong> Peak cognitive performance window. Most challenging tasks first. Use 90-minute focus blocks with 15-minute breaks.
+                    </div>
+                    
+                    <div class="task-group">
+                        <h3>Cognitive Optimization:</h3>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="caffeine-timing-cognitive" name="caffeine-timing-cognitive" onchange="updateCompletion()">
+                            <span><strong>Caffeine timing</strong> (if needed):</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• Coffee/tea <strong>90-120 minutes after waking</strong> (optimal cortisol interaction)</div>
+                            <div>• <strong>L-Theanine pairing</strong> (200mg) - reduces jitters, enhances focus</div>
+                            <div>• <strong>Limit</strong>: 100-200mg caffeine (1-2 cups)</div>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="phone-away-cognitive" name="phone-away-cognitive" onchange="updateCompletion()">
+                            <span><strong>Phone in another room</strong> (minimize distractions)</span>
+                        </label>
                     </div>
                     
                     <div class="task-group">

@@ -106,6 +106,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize dark mode first
     initDarkMode();
     
+    // Initialize tabs - hide all except tracker with complete isolation
+    const allTabs = document.querySelectorAll('.tab-content');
+    allTabs.forEach(tab => {
+        if (tab.id === 'tracker-tab') {
+            tab.classList.add('active');
+            tab.style.setProperty('display', 'block', 'important');
+            tab.style.setProperty('visibility', 'visible', 'important');
+            tab.style.setProperty('height', 'auto', 'important');
+            tab.style.setProperty('overflow', 'visible', 'important');
+            tab.style.setProperty('padding', '30px', 'important');
+            // Show all children
+            Array.from(tab.children).forEach(child => {
+                child.style.removeProperty('display');
+                child.style.removeProperty('visibility');
+            });
+        } else {
+            tab.classList.remove('active');
+            tab.style.setProperty('display', 'none', 'important');
+            tab.style.setProperty('visibility', 'hidden', 'important');
+            tab.style.setProperty('height', '0', 'important');
+            tab.style.setProperty('overflow', 'hidden', 'important');
+            tab.style.setProperty('padding', '0', 'important');
+            // Hide all children
+            Array.from(tab.children).forEach(child => {
+                child.style.setProperty('display', 'none', 'important');
+                child.style.setProperty('visibility', 'hidden', 'important');
+            });
+        }
+    });
+    
     // Set today's date as default
     const today = new Date().toISOString().split('T')[0];
     const trackerDate = document.getElementById('tracker-date');
@@ -159,11 +189,23 @@ function createCelebrationEffect(element) {
     }
 }
 
-// Tab switching
+// Tab switching - CRITICAL: Complete isolation to prevent content leakage
 function showTab(tabName) {
-    // Hide all tabs
-    document.querySelectorAll('.tab-content').forEach(tab => {
+    // First, hide ALL tabs completely with inline styles (stronger than CSS)
+    const allTabs = document.querySelectorAll('.tab-content');
+    allTabs.forEach(tab => {
         tab.classList.remove('active');
+        // Force hide with inline styles using setProperty for !important
+        tab.style.setProperty('display', 'none', 'important');
+        tab.style.setProperty('visibility', 'hidden', 'important');
+        tab.style.setProperty('height', '0', 'important');
+        tab.style.setProperty('overflow', 'hidden', 'important');
+        tab.style.setProperty('padding', '0', 'important');
+        // Hide ALL children explicitly
+        Array.from(tab.children).forEach(child => {
+            child.style.setProperty('display', 'none', 'important');
+            child.style.setProperty('visibility', 'hidden', 'important');
+        });
     });
     
     // Remove active class from all buttons
@@ -171,18 +213,47 @@ function showTab(tabName) {
         btn.classList.remove('active');
     });
     
-    // Show selected tab
+    // Show/hide completion stats only for tracker tab
+    const completionStats = document.getElementById('completion-stats');
+    if (completionStats) {
+        if (tabName === 'tracker') {
+            completionStats.style.display = 'flex';
+        } else {
+            completionStats.style.display = 'none';
+        }
+    }
+    
+    // Now show the selected tab with all properties
     const tabEl = document.getElementById(tabName + '-tab');
-    if (tabEl) tabEl.classList.add('active');
+    if (tabEl) {
+        tabEl.classList.add('active');
+        // Force show with inline styles
+        tabEl.style.setProperty('display', 'block', 'important');
+        tabEl.style.setProperty('visibility', 'visible', 'important');
+        tabEl.style.setProperty('height', 'auto', 'important');
+        tabEl.style.setProperty('overflow', 'visible', 'important');
+        tabEl.style.setProperty('padding', '30px', 'important');
+        // Show ALL children explicitly
+        Array.from(tabEl.children).forEach(child => {
+            child.style.removeProperty('display');
+            child.style.removeProperty('visibility');
+        });
+    }
     
     // Add active class to clicked button
     if (event && event.target) {
         event.target.classList.add('active');
     }
     
-    // Load data if switching to history
+    // Load data if switching to history or summaries
     if (tabName === 'history') {
         loadHistory();
+    } else if (tabName === 'summaries') {
+        // Load default weekly summary if empty
+        const summaryContent = document.getElementById('summary-content');
+        if (summaryContent && !summaryContent.innerHTML.trim()) {
+            summaryContent.innerHTML = generateWeeklySummary();
+        }
     }
 }
 
@@ -554,8 +625,9 @@ function calculateDayCompletion(dayData) {
     
     let checked = 0;
     checkboxes.forEach(cb => {
-        const fieldName = cb.id.replace(/-/g, '');
-        const camelCase = fieldName.charAt(0).toLowerCase() + fieldName.slice(1).replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+        // Convert kebab-case to camelCase directly (e.g., "morning-sunlight" -> "morningSunlight")
+        const camelCase = cb.id.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+        // Check both camelCase and original id (for backwards compatibility)
         if (dayData[camelCase] || dayData[cb.id]) {
             checked++;
         }

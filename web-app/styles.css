@@ -86,15 +86,24 @@ h1 {
 }
 
 .tab-content {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    contain: layout style paint;
+    isolation: isolate;
     background: var(--card-bg);
-    padding: 30px;
+    padding: 0 !important;
     border-radius: 10px;
     box-shadow: var(--shadow-lg);
 }
 
 .tab-content.active {
-    display: block;
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 30px !important;
 }
 
 /* Form Styles */

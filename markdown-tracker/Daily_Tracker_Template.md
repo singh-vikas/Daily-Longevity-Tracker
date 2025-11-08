@@ -113,7 +113,7 @@
 
 ---
 
-## 🧴 **7:30-8:00 AM — Skin Care & Morning Supplements Block** (30 minutes)
+## 🧴 **7:30-8:00 AM — Shower, Skin Care & Morning Supplements Block** (30 minutes)
 
 > **Separate block** for skin care and supplements - allows proper transition from exercise to breakfast prep.
 

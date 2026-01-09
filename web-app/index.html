@@ -64,6 +64,10 @@
                                 <input type="number" id="sleep-quality" name="sleep-quality" min="1" max="10">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="sleep-notes">Notes:</label>
+                            <textarea id="sleep-notes" name="sleep-notes" rows="2" placeholder="Sleep notes..."></textarea>
+                        </div>
                     </div>
 
                     <div class="subsection">
@@ -81,6 +85,10 @@
                                 <label for="energy-evening">Evening (1-10)</label>
                                 <input type="number" id="energy-evening" name="energy-evening" min="1" max="10">
                             </div>
+                            <div class="form-group">
+                                <label for="energy-average">Average:</label>
+                                <input type="number" id="energy-average" name="energy-average" min="1" max="10" step="0.1" readonly>
+                            </div>
                         </div>
                     </div>
 
@@ -95,6 +103,10 @@
                                 <label for="stress">Stress Level (1-10)</label>
                                 <input type="number" id="stress" name="stress" min="1" max="10">
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="coping-strategies">Coping Strategies Used:</label>
+                            <input type="text" id="coping-strategies" name="coping-strategies" placeholder="List coping strategies used">
                         </div>
                     </div>
                 </section>
@@ -125,6 +137,10 @@
                             <label for="sunlight-duration"><strong>Actual time</strong> (minutes):</label>
                             <input type="number" id="sunlight-duration" name="sunlight-duration" min="0" style="width: 100px;">
                         </div>
+                        <div class="form-group">
+                            <label for="sunlight-location"><strong>Location</strong>:</label>
+                            <input type="text" id="sunlight-location" name="sunlight-location" placeholder="Outdoor preferred, near window if outdoor not possible">
+                        </div>
                     </div>
 
                     <div class="task-group">
@@ -152,6 +168,14 @@
                         <div class="form-group inline-group">
                             <label for="meditation-duration"><strong>Duration</strong> (minutes):</label>
                             <input type="number" id="meditation-duration" name="meditation-duration" min="0" style="width: 100px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="meditation-location"><strong>Location</strong>:</label>
+                            <input type="text" id="meditation-location" name="meditation-location" placeholder="Where did you meditate?">
+                        </div>
+                        <div class="form-group">
+                            <label for="meditation-notes"><strong>Notes</strong>:</label>
+                            <textarea id="meditation-notes" name="meditation-notes" rows="2" placeholder="Meditation notes..."></textarea>
                         </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="gratitude" name="gratitude" onchange="updateCompletion()">
@@ -409,7 +433,7 @@
                 <section class="tracker-section">
                     <h2>💼 8:00-8:45 AM — Deep Work Block (45 minutes)</h2>
                     <div class="note-text">
-                        <strong>Optimal Timing:</strong> After green tea and warm bath - body is warm, focused, and ready for peak cognitive performance. This leverages the post-bath warmth and green tea's L-theanine for enhanced concentration.
+                        <strong>Optimal Timing:</strong> After green tea and warm shower - body is warm, focused, and ready for peak cognitive performance. This leverages the post-shower warmth and green tea's L-theanine for enhanced concentration.
                     </div>
                     
                     <div class="task-group">
@@ -482,9 +506,9 @@
                     </div>
                 </section>
 
-                <!-- 8:45-9:00 AM Breakfast -->
+                <!-- 8:45-9:15 AM Breakfast -->
                 <section class="tracker-section">
-                    <h2>🍳 8:45-9:00 AM — Breakfast & Metabolic Optimization Block (15 minutes)</h2>
+                    <h2>🍳 8:45-9:15 AM — Breakfast & Metabolic Optimization Block (30 minutes)</h2>
                     <div class="note-text">
                         <strong>Timing:</strong> 2:45-3:00 hours after waking. While slightly later than the typical 90-120 minute window, this timing works well after the morning deep work session and still supports metabolic health. Break fast 16-18 hours after last meal (if doing 16:8 intermittent fasting).
                     </div>
@@ -499,6 +523,16 @@
                             <input type="checkbox" id="breakfast-16-8" name="breakfast-16-8" onchange="updateCompletion()">
                             <span><strong>Break fast 16-18 hours after last meal</strong> (if doing 16:8 intermittent fasting)</span>
                         </label>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="last-meal-yesterday">Last meal yesterday:</label>
+                                <input type="time" id="last-meal-yesterday" name="last-meal-yesterday">
+                            </div>
+                            <div class="form-group">
+                                <label for="hours-fasted">Hours fasted:</label>
+                                <input type="number" id="hours-fasted" name="hours-fasted" min="0" step="0.25" placeholder="Hours">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="task-group">
@@ -593,26 +627,33 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>Post-Breakfast Walk (can be done during first break):</h4>
+                        <h4>9:00-9:15 AM — Post-Breakfast Walk:</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="post-breakfast-walk" name="post-breakfast-walk" onchange="updateCompletion()">
                             <span><strong>15-minute walk</strong> (enhances glucose disposal, improves insulin sensitivity)</span>
                         </label>
+                        <div class="nested-item">
+                            <div>• <strong>Continue sunlight exposure</strong> if possible</div>
+                        </div>
                         <div class="form-group inline-group">
                             <label for="walk-duration-breakfast">Walk duration (minutes):</label>
                             <input type="number" id="walk-duration-breakfast" name="walk-duration-breakfast" min="0" style="width: 100px;">
                         </div>
+                        <div class="form-group">
+                            <label for="walk-location-breakfast">Location:</label>
+                            <input type="text" id="walk-location-breakfast" name="walk-location-breakfast" placeholder="Where did you walk?">
+                        </div>
                         <div class="note-text">
-                            Can be done during the 10:30-10:45 AM break to avoid interrupting deep work flow
+                            Can be done during the 10:45-11:00 AM break to avoid interrupting deep work flow
                         </div>
                     </div>
                 </section>
 
-                <!-- 9:00-12:00 PM Deep Work -->
+                <!-- 9:15-12:00 PM Deep Work -->
                 <section class="tracker-section">
-                    <h2>💼 9:00 AM-12:00 PM — Deep Work & Cognitive Peak Block</h2>
+                    <h2>💼 9:15-12:00 PM — Deep Work & Cognitive Peak Block</h2>
                     <div class="note-text">
-                        <strong>Science:</strong> Peak cognitive performance window. Most challenging tasks first. Use 90-minute focus blocks with 15-minute breaks.
+                        <strong>Science:</strong> Peak cognitive performance window. Most challenging tasks first. Use 90-minute focus blocks with 15-minute breaks. This aligns with ultradian rhythms - natural 90-minute cycles of alertness.
                     </div>
                     
                     <div class="task-group">
@@ -626,14 +667,31 @@
                             <div>• <strong>L-Theanine pairing</strong> (200mg) - reduces jitters, enhances focus</div>
                             <div>• <strong>Limit</strong>: 100-200mg caffeine (1-2 cups)</div>
                         </div>
+                        <div class="form-group inline-group">
+                            <label for="caffeine-amount-cognitive">Caffeine amount (mg):</label>
+                            <input type="number" id="caffeine-amount-cognitive" name="caffeine-amount-cognitive" min="0" max="200" style="width: 100px;">
+                        </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="phone-away-cognitive" name="phone-away-cognitive" onchange="updateCompletion()">
                             <span><strong>Phone in another room</strong> (minimize distractions)</span>
                         </label>
+                        <div class="form-group">
+                            <label for="work-environment">Environment:</label>
+                            <select id="work-environment" name="work-environment">
+                                <option value="">Select...</option>
+                                <option value="quiet">Quiet</option>
+                                <option value="music">Music</option>
+                                <option value="white-noise">White noise</option>
+                            </select>
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="work-temperature">Temperature (°F/°C):</label>
+                            <input type="number" id="work-temperature" name="work-temperature" placeholder="68-72°F optimal" style="width: 150px;">
+                        </div>
                     </div>
                     
                     <div class="task-group">
-                        <h4>9:00-10:30 AM — Deep Work Session 1 (90 min):</h4>
+                        <h4>9:15-10:45 AM — Deep Work Session 1 (90 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="deep-work-1" name="deep-work-1" onchange="updateCompletion()">
                             <span><strong>Deep work/study session completed</strong></span>
@@ -686,11 +744,17 @@
                     </div>
 
                     <div class="task-group">
-                        <h4>10:30-10:45 AM — Break (15 min):</h4>
+                        <h4>10:45-11:00 AM — Break + Snack (15 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="break-morning" name="break-morning" onchange="updateCompletion()">
-                            <span><strong>Break activities</strong>: Stand, stretch, hydrate, rest eyes (20-20-20 rule)</span>
+                            <span><strong>Break activities</strong>:</span>
                         </label>
+                        <div class="nested-item">
+                            <div>• Stand (avoid sitting for extended periods)</div>
+                            <div>• Stretch (full body, 2-3 min)</div>
+                            <div>• Hydrate (water)</div>
+                            <div>• Rest eyes (20-20-20 rule: every 20 min, look at something 20 feet away for 20 seconds)</div>
+                        </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="post-breakfast-walk-break" name="post-breakfast-walk-break" onchange="updateCompletion()">
                             <span><strong>Post-breakfast walk</strong> (if not done earlier) - enhances glucose disposal</span>
@@ -699,10 +763,39 @@
                             <input type="checkbox" id="sunlight-exposure-break" name="sunlight-exposure-break" onchange="updateCompletion()">
                             <span><strong>Sunlight exposure</strong> (if possible) - circadian rhythm support</span>
                         </label>
+                        <div class="form-group inline-group">
+                            <label for="hydration-break">Hydration (ml):</label>
+                            <input type="number" id="hydration-break" name="hydration-break" min="0" style="width: 100px;" placeholder="500-750ml target">
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="mid-morning-snack" name="mid-morning-snack" onchange="updateCompletion()">
+                            <span><strong>Mid-Morning Snack (if needed)</strong>:</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• Greek yogurt with pomegranate seeds</div>
+                            <div>• Mixed nuts (almonds, walnuts, macadamia) - 1-2 oz</div>
+                            <div>• Fresh fruit (berries, apple, seasonal)</div>
+                            <div>• Cottage cheese with cucumber</div>
+                            <div>• Apple slices with almond butter</div>
+                            <div>• Roasted chickpeas (protein + fiber)</div>
+                            <div>• Dates with walnuts (natural energy boost)</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="snack-choice">What I had:</label>
+                            <input type="text" id="snack-choice" name="snack-choice" placeholder="Snack details">
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="snack-calories">Calories:</label>
+                            <input type="number" id="snack-calories" name="snack-calories" min="0" style="width: 100px;">
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="green-tea-break" name="green-tea-break" onchange="updateCompletion()">
+                            <span><strong>Green tea</strong> (optional, 2nd cup) - antioxidants, L-theanine</span>
+                        </label>
                     </div>
 
                     <div class="task-group">
-                        <h4>10:45-12:00 PM — Deep Work Session 2 (75 min):</h4>
+                        <h4>11:00 AM-12:00 PM — Deep Work Session 2 (60 min):</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="deep-work-2" name="deep-work-2" onchange="updateCompletion()">
                             <span><strong>Focus work/study session completed</strong></span>
@@ -751,25 +844,36 @@
                         </div>
                     </div>
 
-                    <div class="task-group">
-                        <h4>11:00 AM — Mid-Morning Snack (if needed):</h4>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="mid-morning-snack" name="mid-morning-snack" onchange="updateCompletion()">
-                            <span><strong>Snack taken</strong></span>
-                        </label>
-                        <div class="form-group">
-                            <label for="snack-choice">What I had:</label>
-                            <input type="text" id="snack-choice" name="snack-choice" placeholder="Snack details">
-                        </div>
-                    </div>
                 </section>
 
                 <!-- 12:00-1:00 PM Lunch -->
                 <section class="tracker-section">
                     <h2>🍽️ 12:00-1:00 PM — Lunch Break & Metabolic Health Block</h2>
+                    <div class="note-text">
+                        <strong>Timing:</strong> Consistent meal timing regulates circadian rhythm. Eat within 4-6 hour window from breakfast. 12:00-12:30 PM (Prep/Bring/Buy), 12:30-12:45 PM (Eat). Within 4-6 hours from breakfast (8:45 AM breakfast = 12:45 PM latest).
+                    </div>
                     
                     <div class="task-group">
-                        <h4>Lunch Timing:</h4>
+                        <h4>12:00-12:15 PM — Pre-Meal Preparation:</h4>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="lunch-acv" name="lunch-acv" onchange="updateCompletion()">
+                            <span><strong>Apple Cider Vinegar + Psyllium husk</strong> (with warm water, before meal)</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• <strong>ACV amount</strong>: 1 tbsp</div>
+                            <div>• <strong>Psyllium husk amount</strong>: _____ g</div>
+                            <div>• <strong>Water temperature</strong>: Warm</div>
+                            <div>• <strong>Why</strong>: ACV improves insulin sensitivity, psyllium husk provides fiber and slows glucose absorption</div>
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="psyllium-husk-lunch">Psyllium husk (g):</label>
+                            <input type="number" id="psyllium-husk-lunch" name="psyllium-husk-lunch" min="0" style="width: 100px;">
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>12:30-12:45 PM — Lunch Meal:</h4>
+                        <h5>Lunch Timing:</h5>
                         <div class="form-group inline-group">
                             <label for="lunch-prep-time">12:00-12:30 PM (Prep, Bring, Buy):</label>
                             <input type="checkbox" id="lunch-prep" name="lunch-prep" onchange="updateCompletion()">
@@ -791,6 +895,32 @@
                                 <label for="lunch-meal">Meal choice:</label>
                                 <input type="text" id="lunch-meal" name="lunch-meal" placeholder="What did you eat?">
                             </div>
+                        </div>
+                        <h5>Main Course (choose one):</h5>
+                        <div class="note-text">
+                            <strong>Indian Options:</strong> Grilled fish curry, Lentil dal, Chicken curry, Paneer bhurji, Soya chunks curry, Vegetable khichdi, Rajma, Palak tofu curry, Baingan bharta, Other/Custom
+                        </div>
+                        <div class="note-text">
+                            <strong>Western Options:</strong> Grilled chicken breast, Chickpea salad bowl, Tuna salad, Quinoa and roasted vegetable bowl, Lentil stew, Other/Custom
+                        </div>
+                        <h5>Accompaniments (always include):</h5>
+                        <div class="checkbox-grid">
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="lunch-steamed-veggies" name="lunch-steamed-veggies" onchange="updateCompletion()">
+                                <span><strong>Steamed vegetables</strong>: Broccoli, cauliflower, spinach (cruciferous) - Rich in fiber, vitamins, and sulforaphane (anti-cancer compound)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="lunch-fermented" name="lunch-fermented" onchange="updateCompletion()">
+                                <span><strong>Fermented foods</strong>: Yogurt, pickle (achar), kimchi, sauerkraut - Probiotics support gut microbiome</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="lunch-complex-carbs" name="lunch-complex-carbs" onchange="updateCompletion()">
+                                <span><strong>Complex carbs</strong>: Brown rice, multigrain roti, quinoa (if needed)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="lunch-salad" name="lunch-salad" onchange="updateCompletion()">
+                                <span><strong>Salad</strong>: Mixed greens with olive oil dressing - Additional fiber, micronutrients, healthy fats</span>
+                            </label>
                         </div>
                         <div class="form-grid">
                             <div class="form-group">
@@ -829,17 +959,36 @@
                                 <span><strong>B Complex</strong> (½ pill, Mon & Thurs only) - energy metabolism, brain function</span>
                             </label>
                         </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>12:45-1:00 PM — Post-Lunch:</h4>
                         <label class="task-checkbox">
                             <input type="checkbox" id="post-lunch-walk" name="post-lunch-walk" onchange="updateCompletion()">
-                            <span><strong>Post-Lunch:</strong></span>
+                            <span><strong>10-15 minute walk</strong> (glucose disposal, prevents post-meal energy crash)</span>
                         </label>
                         <div class="nested-item">
-                            <div>• <strong>10-15 minute walk</strong> (glucose disposal, prevents post-meal energy crash)</div>
-                            <div>• <strong>Social connection</strong> (if possible) - boosts mood, longevity marker</div>
+                            <div>• <strong>Why</strong>: Light movement after meals improves insulin sensitivity and glucose uptake</div>
                         </div>
                         <div class="form-group inline-group">
                             <label for="walk-duration-lunch">Walk duration (minutes):</label>
                             <input type="number" id="walk-duration-lunch" name="walk-duration-lunch" min="0" style="width: 100px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="walk-location-lunch">Location:</label>
+                            <input type="text" id="walk-location-lunch" name="walk-location-lunch" placeholder="Where did you walk?">
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="social-connection-lunch" name="social-connection-lunch" onchange="updateCompletion()">
+                            <span><strong>Social connection</strong> (if possible) - boosts mood, longevity marker</span>
+                        </label>
+                        <div class="form-group">
+                            <label for="social-connection-who">With whom:</label>
+                            <input type="text" id="social-connection-who" name="social-connection-who" placeholder="Who did you connect with?">
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="social-connection-duration">Duration (minutes):</label>
+                            <input type="number" id="social-connection-duration" name="social-connection-duration" min="0" style="width: 100px;">
                         </div>
                     </div>
                 </section>
@@ -984,30 +1133,108 @@
                     </div>
                 </section>
 
-                <!-- 4:00-6:00 PM Afternoon Work -->
+                <!-- 4:00-6:00 PM Transition & Evening Preparation -->
                 <section class="tracker-section">
-                    <h2>🚶 4:00-6:00 PM — Afternoon Work/Study & Transition Block</h2>
+                    <h2>🚶 4:00-6:00 PM — Transition & Evening Preparation Block</h2>
                     
                     <div class="task-group">
-                        <h4>4:00-5:00 PM — Work/Study Continuation</h4>
+                        <h4>4:00-5:00 PM — Work Wrap-Up:</h4>
                         <label class="task-checkbox">
-                            <input type="checkbox" id="work-continuation" name="work-continuation" onchange="updateCompletion()">
-                            <span><strong>Work/study session completed</strong></span>
+                            <input type="checkbox" id="plan-next-day-work" name="plan-next-day-work" onchange="updateCompletion()">
+                            <span><strong>Plan next day</strong> (write 3-4 key tasks)</span>
                         </label>
+                        <div class="form-group">
+                            <label for="next-day-tasks-work">Tasks:</label>
+                            <textarea id="next-day-tasks-work" name="next-day-tasks-work" rows="4" placeholder="Task 1, Task 2, Task 3, Task 4"></textarea>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="journal-reflection" name="journal-reflection" onchange="updateCompletion()">
+                            <span><strong>Journal reflection</strong>:</span>
+                        </label>
+                        <div class="form-group">
+                            <label for="what-went-well">What went well today?</label>
+                            <textarea id="what-went-well" name="what-went-well" rows="2" placeholder="What went well?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="what-to-improve">What to improve?</label>
+                            <textarea id="what-to-improve" name="what-to-improve" rows="2" placeholder="What to improve?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="key-learnings">Key learnings:</label>
+                            <textarea id="key-learnings" name="key-learnings" rows="2" placeholder="Key learnings..."></textarea>
+                        </div>
                     </div>
 
                     <div class="task-group">
-                        <h4>5:00-6:00 PM — Transition & Physical Activity</h4>
+                        <h4>5:00-6:00 PM — Physical Activity:</h4>
                         <label class="task-checkbox">
-                            <input type="checkbox" id="work-wrap-up" name="work-wrap-up" onchange="updateCompletion()">
-                            <span><strong>Work wrap-up</strong>: Plan tomorrow, organize tasks</span>
+                            <input type="checkbox" id="light-stretching-evening" name="light-stretching-evening" onchange="updateCompletion()">
+                            <span><strong>Light stretching</strong> or yoga (10-15 minutes): [ ] Yes [ ] No</span>
                         </label>
+                        <div class="form-group inline-group">
+                            <label for="stretching-duration-evening">Duration (minutes):</label>
+                            <input type="number" id="stretching-duration-evening" name="stretching-duration-evening" min="0" style="width: 100px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="stretching-type-evening">Type:</label>
+                            <select id="stretching-type-evening" name="stretching-type-evening">
+                                <option value="">Select...</option>
+                                <option value="stretching">Stretching</option>
+                                <option value="yoga">Yoga</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="stretching-focus-areas">Focus areas:</label>
+                            <input type="text" id="stretching-focus-areas" name="stretching-focus-areas" placeholder="Which areas did you focus on?">
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="walk-commute" name="walk-commute" onchange="updateCompletion()">
+                            <span><strong>Walk or commute</strong> (if applicable): [ ] Yes [ ] No</span>
+                        </label>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="walk-duration-evening">Duration (minutes):</label>
+                                <input type="number" id="walk-duration-evening" name="walk-duration-evening" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="steps-evening">Steps:</label>
+                                <input type="number" id="steps-evening" name="steps-evening" min="0">
+                            </div>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="evening-workout" name="evening-workout" onchange="updateCompletion()">
+                            <span><strong>OR</strong>: Evening workout session (if morning not possible): [ ] Yes [ ] No</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• Strength training: 3-4x/week</div>
+                            <div>• Zone 2 cardio: 3-4x/week</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="evening-workout-type">Type:</label>
+                            <input type="text" id="evening-workout-type" name="evening-workout-type" placeholder="Workout type">
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="evening-workout-duration">Duration (minutes):</label>
+                            <input type="number" id="evening-workout-duration" name="evening-workout-duration" min="0" style="width: 100px;">
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Pre-Dinner Preparation:</h4>
+                        <div class="form-group inline-group">
+                            <label for="hydration-pre-dinner">Hydration (ml):</label>
+                            <input type="number" id="hydration-pre-dinner" name="hydration-pre-dinner" min="0" style="width: 100px;" placeholder="500-750ml target">
+                        </div>
+                        <div class="note-text">
+                            <strong>Avoid heavy snacking</strong> (allow insulin to normalize)
+                        </div>
                     </div>
                 </section>
 
-                <!-- 6:00-9:00 PM Evening -->
+                <!-- 6:00-9:30 PM Evening -->
                 <section class="tracker-section">
-                    <h2>🌙 6:00-9:00 PM — Evening Wind-Down & Sleep Preparation Block</h2>
+                    <h2>🌙 6:00-9:30 PM — Evening Wind-Down & Sleep Preparation Block</h2>
                     
                     <div class="task-group">
                         <h4>6:00-7:00 PM — Personal Time & Preparation (60 min):</h4>
@@ -1067,11 +1294,52 @@
 
                     <div class="task-group">
                         <h4>7:00-8:00 PM — Dinner & Family Time Block (60 min):</h4>
+                        <h5>7:00-7:15 PM — Pre-Meal Preparation:</h5>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="dinner-acv" name="dinner-acv" onchange="updateCompletion()">
+                            <span><strong>Apple Cider Vinegar + Psyllium husk</strong> (with warm water, before meal)</span>
+                        </label>
                         <div class="nested-item">
-                            <div><strong>Dinner Timing</strong>:</div>
+                            <div>• <strong>ACV amount</strong>: 1 tbsp</div>
+                            <div>• <strong>Psyllium husk amount</strong>: _____ g</div>
+                            <div>• <strong>Water temperature</strong>: Warm</div>
+                            <div>• <strong>Why</strong>: ACV improves insulin sensitivity, psyllium husk provides fiber and slows glucose absorption</div>
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="psyllium-husk-dinner">Psyllium husk (g):</label>
+                            <input type="number" id="psyllium-husk-dinner" name="psyllium-husk-dinner" min="0" style="width: 100px;">
+                        </div>
+                        <h5>7:15-7:30 PM — Dinner Timing:</h5>
+                        <div class="nested-item">
                             <div>• <strong>Time</strong>: 7:00-7:30 PM (optimal timing)</div>
                             <div>• <strong>3-4 hours before bedtime</strong> (optimal for sleep quality)</div>
                             <div>• <strong>Lighter meal</strong> than lunch (supports circadian rhythm)</div>
+                        </div>
+                        <h5>7:15-7:30 PM — Dinner Options (choose one):</h5>
+                        <div class="note-text">
+                            <strong>Indian Options:</strong> Grilled fish/chicken curry, Stir-fried vegetables, Vegetable soup, Dal with steamed veggies, Paneer tikka, Tofu stir-fry, Methi thepla, Other/Custom
+                        </div>
+                        <div class="note-text">
+                            <strong>Western Options:</strong> Grilled salmon, Vegetable stir-fry, Lentil soup, Zucchini noodles, Baked sweet potato, Veggie omelette, Other/Custom
+                        </div>
+                        <h5>Dinner Accompaniments:</h5>
+                        <div class="checkbox-grid">
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="dinner-steamed-veggies" name="dinner-steamed-veggies" onchange="updateCompletion()">
+                                <span><strong>Steamed vegetables</strong>: Broccoli, cauliflower, leafy greens</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="dinner-fermented" name="dinner-fermented" onchange="updateCompletion()">
+                                <span><strong>Fermented foods</strong>: Sauerkraut, kimchi, yogurt</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="dinner-complex-carbs" name="dinner-complex-carbs" onchange="updateCompletion()">
+                                <span><strong>Small portion</strong> of complex carbs (if needed)</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="dinner-salad" name="dinner-salad" onchange="updateCompletion()">
+                                <span><strong>Salad</strong>: Mixed greens with olive oil</span>
+                            </label>
                         </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="dinner-completed" name="dinner-completed" onchange="updateCompletion()">
@@ -1087,34 +1355,45 @@
                                 <input type="text" id="dinner-meal" name="dinner-meal" placeholder="What did you eat?">
                             </div>
                         </div>
+                        <h5>Dinner Nutrients Focus:</h5>
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="dinner-protein">Protein (g):</label>
                                 <input type="number" id="dinner-protein" name="dinner-protein" min="0">
-                            </div>
-                            <div class="form-group">
-                                <label for="dinner-carbs">Carbs (g):</label>
-                                <input type="number" id="dinner-carbs" name="dinner-carbs" min="0">
-                            </div>
-                            <div class="form-group">
-                                <label for="dinner-fats">Fats (g):</label>
-                                <input type="number" id="dinner-fats" name="dinner-fats" min="0">
+                                <div class="note-text">Target: 25-35g</div>
                             </div>
                             <div class="form-group">
                                 <label for="dinner-fiber">Fiber (g):</label>
                                 <input type="number" id="dinner-fiber" name="dinner-fiber" min="0">
+                                <div class="note-text">Target: 10-15g</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="dinner-fats">Healthy fats (g):</label>
+                                <input type="number" id="dinner-fats" name="dinner-fats" min="0">
+                                <div class="note-text">Target: 10-15g</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="dinner-carbs">Lower carbs (g):</label>
+                                <input type="number" id="dinner-carbs" name="dinner-carbs" min="0">
+                                <div class="note-text">Target: 30-40g - supports sleep</div>
                             </div>
                         </div>
+                        <div class="form-group inline-group">
+                            <label for="dinner-calories">Calories:</label>
+                            <input type="number" id="dinner-calories" name="dinner-calories" min="0" style="width: 100px;">
+                        </div>
+                        <h5>7:30-8:00 PM — Play with Daughter:</h5>
                         <label class="task-checkbox">
                             <input type="checkbox" id="play-with-daughter" name="play-with-daughter" onchange="updateCompletion()">
-                            <span><strong>Play with Daughter</strong>:</span>
+                            <span><strong>Quality time</strong>: [ ] Yes [ ] No</span>
                         </label>
-                        <div class="nested-item">
-                            <div>• <strong>Quality time</strong>: [ ] Yes [ ] No</div>
-                        </div>
                         <div class="form-group">
                             <label for="play-activities">Activities:</label>
                             <input type="text" id="play-activities" name="play-activities" placeholder="What did you do together?">
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="play-duration">Duration (minutes):</label>
+                            <input type="number" id="play-duration" name="play-duration" min="0" style="width: 100px;">
                         </div>
                     </div>
 
@@ -1130,6 +1409,10 @@
                         </div>
                         <div class="nested-item">
                             <div>• <strong>Light stretching</strong> (5-10 minutes) - can be done during walk</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="walk-location-dinner">Location:</label>
+                            <input type="text" id="walk-location-dinner" name="walk-location-dinner" placeholder="Where did you walk?">
                         </div>
                     </div>
 
@@ -1156,36 +1439,65 @@
                             <input type="checkbox" id="digital-sunset" name="digital-sunset" onchange="updateCompletion()">
                             <span><strong>Digital sunset begins</strong>: No screens 2 hours before bed</span>
                         </label>
+                        <div class="form-group inline-group">
+                            <label for="last-screen-time">Last screen time:</label>
+                            <input type="time" id="last-screen-time" name="last-screen-time">
+                        </div>
                         <div class="nested-item">
-                            <div>• <strong>Blue light blocking</strong>: Use blue light glasses or screen filters</div>
+                            <div>• <strong>Blue light blocking</strong>: Use blue light glasses or screen filters (if screens needed)</div>
                             <div>• <strong>Dim lights</strong>: Use warm, dim lighting (candles, salt lamps)</div>
+                            <div>• <strong>Why</strong>: Blue light suppresses melatonin, delaying sleep onset</div>
                         </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="herbal-tea" name="herbal-tea" onchange="updateCompletion()">
                             <span><strong>Herbal tea</strong>: Chamomile, tulsi (holy basil), or passionflower</span>
                         </label>
+                        <div class="form-group">
+                            <label for="herbal-tea-type">Type:</label>
+                            <input type="text" id="herbal-tea-type" name="herbal-tea-type" placeholder="Chamomile, tulsi, passionflower">
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="herbal-tea-amount">Amount (ml):</label>
+                            <input type="number" id="herbal-tea-amount" name="herbal-tea-amount" min="0" style="width: 100px;">
+                        </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="light-reading" name="light-reading" onchange="updateCompletion()">
                             <span><strong>Light reading</strong>: Physical book (not digital)</span>
                         </label>
+                        <div class="form-group">
+                            <label for="reading-book">Book/Reading:</label>
+                            <input type="text" id="reading-book" name="reading-book" placeholder="What are you reading?">
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="reading-duration">Duration (minutes):</label>
+                            <input type="number" id="reading-duration" name="reading-duration" min="0" style="width: 100px;">
+                        </div>
+                        <div class="note-text">
+                            <strong>Why</strong>: Physical books don't emit blue light, promote relaxation
+                        </div>
                         <label class="task-checkbox">
                             <input type="checkbox" id="evening-journal" name="evening-journal" onchange="updateCompletion()">
-                            <span><strong>Journal</strong>: Review day, plan tomorrow</span>
-                        </label>
-                        <div class="nested-item">
-                            <div>• <strong>Plan next day breakfast, lunch, dinner and tasks</strong>:</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="next-day-meals-tasks">Next day plan:</label>
-                            <textarea id="next-day-meals-tasks" name="next-day-meals-tasks" rows="3" placeholder="Breakfast, lunch, dinner, tasks"></textarea>
-                        </div>
-                        <label class="task-checkbox">
-                            <input type="checkbox" id="gratitude-reflection" name="gratitude-reflection" onchange="updateCompletion()">
-                            <span><strong>Gratitude reflection</strong>: 3 things you're grateful for</span>
+                            <span><strong>Journal & gratitude</strong>: Review day, plan tomorrow breakfast/lunch/dinner and tasks, 3 things grateful for</span>
                         </label>
                         <div class="form-group">
-                            <label for="gratitude-evening">Gratitude items:</label>
-                            <textarea id="gratitude-evening" name="gratitude-evening" rows="3" placeholder="Item 1, Item 2, Item 3"></textarea>
+                            <label for="day-review">Day review:</label>
+                            <textarea id="day-review" name="day-review" rows="2" placeholder="How was your day?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="tomorrows-plan">Tomorrow's plan:</label>
+                            <textarea id="tomorrows-plan" name="tomorrows-plan" rows="3" placeholder="Breakfast, lunch, dinner, tasks"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="gratitude-1">Gratitude 1:</label>
+                            <input type="text" id="gratitude-1" name="gratitude-1" placeholder="What are you grateful for?">
+                        </div>
+                        <div class="form-group">
+                            <label for="gratitude-2">Gratitude 2:</label>
+                            <input type="text" id="gratitude-2" name="gratitude-2" placeholder="What are you grateful for?">
+                        </div>
+                        <div class="form-group">
+                            <label for="gratitude-3">Gratitude 3:</label>
+                            <input type="text" id="gratitude-3" name="gratitude-3" placeholder="What are you grateful for?">
                         </div>
                     </div>
 
@@ -1215,12 +1527,60 @@
                             <input type="checkbox" id="sleep-environment" name="sleep-environment" onchange="updateCompletion()">
                             <span><strong>Sleep Environment Optimization</strong>:</span>
                         </label>
+                        <div class="form-group inline-group">
+                            <label for="room-temperature">Cool room:</label>
+                            <input type="number" id="room-temperature" name="room-temperature" placeholder="65-68°F (18-20°C)" style="width: 150px;">
+                        </div>
                         <div class="nested-item">
-                            <div>• <strong>Cool room</strong>: 65-68°F (18-20°C)</div>
-                            <div>• <strong>Dark room</strong>: Blackout curtains, eye mask</div>
-                            <div>• <strong>Quiet</strong>: Earplugs or white noise machine</div>
-                            <div>• <strong>No electronics</strong>: Phone in another room or airplane mode</div>
-                            <div>• <strong>Prepare tomorrow's clothes</strong> (reduces morning decision fatigue)</div>
+                            <div>• <strong>Why</strong>: Lower body temperature promotes deeper sleep</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="darkness-level">Dark room:</label>
+                            <select id="darkness-level" name="darkness-level">
+                                <option value="">Select...</option>
+                                <option value="complete">Complete</option>
+                                <option value="partial">Partial</option>
+                            </select>
+                            <div class="note-text">Blackout curtains, eye mask</div>
+                        </div>
+                        <div class="nested-item">
+                            <div>• <strong>Why</strong>: Darkness signals melatonin production</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="quiet-method">Quiet:</label>
+                            <select id="quiet-method" name="quiet-method">
+                                <option value="">Select...</option>
+                                <option value="earplugs">Earplugs</option>
+                                <option value="white-noise">White noise</option>
+                                <option value="both">Both</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                        <div class="nested-item">
+                            <div>• <strong>Why</strong>: Reduces sleep disruptions</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-location">No electronics:</label>
+                            <input type="text" id="phone-location" name="phone-location" placeholder="Phone location">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-mode">Phone mode:</label>
+                            <select id="phone-mode" name="phone-mode">
+                                <option value="">Select...</option>
+                                <option value="airplane">Airplane mode</option>
+                                <option value="off">Off</option>
+                                <option value="another-room">Another room</option>
+                            </select>
+                        </div>
+                        <div class="nested-item">
+                            <div>• <strong>Why</strong>: Eliminates notifications and EMF exposure</div>
+                        </div>
+                        <label class="task-checkbox">
+                            <input type="checkbox" id="prepare-clothes" name="prepare-clothes" onchange="updateCompletion()">
+                            <span><strong>Prepare tomorrow's clothes</strong> (reduces morning decision fatigue)</span>
+                        </label>
+                        <div class="nested-item">
+                            <div>• <strong>Why</strong>: Reduces morning stress and decision-making</div>
                         </div>
                         
                         <h5>Final Wind-Down:</h5>
@@ -1250,8 +1610,208 @@
                         </label>
                         <div class="nested-item">
                             <div>• <strong>Melatonin (300 mcg)</strong> - only if sleep issues persist</div>
-                            <div>• <strong>Note</strong>: Try optimizing sleep environment first</div>
+                            <div>  - <strong>Note</strong>: Try optimizing sleep environment first</div>
+                            <div>  - <strong>Why</strong>: Natural sleep hormone, but should be last resort</div>
                             <div>• <strong>Magnesium</strong> (if not taken earlier)</div>
+                        </div>
+                        <h5>Sleep Timing:</h5>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="target-bedtime">Target bedtime:</label>
+                                <input type="time" id="target-bedtime" name="target-bedtime" value="21:30">
+                                <div class="note-text">9:30-10:00 PM (3-4 hours after dinner at 7:00-7:30 PM)</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="actual-bedtime">Actual bedtime:</label>
+                                <input type="time" id="actual-bedtime" name="actual-bedtime">
+                            </div>
+                            <div class="form-group">
+                                <label for="target-wake-time">Target wake time:</label>
+                                <input type="time" id="target-wake-time" name="target-wake-time">
+                            </div>
+                            <div class="form-group">
+                                <label for="target-sleep-hours">Target sleep:</label>
+                                <input type="number" id="target-sleep-hours" name="target-sleep-hours" min="0" max="12" step="0.25" placeholder="7-9 hours">
+                            </div>
+                        </div>
+                        <div class="note-text">
+                            <strong>Sleep consistency</strong>: Same bedtime/wake time (±30 min) - critical for circadian rhythm
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Daily Summary & Stats -->
+                <section class="tracker-section">
+                    <h2>📊 Daily Summary & Stats</h2>
+                    
+                    <div class="task-group">
+                        <h4>Hydration</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="water-intake">Water Intake (liters):</label>
+                                <input type="number" id="water-intake" name="water-intake" min="0" step="0.1" placeholder="Target: 2.5-3L">
+                            </div>
+                            <div class="form-group">
+                                <label for="other-fluids">Other Fluids:</label>
+                                <input type="text" id="other-fluids" name="other-fluids" placeholder="tea, coffee, etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-fluid-intake">Total Fluid Intake (liters):</label>
+                                <input type="number" id="total-fluid-intake" name="total-fluid-intake" min="0" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Exercise Summary</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="total-exercise-time">Total Exercise Time (minutes):</label>
+                                <input type="number" id="total-exercise-time" name="total-exercise-time" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-steps">Steps:</label>
+                                <input type="number" id="total-steps" name="total-steps" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="active-calories">Active Calories:</label>
+                                <input type="number" id="active-calories" name="active-calories" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="workout-type-summary">Workout Type:</label>
+                                <select id="workout-type-summary" name="workout-type-summary">
+                                    <option value="">Select...</option>
+                                    <option value="strength">Strength</option>
+                                    <option value="cardio">Cardio</option>
+                                    <option value="recovery">Recovery</option>
+                                    <option value="none">None</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="rpe-average">RPE Average:</label>
+                                <input type="number" id="rpe-average" name="rpe-average" min="1" max="10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Nutrition Summary</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="total-calories">Total Calories:</label>
+                                <input type="number" id="total-calories" name="total-calories" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-protein">Protein (g):</label>
+                                <input type="number" id="total-protein" name="total-protein" min="0">
+                                <div class="note-text">Target: 1.6-2.2g/kg body weight</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="total-carbs">Carbs (g):</label>
+                                <input type="number" id="total-carbs" name="total-carbs" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-fats">Fats (g):</label>
+                                <input type="number" id="total-fats" name="total-fats" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-fiber">Fiber (g):</label>
+                                <input type="number" id="total-fiber" name="total-fiber" min="0">
+                                <div class="note-text">Target: 30-40g</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="meals-completed">Meals Completed:</label>
+                                <input type="number" id="meals-completed" name="meals-completed" min="0" max="3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Habits Completed</h4>
+                        <div class="checkbox-grid">
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="habit-morning-routine" name="habit-morning-routine" onchange="updateCompletion()">
+                                <span><strong>Morning Routine</strong>: [ ] Sunlight [ ] Hydration [ ] Meditation [ ] Exercise</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="habit-supplements" name="habit-supplements" onchange="updateCompletion()">
+                                <span><strong>Supplements</strong>: [ ] Morning [ ] Lunch [ ] Evening</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="habit-exercise" name="habit-exercise" onchange="updateCompletion()">
+                                <span><strong>Exercise</strong>: [ ] Yes [ ] No</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="habit-meditation" name="habit-meditation" onchange="updateCompletion()">
+                                <span><strong>Meditation/Mindfulness</strong>: [ ] Yes [ ] No</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="habit-social" name="habit-social" onchange="updateCompletion()">
+                                <span><strong>Social Connection</strong>: [ ] Yes [ ] No</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="habit-nature" name="habit-nature" onchange="updateCompletion()">
+                                <span><strong>Nature Exposure</strong>: [ ] Yes [ ] No</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="habit-digital-sunset" name="habit-digital-sunset" onchange="updateCompletion()">
+                                <span><strong>Digital Sunset</strong>: [ ] Yes [ ] No</span>
+                            </label>
+                            <label class="task-checkbox">
+                                <input type="checkbox" id="habit-sleep-environment" name="habit-sleep-environment" onchange="updateCompletion()">
+                                <span><strong>Sleep Environment</strong>: [ ] Optimized [ ] Not Optimized</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Goals & Achievements -->
+                <section class="tracker-section">
+                    <h2>🎯 Goals & Achievements</h2>
+                    
+                    <div class="task-group">
+                        <h4>Top 3 Wins Today</h4>
+                        <div class="form-group">
+                            <label for="win-1">1.</label>
+                            <input type="text" id="win-1" name="win-1" placeholder="Win 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="win-2">2.</label>
+                            <input type="text" id="win-2" name="win-2" placeholder="Win 2">
+                        </div>
+                        <div class="form-group">
+                            <label for="win-3">3.</label>
+                            <input type="text" id="win-3" name="win-3" placeholder="Win 3">
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Challenges Faced</h4>
+                        <div class="form-group">
+                            <textarea id="challenges" name="challenges" rows="3" placeholder="What challenges did you face today?"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>What I Learned</h4>
+                        <div class="form-group">
+                            <textarea id="learnings" name="learnings" rows="3" placeholder="What did you learn today?"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Tomorrow's Focus</h4>
+                        <div class="form-group">
+                            <label for="tomorrow-focus-1">1.</label>
+                            <input type="text" id="tomorrow-focus-1" name="tomorrow-focus-1" placeholder="Focus 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="tomorrow-focus-2">2.</label>
+                            <input type="text" id="tomorrow-focus-2" name="tomorrow-focus-2" placeholder="Focus 2">
+                        </div>
+                        <div class="form-group">
+                            <label for="tomorrow-focus-3">3.</label>
+                            <input type="text" id="tomorrow-focus-3" name="tomorrow-focus-3" placeholder="Focus 3">
                         </div>
                     </div>
                 </section>
@@ -1261,6 +1821,131 @@
                     <h2>📝 Notes & Observations</h2>
                     <div class="form-group">
                         <textarea id="notes" name="notes" rows="6" placeholder="Any observations, challenges, or wins today..."></textarea>
+                    </div>
+                </section>
+
+                <!-- Weekly Review -->
+                <section class="tracker-section">
+                    <h2>🔄 Weekly Review (Fill on Sunday)</h2>
+                    
+                    <div class="task-group">
+                        <h4>Week of:</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="week-start">Start date:</label>
+                                <input type="date" id="week-start" name="week-start">
+                            </div>
+                            <div class="form-group">
+                                <label for="week-end">End date:</label>
+                                <input type="date" id="week-end" name="week-end">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Consistency Metrics</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="days-following-routine">Days following routine:</label>
+                                <input type="number" id="days-following-routine" name="days-following-routine" min="0" max="7">
+                            </div>
+                            <div class="form-group">
+                                <label for="avg-sleep-quality">Average sleep quality:</label>
+                                <input type="number" id="avg-sleep-quality" name="avg-sleep-quality" min="1" max="10" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="avg-energy">Average energy:</label>
+                                <input type="number" id="avg-energy" name="avg-energy" min="1" max="10" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="avg-mood">Average mood:</label>
+                                <input type="number" id="avg-mood" name="avg-mood" min="1" max="10" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exercise-days">Exercise days:</label>
+                                <input type="number" id="exercise-days" name="exercise-days" min="0" max="7">
+                            </div>
+                            <div class="form-group">
+                                <label for="meditation-days">Meditation days:</label>
+                                <input type="number" id="meditation-days" name="meditation-days" min="0" max="7">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Health Metrics</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="avg-sleep-duration">Average sleep duration (hours):</label>
+                                <input type="number" id="avg-sleep-duration" name="avg-sleep-duration" min="0" max="12" step="0.25">
+                            </div>
+                            <div class="form-group">
+                                <label for="weight-change">Weight change (kg):</label>
+                                <input type="number" id="weight-change" name="weight-change" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="body-measurements">Body measurements:</label>
+                                <input type="text" id="body-measurements" name="body-measurements" placeholder="Body measurements">
+                            </div>
+                            <div class="form-group">
+                                <label for="other-metrics">Other metrics:</label>
+                                <input type="text" id="other-metrics" name="other-metrics" placeholder="Other health metrics">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Productivity Metrics</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="deep-work-sessions">Deep work sessions:</label>
+                                <input type="number" id="deep-work-sessions" name="deep-work-sessions" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="goals-achieved">Goals achieved:</label>
+                                <input type="number" id="goals-achieved" name="goals-achieved" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="tasks-completed">Tasks completed:</label>
+                                <input type="number" id="tasks-completed" name="tasks-completed" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>What Worked Well</h4>
+                        <div class="form-group">
+                            <textarea id="what-worked-well-1" name="what-worked-well-1" rows="2" placeholder="What worked well?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="what-worked-well-2" name="what-worked-well-2" rows="2" placeholder="What else worked well?"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>What Needs Improvement</h4>
+                        <div class="form-group">
+                            <textarea id="needs-improvement-1" name="needs-improvement-1" rows="2" placeholder="What needs improvement?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="needs-improvement-2" name="needs-improvement-2" rows="2" placeholder="What else needs improvement?"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="task-group">
+                        <h4>Next Week's Goals</h4>
+                        <div class="form-group">
+                            <label for="next-week-goal-1">1.</label>
+                            <input type="text" id="next-week-goal-1" name="next-week-goal-1" placeholder="Goal 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="next-week-goal-2">2.</label>
+                            <input type="text" id="next-week-goal-2" name="next-week-goal-2" placeholder="Goal 2">
+                        </div>
+                        <div class="form-group">
+                            <label for="next-week-goal-3">3.</label>
+                            <input type="text" id="next-week-goal-3" name="next-week-goal-3" placeholder="Goal 3">
+                        </div>
                     </div>
                 </section>
 
@@ -1311,3 +1996,4 @@
     <script src="report-generator.js"></script>
 </body>
 </html>
+

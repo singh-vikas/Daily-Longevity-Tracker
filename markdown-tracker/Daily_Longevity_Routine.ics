@@ -1,0 +1,353 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Daily Longevity Tracker//Daily Routine//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+
+BEGIN:VEVENT
+UID:circadian-reset@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T060000
+DTEND;TZID=America/Los_Angeles:20240101T063000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🌅 Circadian Reset & Activation Block
+DESCRIPTION:Immediate Upon Waking:\n- No phone/screens (preserve dopamine baseline)\n- Get out of bed immediately (avoid snoozing)\n- Morning sunlight exposure (5-10 min outdoors)\n\nHydration & Gut Activation:\n- Warm water with fresh lime (500ml)\n- Optional: 1 tbsp apple cider vinegar\n- No caffeine yet (wait 90-120 min)\n\nMindfulness & Stress Reduction:\n- Meditation or pranayama (10-15 min)\n- Box breathing or Anulom-Vilom
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Circadian Reset & Activation Block starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:exercise-block@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T063000
+DTEND;TZID=America/Los_Angeles:20240101T073000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🏋️ Exercise & Performance Block (60 min)
+DESCRIPTION:Pre-Workout Prep (10 min):\n- Transition time (5 min)\n- L-Tyrosine (500mg) - optional\n- Light hydration (200-300ml)\n- Mental preparation\n\nWorkout Session (40 min):\nChoose ONE per day:\n- Strength Training (3-4 exercises, 3-4 sets, 8-12 reps)\n- Zone 2 Cardio (30-40 min, 60-70% max HR)\n- Zone 5 Intervals (4-6 intervals)\n- Light/Recovery Day (flexibility & mobility)\n\nPost-Workout Cool-Down (10 min):\n- Wait 10-15 minutes before showering\n- Light stretching\n- Hydration
+LOCATION:Home/Gym
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Exercise & Performance Block starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:shower-skincare@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T073000
+DTEND;TZID=America/Los_Angeles:20240101T080000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🧴 Shower, Skin Care & Green Tea Block (30 min)
+DESCRIPTION:Shower (15 min):\n- Cold Exposure (optional, 2-3x/week)\n- Regular shower: Warm water, cleanse body\n\nSkin Care Routine (10 min):\n- Gentle face wash (pH 5.5-6.5)\n- Pat dry (don't rub)\n- Vitamin C serum (L-ascorbic acid 10-20%)\n- Moisturizer (gel/cream)\n- Sunscreen SPF 30+ (CRITICAL for longevity)\n\nGreen Tea (5 min):\n- Timing: 90-120 minutes after waking\n- Benefits: Antioxidants (EGCG), L-theanine, gentle caffeine
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Shower, Skin Care & Green Tea Block starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:deep-work-morning@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T080000
+DTEND;TZID=America/Los_Angeles:20240101T084500
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:💼 Deep Work Block (45 min)
+DESCRIPTION:Optimal Timing: After green tea and warm shower\n\nDeep Work Session:\n- Most challenging tasks first (peak cognitive performance)\n- Phone in another room (minimize distractions)\n- Study methods: Active recall, Spaced repetition, Feynman technique, Practice problems\n\nCaffeine timing (if needed):\n- Coffee/tea 90-120 minutes after waking\n- L-Theanine pairing (200mg)\n- Limit: 100-200mg caffeine
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Deep Work Block starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:breakfast-block@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T084500
+DTEND;TZID=America/Los_Angeles:20240101T091500
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🍳 Breakfast & Metabolic Optimization Block (30 min)
+DESCRIPTION:Timing: 2:45-3:00 hours after waking\nBreak fast 16-18 hours after last meal (if doing 16:8 intermittent fasting)\n\nHigh-Protein, Nutrient-Dense Breakfast:\n- Target: 30-40g protein, 10-15g fiber, 15-20g healthy fats, 40-60g complex carbs\n\nEssential Morning Supplements:\n- Vitamin D3 (2000 IU)\n- Vitamin C (500 mg)\n- Omega-3 (800 mg EPA/DHA)\n- Turmeric/Curcumin (1g)\n- CoQ10 (100mg)\n- NR/NMN (375mg/500mg)\n- Lion's Mane Mushroom (optional)\n- Spermidine (10mg)\n\nPost-Breakfast Walk (15 min):\n- Enhances glucose disposal, improves insulin sensitivity
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Breakfast & Metabolic Optimization Block starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:deep-work-1@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T091500
+DTEND;TZID=America/Los_Angeles:20240101T104500
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:💼 Deep Work Session 1 (90 min)
+DESCRIPTION:Peak cognitive performance window\n\nDeep Work Session:\n- Most challenging tasks first\n- Study methods: Active recall, Spaced repetition, Feynman technique, Practice problems, Reading/note-taking\n- Phone in another room\n- Optimal temperature: 68-72°F\n\nCognitive Optimization:\n- Caffeine timing (if needed): 90-120 minutes after waking\n- L-Theanine pairing (200mg)\n- Limit: 100-200mg caffeine
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Deep Work Session 1 starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:break-snack@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T104500
+DTEND;TZID=America/Los_Angeles:20240101T110000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:☕ Break + Snack (15 min)
+DESCRIPTION:Break activities:\n- Stand (avoid sitting for extended periods)\n- Stretch (full body, 2-3 min)\n- Hydrate (water, 500-750ml target)\n- Rest eyes (20-20-20 rule)\n\nPost-breakfast walk (if not done earlier)\n- Enhances glucose disposal\n\nSunlight exposure (if possible)\n- Circadian rhythm support\n\nMid-Morning Snack (if needed):\n- Greek yogurt with pomegranate seeds\n- Mixed nuts (almonds, walnuts, macadamia)\n- Fresh fruit\n- Cottage cheese with cucumber\n\nGreen tea (optional, 2nd cup)
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT2M
+ACTION:DISPLAY
+DESCRIPTION:Break + Snack starting in 2 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:deep-work-2@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T110000
+DTEND;TZID=America/Los_Angeles:20240101T120000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:💼 Deep Work Session 2 (60 min)
+DESCRIPTION:Focus work/study session\n\nStudy methods:\n- Active recall (testing yourself)\n- Spaced repetition (Anki, flashcards)\n- Feynman technique (explain in simple terms)\n- Practice problems/exercises\n- Reading/note-taking\n\nTasks/Study topics: Focus on most challenging work
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT2M
+ACTION:DISPLAY
+DESCRIPTION:Deep Work Session 2 starting in 2 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:lunch-prep@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T120000
+DTEND;TZID=America/Los_Angeles:20240101T121500
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🍽️ Pre-Meal Preparation (Lunch)
+DESCRIPTION:Apple Cider Vinegar + Psyllium husk (with warm water, before meal)\n- ACV amount: 1 tbsp\n- Psyllium husk: _____ g\n- Why: ACV improves insulin sensitivity, psyllium husk provides fiber and slows glucose absorption\n\nLunch Prep/Bring/Buy: 12:00-12:30 PM
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Pre-Meal Preparation (Lunch) starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:lunch-block@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T123000
+DTEND;TZID=America/Los_Angeles:20240101T130000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🍽️ Lunch Break & Metabolic Health Block
+DESCRIPTION:Timing: 12:30-12:45 PM (Eat, exact timing window)\nWithin 4-6 hours from breakfast\n\nLunch Meal:\n- Target: 25-35g protein, 10-15g fiber\n- Always include: Steamed vegetables, Fermented foods, Complex carbs, Salad\n\nLunch Supplements:\n- Vitamin K2 (MK-7, 600 mcg)\n- Garlic extract (2.4g equivalent)\n- Magnesium (400mg) - if not taken in evening\n- B Complex (½ pill, Mon & Thurs only)\n\nPost-Lunch (12:45-1:00 PM):\n- 10-15 minute walk (glucose disposal)\n- Social connection (if possible)
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Lunch Break & Metabolic Health Block starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:light-work-1@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T130000
+DTEND;TZID=America/Los_Angeles:20240101T140000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:☕ Light Work/Study Block (60 min)
+DESCRIPTION:Focus: Lighter cognitive tasks\n- Email, admin, meetings, review notes\n- Work/study session\n\nTasks: Complete lighter cognitive work
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT2M
+ACTION:DISPLAY
+DESCRIPTION:Light Work/Study Block starting in 2 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:break-afternoon@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T140000
+DTEND;TZID=America/Los_Angeles:20240101T141500
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:☕ Break, Green Tea & Energy Management (15 min)
+DESCRIPTION:Green tea with lemon\n- Antioxidants, gentle caffeine, L-theanine\n- Helps manage natural afternoon dip (2-3 PM circadian low)\n\nBreak activities:\n- Stand, stretch, hydrate\n- Rest eyes (20-20-20 rule)\n- Social connection (if possible)
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT2M
+ACTION:DISPLAY
+DESCRIPTION:Break, Green Tea & Energy Management starting in 2 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:collaborative-work@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T141500
+DTEND;TZID=America/Los_Angeles:20240101T153000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:💼 Collaborative Work/Study Block (75 min)
+DESCRIPTION:Focus: Collaborative work, study groups, or focused learning\n\nStudy Methods:\n- Study group discussion\n- Teaching others (peer tutoring)\n- Group problem-solving\n- Review sessions\n\nWork/study session completed
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT2M
+ACTION:DISPLAY
+DESCRIPTION:Collaborative Work/Study Block starting in 2 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:nsdr-snack@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T153000
+DTEND;TZID=America/Los_Angeles:20240101T160000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🧘 NSDR & Snack Break (30 min)
+DESCRIPTION:NSDR (Non-Sleep Deep Rest) - 10-20 minutes:\n- Benefits: Reduces cortisol, enhances focus, improves learning retention\n- Method: YouTube NSDR/Yoga Nidra, Guided meditation, Deep breathing\n- Science: Huberman protocol - addresses natural 2-3 PM circadian dip, consolidates morning learning\n- Critical for study/work performance - do before 4 PM\n\nMid-Afternoon Snack (if needed):\n- Nutty pudding, Fruit chaat, Chia seed pudding, Roasted makhana, Hummus, Dark chocolate (15g)
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:NSDR & Snack Break starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:work-wrap-up@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T160000
+DTEND;TZID=America/Los_Angeles:20240101T170000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:📝 Work Wrap-Up (60 min)
+DESCRIPTION:Plan next day (write 3-4 key tasks)\n\nJournal reflection:\n- What went well today?\n- What to improve?\n- Key learnings:\n\nWork/study session completed
+LOCATION:Home/Office
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Work Wrap-Up starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:physical-activity@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T170000
+DTEND;TZID=America/Los_Angeles:20240101T180000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🚶 Physical Activity (60 min)
+DESCRIPTION:Light stretching or yoga (10-15 minutes)\n- Surya Namaskar or dynamic stretching\n- Focus areas: Full body\n\nWalk or commute (if applicable)\n\nOR Evening workout session (if morning not possible):\n- Strength training: 3-4x/week\n- Zone 2 cardio: 3-4x/week\n\nPre-Dinner Preparation:\n- Hydration: 500-750ml water\n- Avoid heavy snacking (allow insulin to normalize)
+LOCATION:Home/Gym
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Physical Activity starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:personal-time@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T180000
+DTEND;TZID=America/Los_Angeles:20240101T190000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:📚 Personal Time & Preparation (60 min)
+DESCRIPTION:Evening Review/Study Session (optional, lighter cognitive load):\n- Quick review of morning topics\n- Spaced repetition review (Anki)\n- Planning next study session\n- Light reading (not intensive)\n\nPlan next day:\n- Write 3-4 key tasks\n- Plan breakfast/lunch/dinner\n\nHydration: 500-750ml water
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Personal Time & Preparation starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:dinner-prep@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T190000
+DTEND;TZID=America/Los_Angeles:20240101T191500
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🍽️ Pre-Meal Preparation (Dinner)
+DESCRIPTION:Apple Cider Vinegar + Psyllium husk (with warm water, before meal)\n- ACV amount: 1 tbsp\n- Psyllium husk: _____ g\n- Why: ACV improves insulin sensitivity, psyllium husk provides fiber and slows glucose absorption
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Pre-Meal Preparation (Dinner) starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:dinner-block@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T191500
+DTEND;TZID=America/Los_Angeles:20240101T200000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🍽️ Dinner & Family Time Block (60 min)
+DESCRIPTION:Dinner Timing:\n- Time: 7:00-7:30 PM (optimal timing)\n- 3-4 hours before bedtime (optimal for sleep quality)\n- Lighter meal than lunch (supports circadian rhythm)\n\nDinner Nutrients Focus:\n- Protein: 25-35g\n- Fiber: 10-15g\n- Healthy fats: 10-15g\n- Lower carbs: 30-40g (supports sleep)\n\nPlay with Daughter (7:30-8:00 PM):\n- Quality time\n- Activities together
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Dinner & Family Time Block starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:post-dinner-walk@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T200000
+DTEND;TZID=America/Los_Angeles:20240101T201500
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🚶 Post-Meal Walk (15 min)
+DESCRIPTION:15-minute walk\n- Glucose disposal, prevents post-meal energy crash\n- Light stretching (5-10 minutes) - can be done during walk
+LOCATION:Home/Outdoor
+BEGIN:VALARM
+TRIGGER:-PT2M
+ACTION:DISPLAY
+DESCRIPTION:Post-Meal Walk starting in 2 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:evening-skincare@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T201500
+DTEND;TZID=America/Los_Angeles:20240101T203000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🧴 Evening Skin Care Routine (15 min)
+DESCRIPTION:Cleanse face with gentle cleanser (pH 5.5-6.5)\n- Pat dry (don't rub)\n\nRetinol or niacinamide serum (alternate nights):\n- Retinol: Anti-aging, collagen production (use 2-3x/week initially)\n- Niacinamide: Pore refinement, anti-inflammatory\n\nMoisturizer (night cream)\nEye cream (if needed)
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT2M
+ACTION:DISPLAY
+DESCRIPTION:Evening Skin Care Routine starting in 2 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:wind-down@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T203000
+DTEND;TZID=America/Los_Angeles:20240101T210000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:🌙 Wind-Down Activities Block (30 min)
+DESCRIPTION:Digital sunset begins: No screens 2 hours before bed\n- Blue light blocking: Use blue light glasses or screen filters\n- Dim lights: Use warm, dim lighting (candles, salt lamps)\n- Why: Blue light suppresses melatonin, delaying sleep onset\n\nHerbal tea: Chamomile, tulsi (holy basil), or passionflower\n\nLight reading: Physical book (not digital)\n- Why: Physical books don't emit blue light, promote relaxation\n\nJournal & gratitude:\n- Review day, plan tomorrow breakfast/lunch/dinner and tasks\n- 3 things grateful for\n\nGentle stretching or yoga (if not done earlier)
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Wind-Down Activities Block starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:supplements-sleep@longevity-tracker
+DTSTART;TZID=America/Los_Angeles:20240101T210000
+DTEND;TZID=America/Los_Angeles:20240101T213000
+RRULE:FREQ=DAILY;INTERVAL=1
+SUMMARY:💊 Supplements & Sleep Prep (30 min)
+DESCRIPTION:Evening Supplements:\n- Ashwagandha (600mg) - stress management, cortisol reduction\n- Magnesium (400mg) - muscle recovery, sleep quality, stress reduction\n  Forms: Magnesium glycinate or citrate (best absorption)\n- Optional: L-Theanine (200mg) - if feeling anxious\n\nSleep Environment Optimization:\n- Cool room: 65-68°F (18-20°C)\n- Dark room: Blackout curtains, eye mask\n- Quiet: Earplugs or white noise machine\n- No electronics: Phone in another room or airplane mode\n- Prepare tomorrow's clothes (reduces morning decision fatigue)\n\nFinal Wind-Down:\n- Deep breathing or meditation (5-10 minutes)\n  Type: Box breathing, 4-7-8 breathing, Body scan\n- Final supplements (if needed):\n  Melatonin (300 mcg) - only if sleep issues persist\n\nSleep Timing:\n- Target bedtime: 9:30-10:00 PM (3-4 hours after dinner)\n- Target sleep: 7-9 hours\n- Sleep consistency: Same bedtime/wake time (±30 min) - critical for circadian rhythm
+LOCATION:Home
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Supplements & Sleep Prep starting in 5 minutes
+END:VALARM
+END:VEVENT
+
+END:VCALENDAR
+

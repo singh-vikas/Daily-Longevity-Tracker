@@ -65,7 +65,7 @@
 
 ## 🏋️ **6:30-7:30 AM — Exercise & Performance Block** (60 minutes)
 
-> **Science-Based Protocol**: Morning exercise leverages peak testosterone (highest in morning) and optimal muscle protein synthesis. **Choose ONE workout type per day** - alternate strength/cardio days for optimal recovery and adaptation.
+> **Science-Based Protocol**: Morning exercise leverages peak testosterone and muscle protein synthesis. **Log everything you did today — combining modalities is encouraged** (e.g. strength + a short Zone 2 finisher). For fat loss + muscle + cardiac risk (HDL 32 🔴, A1C 5.8% ⚠️), aim **across the week**: **Resistance ×3 · Zone 2 40–45 min ×3–4 · HIIT ×1–2** + daily post-meal walks.
 
 ### **6:30-6:40 AM — Pre-Workout Prep (10 min):**
 - [ ] **Transition time** (5 min) - Change clothes, prepare equipment, mental shift
@@ -81,9 +81,9 @@
 
 ### **6:40-7:20 AM — Workout Session (40 min):**
 
-**Choose ONE per day (alternate days for optimal recovery):**
+**Log any/all you did today — strength + Zone 2 on the same day is encouraged for your goals. Weekly targets: Resistance ×3 · Zone 2 ×3–4 · HIIT ×1–2.**
 
-#### **Option A: Strength Training Day (30-45 min):**
+#### **Option A: Strength Training (aim ×3/week — muscle + insulin sensitivity):**
 - [ ] **Strength Training**: [ ] Yes [ ] No
 - [ ] **Focus**: [ ] Upper body [ ] Lower body [ ] Core [ ] Full body
 - [ ] **Protocol**: 
@@ -103,7 +103,7 @@
 - [ ] **RPE (Rate of Perceived Exertion)**: _____/10
 - [ ] **Notes**: _____
 
-#### **Option B: Cardio Day (30-40 min):**
+#### **Option B: Zone 2 Cardio (aim ×3–4/week, 40–45 min — raises HDL, lowers TG):**
 - [ ] **Zone 2 Training** (60-70% max heart rate): [ ] Yes [ ] No
   - [ ] **Type**: [ ] Jogging [ ] Cycling [ ] Rowing [ ] Swimming [ ] Other: _____
   - [ ] **Duration**: _____ minutes (target: 30-40 min)
@@ -111,15 +111,15 @@
   - [ ] **Science**: Optimizes mitochondrial function, fat oxidation, cardiovascular health
   - [ ] **Frequency**: 3-4x/week, 150-180 min/week total
   - [ ] **Perceived effort**: Should be able to hold conversation
-- [ ] **OR Zone 5 (90-100% max HR)** - 4-6 intervals: [ ] Yes [ ] No
+- [ ] **HIIT / Zone 5 (90-100% max HR)** - 4-6 intervals: [ ] Yes [ ] No
   - [ ] **Intervals completed**: _____
   - [ ] **Work duration**: _____ seconds per interval
   - [ ] **Rest duration**: _____ seconds between intervals
   - [ ] **Total duration**: _____ minutes
-  - [ ] **Frequency**: 1x/week for VO2 max improvement
+  - [ ] **Frequency**: 1–2x/week — best exercise lever for low HDL (32 mg/dL) + VO2 max
   - [ ] **Notes**: _____
 
-#### **Option C: Light/Recovery Day (20-30 min):**
+#### **Option C: Light/Recovery (mobility, 20-30 min):**
 - [ ] **Flexibility & Mobility**: [ ] Yes [ ] No
   - [ ] **Surya Namaskar** (5-10 rounds) or dynamic stretching
   - [ ] **OR Light walk** (if recovering)
@@ -244,32 +244,44 @@
 - [ ] **Other/Custom**: _____
 
 #### **Breakfast Nutrients Checklist:**
-- [ ] **Protein**: _____ g (target: 30-40g) - muscle synthesis, satiety
+- [ ] **Protein isolate scoop** (whey or pea, ~25g P) - **added daily** to hit the 135g/day protein target for muscle gain
+  - [ ] **Taken**: [ ] Yes [ ] No
+- [ ] **Protein**: _____ g (target: 30-40g per meal; **~135g/day total** ≈ 1.9 g/kg for muscle gain) - muscle synthesis, satiety
 - [ ] **Fiber**: _____ g (target: 10-15g) - gut health, blood sugar control
 - [ ] **Healthy fats**: _____ g (target: 15-20g) - omega-3, MCTs
 - [ ] **Complex carbs**: _____ g (target: 40-60g) - sustained energy
 - [ ] **Micronutrients**: Vitamin C, B vitamins, magnesium, zinc
 - [ ] **Calories**: _____ kcal
 
-### **8:45-9:00 AM — Essential Morning Supplements (with breakfast):**
-- [ ] **Vitamin D3 (2000 IU)** - immune function, bone health, mood
-  - [ ] **Timing**: With fat-containing meal for absorption
+### **8:45-9:00 AM — Morning Supplements (with breakfast):**
+
+> **Personalized to Apr 2026 labs** — see [Weekly Diet Plan.md]. 🔴 = essential · ⚪ = optional (keep for future tracking, take only if targeted).
+> **Note:** Vitamin C is now taken at the **3:30 PM snack with iron** (better iron absorption), not here.
+
+**🔴 Essential (with breakfast — fat-soluble need food):**
+- [ ] **Vitamin D3 (50,000 IU — ONCE WEEKLY, e.g. Sunday)** 🩺 - severe deficiency (10 ng/mL); maintenance 2,000–4,000 IU/day after repletion
+  - [ ] **Timing**: With the fattiest meal for absorption
+  - [ ] **Taken this week**: [ ] Yes [ ] No
+- [ ] **Omega-3 (~2 g EPA/DHA)** 🩺 - lowers TG (227), raises HDL, shifts LDL particle size (800mg is too low for your TG)
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **Vitamin C (500 mg)** - collagen synthesis, immune support, antioxidant
+- [ ] **Creatine monohydrate (5g)** - muscle + strength (any consistent daily time); note: mildly raises creatinine lab value (harmless)
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **Omega-3 (800 mg EPA/DHA)** - anti-inflammatory, brain health
+
+**⚪ Optional (keep for future tracking):**
+- [ ] **CoQ10 (100mg)** - mitochondrial function; may ease statin muscle aches
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **Turmeric/Curcumin (1g)** - anti-inflammatory, activates AMPK pathway
+- [ ] **Vitamin K2 (MK-7, 600 mcg)** - directs calcium away from arteries; pairs with high-dose D *(can also take at lunch)*
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **CoQ10 (100mg)** - mitochondrial function, energy production
+- [ ] **Turmeric/Curcumin (1g)** - anti-inflammatory. ⚠️ **Keep away from the iron dose** (curcumin chelates iron)
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **NR (Nicotinamide Riboside 375mg) or NMN (500mg)** - cellular energy, NAD+ boost, cognitive function
+- [ ] **NR (Nicotinamide Riboside 375mg) or NMN (500mg)** - NAD+ boost (weak human evidence)
   - [ ] **Type**: [ ] NR [ ] NMN
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **Lion's Mane Mushroom** (optional) - brain health, memory, focus
+- [ ] **Lion's Mane Mushroom** - brain health, memory, focus
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **Spermidine (10mg)** - autophagy, cellular renewal, cognitive longevity
+- [ ] **Spermidine (10mg)** - autophagy, cellular renewal (preliminary evidence)
   - [ ] **Taken**: [ ] Yes [ ] No
+- [ ] ~~**Vitamin E (67mg)**~~ - ❌ **dropped** (supplemental Vit E is neutral-to-harmful for cardiovascular outcomes)
 
 ### **9:00-9:15 AM — Post-Breakfast Walk:**
 - [ ] **15-minute walk** (enhances glucose disposal, improves insulin sensitivity)
@@ -414,14 +426,16 @@
 - [ ] **Calories**: _____ kcal
 
 ### **12:30-12:45 PM — Lunch Supplements (with meal):**
-- [ ] **Vitamin K2 (MK-7, 600 mcg)** - calcium regulation, bone health, cardiovascular health
+
+> **⚪ All optional (keep for future tracking).** Magnesium is now taken in the **evening** (better for sleep + keeps it ≥5h from the 3:30 PM iron). Do **not** take Vitamin K2/calcium near the iron dose.
+- [ ] **Vitamin K2 (MK-7, 600 mcg)** ⚪ - calcium regulation, bone, cardiovascular *(can also take at breakfast)*
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **Garlic extract (2.4g equivalent)** - cardiovascular health, immune function
+- [ ] **Garlic extract (2.4g equivalent)** ⚪ - cardiovascular health, immune function
   - [ ] **Taken**: [ ] Yes [ ] No
-- [ ] **Magnesium (400mg)** - muscle recovery, sleep quality, stress reduction (if not taken in evening)
-  - [ ] **Taken**: [ ] Yes [ ] No
+- [ ] **Magnesium (400mg)** ⚪ - *moved to evening (9 PM) — see Evening Supplements. Only log here if taken at lunch instead.*
+  - [ ] **Taken at lunch**: [ ] Yes [ ] No
   - [ ] **Form**: [ ] Glycinate [ ] Citrate [ ] Other: _____
-- [ ] **B Complex** (½ pill, Mon & Thurs only) - energy metabolism, brain function
+- [ ] **B Complex** (½ pill, Mon & Thurs only) ⚪ - energy metabolism, brain function (B12 was low-normal at 314)
   - [ ] **Day**: _____
   - [ ] **Taken**: [ ] Yes [ ] No
 
@@ -502,10 +516,12 @@
 - [ ] **Resource used**: _____
 - [ ] **Notes**: _____
 
-#### **3:50-4:00 PM — Mid-Afternoon Snack (if needed):**
+#### **3:30-4:00 PM — Mid-Afternoon Snack (IRON ANCHOR — no dairy, no tea/coffee):**
+
+> ⚠️ **This is the daily iron window.** Choose a **dairy-free** snack (skip the Greek-yogurt/nutty-pudding options below — calcium blocks iron). Include a Vitamin C source (orange/berries). **No tea/coffee/green tea within 2h.**
 - [ ] **Snack taken**: [ ] Yes [ ] No
-- [ ] **Options**:
-  - [ ] Nutty pudding (Greek yogurt, flaxseeds, chia seeds, nuts, berries)
+- [ ] **Options** *(prefer the dairy-free, Vit-C-containing ones)*:
+  - [ ] Nutty pudding (Greek yogurt, flaxseeds, chia seeds, nuts, berries) ⚠️ *dairy — not on iron days*
   - [ ] Fruit chaat (seasonal fruits)
   - [ ] Chia seed pudding with nuts and fruit
   - [ ] Roasted makhana (fox nuts) - protein, low GI
@@ -516,6 +532,17 @@
 - [ ] **What I had**: _____
 - [ ] **Calories**: _____ kcal
 - [ ] **Water**: _____ ml
+
+#### **3:30 PM — Afternoon Supplements (IRON ANCHOR — with snack):**
+
+> 🔴 **Essential.** Take iron + Vitamin C together, dairy-free, **≥2h from any tea/coffee** and **not with turmeric/calcium/magnesium**. Recheck ferritin in 8–12 weeks.
+- [ ] **Iron — ferrous bisglycinate (25–50mg elemental)** 🩺 - ferritin 14 ng/mL (deficient)
+  - [ ] **Taken**: [ ] Yes [ ] No
+- [ ] **Vitamin C (500mg)** - taken here with iron to double non-heme iron absorption
+  - [ ] **Taken**: [ ] Yes [ ] No
+- [ ] **No tea/coffee/green tea within 2h of iron**: [ ] Confirmed
+- [ ] **Ashwagandha (600mg)** ⚪ - optional; cortisol/stress (can nudge thyroid — recheck TSH)
+  - [ ] **Taken**: [ ] Yes [ ] No
 
 #### **Optional Energy Boost:**
 - [ ] **Cold exposure** (if not done in morning): [ ] Yes [ ] No
@@ -707,17 +734,21 @@
 ### **9:00-9:30 PM — Supplements & Sleep Prep (30 min):**
 
 #### **9:00 PM — Evening Supplements:**
-- [ ] **Ashwagandha (600mg)** - stress management, cortisol reduction
+
+**🔴 Essential:**
+- [ ] **Magnesium glycinate (400mg)** - sleep quality + insulin sensitivity; evening slot keeps it ≥5h from the 3:30 PM iron
+  - [ ] **Form used**: [ ] Glycinate [ ] Citrate [ ] Other: _____
   - [ ] **Taken**: [ ] Yes [ ] No
-  - [ ] **Why**: Reduces evening cortisol, promotes relaxation
-- [ ] **Magnesium (400mg)** - muscle recovery, sleep quality, stress reduction
-  - [ ] **Forms**: Magnesium glycinate or citrate (best absorption)
-  - [ ] **Form used**: _____
+
+**⚪ Optional (keep for future tracking):**
+- [ ] **Ashwagandha (600mg)** ⚪ - stress/cortisol *(take at snack OR evening, not both; can nudge thyroid — recheck TSH)*
   - [ ] **Taken**: [ ] Yes [ ] No
-  - [ ] **Why**: Essential for muscle relaxation and sleep quality
-- [ ] **Optional: L-Theanine (200mg)** - if feeling anxious
+- [ ] **L-Theanine (200mg)** ⚪ - if feeling anxious; calm without drowsiness
   - [ ] **Taken**: [ ] Yes [ ] No
-  - [ ] **Why**: Promotes calm without drowsiness
+
+#### **10:00 PM — Medication (Rx):**
+- [ ] **Atorvastatin (10mg)** 🩺 - **EVERY night, DAILY — not sporadic.** Statins only lower cardiac risk taken daily (liver re-ramps cholesterol overnight). Avoid grapefruit juice. Given Lp(a) 119 + LDL-P 2172, ask your doctor if 10mg is enough or should step up ± ezetimibe.
+  - [ ] **Taken tonight**: [ ] Yes [ ] No
 
 #### **Sleep Environment Optimization:**
 - [ ] **Cool room**: 65-68°F (18-20°C)
@@ -789,7 +820,9 @@
 
 ### **Habits Completed**
 - [ ] **Morning Routine**: [ ] Sunlight [ ] Hydration [ ] Meditation [ ] Exercise
-- [ ] **Supplements**: [ ] Morning [ ] Lunch [ ] Evening
+- [ ] **Supplements**: [ ] Morning (D3/Omega-3/Creatine) [ ] Iron+Vit C (3:30, dairy-free) [ ] Evening (Magnesium)
+- [ ] **Medication**: [ ] Atorvastatin taken tonight (DAILY — the key adherence metric)
+- [ ] **Protein target hit** (~135g/day): [ ] Yes [ ] No
 - [ ] **Exercise**: [ ] Yes [ ] No
 - [ ] **Meditation/Mindfulness**: [ ] Yes [ ] No
 - [ ] **Social Connection**: [ ] Yes [ ] No

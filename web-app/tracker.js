@@ -322,11 +322,17 @@ function loadTrackerData() {
         'post-dinner-walk', 'digital-sunset', 'herbal-tea', 'light-reading',
         'evening-journal', 'gratitude-reflection', 'supp-ashwagandha', 'supp-magnesium',
         'supp-l-theanine', 'evening-skincare', 'sleep-environment', 'prepare-clothes',
-        'final-meditation', 'final-supplements'
+        'final-meditation', 'final-supplements',
+        // Personalized additions (labs-aligned)
+        'supp-creatine', 'supp-iron', 'no-tea-before-iron', 'supp-ashwagandha-snack',
+        'breakfast-protein-isolate', 'med-statin'
     ];
-    
+
     checkboxFields.forEach(field => {
-        setChecked(field, dayData[field]);
+        // Data is saved in camelCase (e.g. 'supp-iron' → suppIron); convert to match, with kebab fallback
+        const camel = field.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+        const value = dayData[camel] !== undefined ? dayData[camel] : dayData[field];
+        setChecked(field, value);
     });
     
     // Load text fields
@@ -489,11 +495,13 @@ function saveTrackerData(event, isAutoSave = false) {
         suppVitaminD: getChecked('supp-vitamin-d'),
         suppVitaminC: getChecked('supp-vitamin-c'),
         suppOmega3: getChecked('supp-omega3'),
+        suppCreatine: getChecked('supp-creatine'),
         suppTurmeric: getChecked('supp-turmeric'),
         suppCoq10: getChecked('supp-coq10'),
         suppNrNmn: getChecked('supp-nr-nmn'),
         suppLionsMane: getChecked('supp-lions-mane'),
         suppSpermidine: getChecked('supp-spermidine'),
+        breakfastProteinIsolate: getChecked('breakfast-protein-isolate'),
         postBreakfastWalk: getChecked('post-breakfast-walk'),
         // Work block 2
         focusWork2: getChecked('focus-work-2'),
@@ -560,6 +568,11 @@ function saveTrackerData(event, isAutoSave = false) {
         suppAshwagandha: getChecked('supp-ashwagandha'),
         suppMagnesium: getChecked('supp-magnesium'),
         suppLTheanine: getChecked('supp-l-theanine'),
+        // Personalized additions (labs-aligned)
+        suppIron: getChecked('supp-iron'),
+        noTeaBeforeIron: getChecked('no-tea-before-iron'),
+        suppAshwagandhaSnack: getChecked('supp-ashwagandha-snack'),
+        medStatin: getChecked('med-statin'),
         eveningSkincare: getChecked('evening-skincare'),
         sleepEnvironment: getChecked('sleep-environment'),
         prepareClothes: getChecked('prepare-clothes'),

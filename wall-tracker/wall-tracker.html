@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily Longevity Wall Tracker</title>
+<style>
+  @page { size: A4; margin: 9mm 11mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1f2937; margin: 0; font-size: 10.7px; line-height: 1.32; }
+  .section { page-break-after: always; page-break-inside: avoid; }
+  .section:last-child { page-break-after: auto; }
+  .banner { border-radius: 9px; padding: 9px 18px; text-align: center; margin-bottom: 9px; }
+  .banner h1 { margin: 0; font-size: 19px; }
+  .banner .sub { font-weight: 600; margin-top: 2px; font-size: 12px; }
+  .morning .banner { background: #ffe6b8; } .morning .banner h1, .morning .banner .sub { color: #b45309; }
+  .afternoon .banner { background: #bfe0ff; } .afternoon .banner h1, .afternoon .banner .sub { color: #1e3a8a; }
+  .evening .banner { background: #e6d4ff; } .evening .banner h1, .evening .banner .sub { color: #6b21a8; }
+  .card { background: #f7f8fa; border-left: 4px solid #374151; border-radius: 6px; padding: 7px 13px; margin-bottom: 7px; page-break-inside: avoid; }
+  .card h2 { margin: 0 0 4px; font-size: 12.5px; }
+  .timing { background: #fdf3d0; border-left: 4px solid #f0a020; border-radius: 4px; padding: 4px 9px; font-style: italic; font-size: 10px; margin: 3px 0 6px; }
+  .supp { background: #e7f6ec; border: 1px solid #86c79b; border-radius: 6px; padding: 7px 13px; margin-bottom: 7px; page-break-inside: avoid; }
+  .supp h2 { color: #15803d; font-size: 12.5px; margin: 0 0 4px; }
+  .med { background: #fdeaea; border: 1px solid #e59a9a; border-radius: 6px; padding: 7px 13px; margin-bottom: 7px; page-break-inside: avoid; }
+  .med h2 { color: #b91c1c; font-size: 12.5px; margin: 0 0 4px; }
+  ul { margin: 3px 0; padding-left: 0; list-style: none; }
+  li { margin: 2px 0; padding-left: 20px; position: relative; }
+  li::before { content: "\2610"; position: absolute; left: 0; font-size: 13px; color: #6b7280; }
+  li.plain::before { content: ""; }
+  .essential { color: #b45309; font-weight: 700; }
+  .opt { color: #6b7280; }
+  .flag { color: #b91c1c; font-weight: 700; }
+  .note { font-size: 10px; color: #4b5563; }
+  .reminders { background: #fdf3d0; border-left: 5px solid #f0a020; border-radius: 6px; padding: 10px 16px; page-break-inside: avoid; }
+  .reminders h2 { margin: 0 0 5px; color: #92400e; font-size: 13px; }
+  .reminders li::before { content: "\2022"; color: #92400e; }
+  small { color: #6b7280; }
+</style>
+</head>
+<body>
+
+<!-- ============ MORNING ============ -->
+<div class="section morning">
+  <div class="banner"><h1>🌅 MORNING ROUTINE</h1><div class="sub">Priming &amp; Energy</div></div>
+
+  <div class="card">
+    <h2>6:00–6:30 AM — Wake &amp; Activate</h2>
+    <div class="timing">⏰ Immediate upon waking (&lt;2 min)</div>
+    <ul>
+      <li>No phone/screens (preserve dopamine baseline)</li>
+      <li>Get out of bed immediately</li>
+      <li>Morning sunlight 5–10 min, bare eyes (cloudy: 10–20 min)</li>
+      <li>Warm water + lime (500 ml)</li>
+      <li>Meditation / breathing 10–15 min (box breathing or Anulom-Vilom)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>6:30–7:30 AM — Exercise</h2>
+    <div class="timing">⏰ Log everything you did — combining is encouraged (e.g. strength + short Zone 2). <b>Weekly targets: Resistance ×3 · Zone 2 40–45 min ×3–4 · HIIT ×1–2</b> + daily post-meal walks.</div>
+    <ul>
+      <li>Pre-workout prep (transition, mental prep; L-Tyrosine optional)</li>
+      <li>Strength training (aim ×3/wk — muscle + insulin sensitivity)</li>
+      <li>Zone 2 cardio 40–45 min (aim ×3–4/wk — raises HDL, lowers TG)</li>
+      <li>HIIT / Zone 5 intervals (aim ×1–2/wk — best lever for low HDL 32)</li>
+      <li>Light/recovery mobility (Surya Namaskar / stretching)</li>
+      <li>Post-workout cool-down (wait 10–15 min before shower)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>7:30–8:00 AM — Shower, Skin Care &amp; Green Tea</h2>
+    <div class="timing">⏰ 90–120 min after waking. Cold exposure NOT right after strength training.</div>
+    <ul>
+      <li>Shower (cold exposure optional, 2–3×/wk)</li>
+      <li>Skin care: face wash → Vitamin C serum → moisturizer → <b>sunscreen SPF 30+</b> (non-negotiable)</li>
+      <li>Green tea <small>(fine in AM; keep ≥2 h away from the 3:30 PM iron dose)</small></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>8:00–8:45 AM — Deep Work</h2>
+    <ul>
+      <li>Deep work session (45 min — hardest tasks first)</li>
+      <li>Phone in another room</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🍳 Breakfast (8:45–9:15 AM, or 10:00 AM if 15-h fast)</h2>
+    <div class="timing">⏰ Per diet plan: last bite ~7 PM → first meal 10 AM (15-h fast — best for TG 227).</div>
+    <ul>
+      <li>High-protein meal (30–40 g protein) — <b>+1 scoop whey/pea isolate</b> (daily, for 135 g/day target)</li>
+      <li>No red meat · salmon Tue/Thu · low-fat paneer only</li>
+      <li>Post-breakfast walk (15 min)</li>
+    </ul>
+  </div>
+
+  <div class="supp">
+    <h2>🌿 Morning Supplements (with breakfast)</h2>
+    <ul>
+      <li><span class="essential">Vitamin D3 — 50,000 IU ONCE WEEKLY (Sun)</span> 🩺 with fattiest meal (Vit D was 10 ng/mL)</li>
+      <li><span class="essential">Omega-3 ~2 g EPA/DHA</span> 🩺 (lowers TG, raises HDL)</li>
+      <li><span class="essential">Creatine 5 g</span> (muscle + strength; any consistent time)</li>
+      <li class="plain"><span class="opt">Optional — CoQ10 · Vitamin K2 · Turmeric <small>(away from iron)</small> · NR/NMN · Spermidine</small></span></li>
+      <li class="plain"><small>Vitamin C moved to the 3:30 PM iron slot · Vitamin E dropped</small></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ AFTERNOON ============ -->
+<div class="section afternoon">
+  <div class="banner"><h1>☀️ AFTERNOON ROUTINE</h1><div class="sub">Performance &amp; Maintenance</div></div>
+
+  <div class="card">
+    <h2>🍽 Lunch (12:00–1:00 PM)</h2>
+    <div class="timing">⏰ Psyllium 1 tsp + water 10–15 min before the meal.</div>
+    <ul>
+      <li>Apple cider vinegar + psyllium husk (before meal)</li>
+      <li>High-protein meal (25–35 g) + steamed veg + fermented foods</li>
+      <li>No red meat · foxtail millet not brown rice · 1 tsp EVOO/mustard oil</li>
+      <li>Post-lunch walk (10–15 min)</li>
+    </ul>
+  </div>
+
+  <div class="supp">
+    <h2>🌿 Lunch Supplements — ⚪ all optional</h2>
+    <ul>
+      <li class="plain"><span class="opt">Vitamin K2 · Garlic extract · B-Complex (Mon &amp; Thu)</span></li>
+      <li class="plain"><small>Magnesium moved to evening (keeps it ≥5 h from the iron dose)</small></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1:00–3:30 PM — Work &amp; Energy</h2>
+    <ul>
+      <li>1:00–2:00 Light cognitive tasks (email, admin, meetings)</li>
+      <li>2:00–2:15 Green tea <small>(finish ≥90 min before the 3:30 iron)</small> + break</li>
+      <li>2:15–3:30 Collaborative work / study</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>3:30–4:00 PM — NSDR + Snack</h2>
+    <div class="timing">⏰ NSDR before 4 PM consolidates learning &amp; addresses the 2–3 PM dip.</div>
+    <ul>
+      <li>NSDR / Yoga Nidra 10–20 min</li>
+      <li>Snack — <b>dairy-free, with a Vitamin C source</b> (orange/berries)</li>
+    </ul>
+  </div>
+
+  <div class="supp">
+    <h2>🌿 3:30 PM — Iron Anchor (essential, every day)</h2>
+    <div class="timing" style="background:#fdeaea;border-color:#e59a9a;">⚠️ Dairy-free · no tea/coffee within 2 h · not with turmeric/calcium.</div>
+    <ul>
+      <li><span class="essential">Iron — ferrous bisglycinate 25–50 mg</span> 🩺 (ferritin 14 ng/mL)</li>
+      <li><span class="essential">Vitamin C 500 mg</span> (doubles iron absorption)</li>
+      <li class="plain"><span class="opt">Ashwagandha 600 mg — optional (snack OR evening, not both)</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>4:00–6:00 PM — Wrap-Up &amp; Movement</h2>
+    <ul>
+      <li>Plan next day (3–4 key tasks) + journal reflection</li>
+      <li>Light stretching / walk / evening workout if morning missed</li>
+      <li>Hydration 500–750 ml</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ EVENING ============ -->
+<div class="section evening">
+  <div class="banner"><h1>🌙 EVENING ROUTINE</h1><div class="sub">Recovery &amp; Reflection</div></div>
+
+  <div class="card">
+    <h2>6:00–7:00 PM — Personal Time</h2>
+    <ul>
+      <li>Light review / reading · plan tomorrow's meals · hydration</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🍽 Dinner (7:00–8:00 PM)</h2>
+    <div class="timing">⏰ 3–4 h before bed. Lighter than lunch. Psyllium before.</div>
+    <ul>
+      <li>Apple cider vinegar + psyllium husk (before meal)</li>
+      <li>Lighter meal (25–35 g protein) — <b>no brown rice, no aloo</b></li>
+      <li>Family time / play with daughter</li>
+      <li>Post-dinner walk (15 min)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>8:15–9:00 PM — Skin Care &amp; Wind-Down</h2>
+    <ul>
+      <li>Skin care: cleanse → retinol/niacinamide (alternate) → moisturizer → eye cream</li>
+      <li>Digital sunset (no screens 2 h before bed) · dim lights · herbal tea</li>
+      <li>Journal &amp; gratitude (3 things)</li>
+    </ul>
+  </div>
+
+  <div class="med">
+    <h2>💊 Evening Supplements &amp; Medication (9–10 PM)</h2>
+    <ul>
+      <li><span class="flag">Atorvastatin 10 mg — 10 PM, EVERY NIGHT (DAILY, not sporadic)</span> 🩺 no grapefruit</li>
+      <li><span class="essential">Magnesium glycinate 400 mg</span> — 9 PM (sleep + insulin)</li>
+      <li class="plain"><span class="opt">Optional — Ashwagandha · L-Theanine · Melatonin 300 mcg (only if needed)</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>9:00–9:30 PM — Sleep Prep</h2>
+    <div class="timing">⏰ Target bed 9:30–10:00 PM · 7–9 h · consistent wake ±30 min.</div>
+    <ul>
+      <li>Cool (18–20 °C), dark, quiet · phone out of room</li>
+      <li>Deep breathing / meditation 5–10 min</li>
+      <li>Prepare tomorrow's clothes</li>
+    </ul>
+  </div>
+
+  <div class="reminders">
+    <h2>🎯 Key Reminders — calibrated to Apr 2026 labs</h2>
+    <ul>
+      <li class="plain"><b>Statin EVERY night</b> — the #1 adherence gap (was sporadic)</li>
+      <li class="plain"><b>Iron</b> daily at 3:30 PM, with Vit C, dairy-free, ≥2 h from tea/coffee</li>
+      <li class="plain"><b>Vitamin D</b> 50,000 IU weekly with a fatty meal (retest 3 mo)</li>
+      <li class="plain"><b>Protein ~135 g/day</b> + creatine 5 g · no red meat · salmon ×2/wk</li>
+      <li class="plain"><b>Exercise weekly:</b> Resistance ×3 · Zone 2 ×3–4 · HIIT ×1–2</li>
+      <li class="plain"><b>🩺 Doctor:</b> sleep study for snoring · Lp(a)/LDL-P plan · retest labs Jul 2026</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
